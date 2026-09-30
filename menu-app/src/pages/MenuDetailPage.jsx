@@ -7,7 +7,8 @@ import BurnDialog from '../components/BurnDialog.jsx';
 import BurnEffect from '../components/BurnEffect.jsx';
 import CardBack from '../components/CardBack.jsx';
 import CardFace from '../components/CardFace.jsx';
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon } from '../components/Icons.jsx';
+import { useBackpack } from '../components/backpack.js';
+import { BagIcon, ChevronLeftIcon, ChevronRightIcon, FlameIcon } from '../components/Icons.jsx';
 import StateCard from '../components/StateCard.jsx';
 import { formatCardNo, formatGold, getRarity } from '../components/rarity.js';
 import useTilt from '../components/useTilt.js';
@@ -128,6 +129,8 @@ const MenuDetail = ({ menu, justCreated, onRevealEnd, onBack, onBurn, onBurned }
   // 이 화면에 머무는 동안은 "방금 들인 카드"로 기억한다. (이동 기록의 표시는 연출이 끝나면 지워진다)
   const [revealing] = useState(justCreated);
   const tilt = useTilt();
+  const backpack = useBackpack();
+  const inBag = backpack.qtyOf(menu.menuCode);
 
   // 동작 줄이기에서는 개봉 애니메이션이 없어 animationend 가 오지 않으므로 표시를 바로 지운다.
   useEffect(() => {
@@ -225,6 +228,15 @@ const MenuDetail = ({ menu, justCreated, onRevealEnd, onBack, onBurn, onBurned }
             <Link to={`/menus/${menu.menuCode}/edit`} className="btn btn-outlined label1 medium">
               고쳐 쓰기
             </Link>
+            <button
+              type="button"
+              className="btn btn-primary label1 bold"
+              onClick={() => backpack.add(menu.menuCode)}
+              disabled={soldOut || burning}
+            >
+              <BagIcon />
+              {soldOut ? '품절이라 담을 수 없음' : inBag > 0 ? `배낭에 ${inBag} · 하나 더` : '배낭에 담기'}
+            </button>
             <button
               type="button"
               className="btn btn-danger-outlined label1 bold"
