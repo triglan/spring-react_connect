@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { isCanceled } from '../api/client.js';
 import { deleteMenu, getMenu } from '../api/menus.js';
 import BurnDialog from '../components/BurnDialog.jsx';
+import CardBack from '../components/CardBack.jsx';
 import CardFace from '../components/CardFace.jsx';
 import { ChevronLeftIcon, ChevronRightIcon, FlameIcon } from '../components/Icons.jsx';
 import StateCard from '../components/StateCard.jsx';
@@ -99,6 +100,9 @@ const MenuDetailPage = () => {
       ) : (
         <MenuDetail
           menu={menu}
+          justCreated={location.state?.justCreated === true}
+          // 개봉 연출이 끝나면 표시를 지워 새로고침·뒤로가기 때 다시 나오지 않게 한다.
+          onRevealEnd={() => navigate(location.pathname, { replace: true, state: null })}
           onBack={backToList}
           onBurn={async () => {
             await deleteMenu(menu.menuCode);
@@ -111,15 +115,44 @@ const MenuDetailPage = () => {
   );
 };
 
-const MenuDetail = ({ menu, onBack, onBurn }) => {
+// 새로 들인 카드를 처음 볼 때 상인이 건네는 말. 전설이면 더 반긴다.
+const revealLine = (rarity) =>
+  rarity.key === 'legendary'
+    ? '“장부에 적었네! 전설 카드라니, 오늘 운이 좋군.”'
+    : `“장부에 적었네! ${rarity.name} 카드가 진열장에 들어갔다네.”`;
+
+const MenuDetail = ({ menu, justCreated, onRevealEnd, onBack, onBurn }) => {
   const [burnOpen, setBurnOpen] = useState(false);
+  // 이 화면에 머무는 동안은 "방금 들인 카드"로 기억한다. (이동 기록의 표시는 연출이 끝나면 지워진다)
+  const [revealing] = useState(justCreated);
   const tilt = useTilt();
+
+  // 동작 줄이기에서는 개봉 애니메이션이 없어 animationend 가 오지 않으므로 표시를 바로 지운다.
+  useEffect(() => {
+    if (justCreated && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) onRevealEnd();
+  }, [justCreated, onRevealEnd]);
   const rarity = getRarity(menu.menuPrice);
   const soldOut = menu.orderableStatus === 'N';
+  const card = <CardFace menu={menu} size="large" {...tilt} />;
 
   return (
     <article className="detail panel panel-gold">
-      <CardFace menu={menu} size="large" {...tilt} />
+      {revealing ? (
+        <div className={`reveal-stage rarity-${rarity.key}`}>
+          <span className="reveal-burst" aria-hidden="true" />
+          <div
+            className="reveal-card"
+            onAnimationEnd={(event) => {
+              if (event.target === event.currentTarget) onRevealEnd();
+            }}
+          >
+            {card}
+            <CardBack />
+          </div>
+        </div>
+      ) : (
+        card
+      )}
 
       <div className="detail-body">
         <div className="detail-title">
@@ -140,7 +173,9 @@ const MenuDetail = ({ menu, onBack, onBurn }) => {
           <div className="npc-say-text">
             <p className="npc-name caption1 bold">상인</p>
             <p className="npc-line body2 regular">
-              {soldOut
+              {revealing
+                ? revealLine(rarity)
+                : soldOut
                 ? '“아쉽게도 이 카드는 지금 품절이라네. 다시 들어오면 진열해 두지.”'
                 : '“눈이 좋군. 이 카드는 지금 바로 내어 줄 수 있다네.”'}
             </p>

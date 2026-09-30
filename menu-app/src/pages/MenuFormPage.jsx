@@ -63,9 +63,10 @@ const MenuFormPage = () => {
   const isLoading = loaded.key !== requestKey;
 
   // 저장이 끝나면 그 메뉴의 상세 화면으로 간다. 폼으로 되돌아오지 않도록 기록을 바꿔 치운다.
+  // 새로 들인 카드면 상세 화면이 입고 개봉 연출을 한 번 보여 주도록 이동 기록(state)에 표시한다.
   const submit = async (menu) => {
     const saved = isEdit ? await updateMenu(menuCode, menu) : await createMenu(menu);
-    navigate(`/menus/${saved.menuCode}`, { replace: true });
+    navigate(`/menus/${saved.menuCode}`, { replace: true, state: isEdit ? null : { justCreated: true } });
   };
 
   return (

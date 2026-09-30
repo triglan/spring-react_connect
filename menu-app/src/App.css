@@ -1437,6 +1437,115 @@ a.menu-card:focus-visible {
   }
 }
 
+/* ─── 연출: 입고 개봉 ─── */
+
+/* 뒷면이 위에서 떨어져 뒤집히며 앞면이 드러나고, 그 순간 레어도 색으로 빛이 터진다 */
+.reveal-stage {
+  position: relative;
+  align-self: start;
+  perspective: var(--motion-tilt-perspective);
+}
+
+.reveal-card {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: reveal-drop var(--motion-duration-reveal) var(--motion-easing-standard) both;
+}
+
+.reveal-card > .menu-card,
+.reveal-card > .card-back {
+  backface-visibility: hidden;
+}
+
+.reveal-card > .card-back {
+  position: absolute;
+  inset: var(--spacing-0);
+  transform: rotateY(180deg);
+}
+
+.reveal-burst {
+  position: absolute;
+  inset: -30%;
+  border-radius: var(--radius-9999);
+  background: radial-gradient(circle, var(--card-rarity) 0%, transparent 62%);
+  opacity: var(--opacity-0);
+  pointer-events: none;
+  animation: reveal-burst var(--motion-duration-reveal) ease-out both;
+}
+
+.reveal-stage.rarity-legendary .reveal-burst {
+  inset: -60%;
+}
+
+@keyframes reveal-drop {
+  0% {
+    opacity: var(--opacity-0);
+    transform: translateY(calc(var(--spacing-64) * -1)) rotateY(180deg);
+  }
+
+  25% {
+    opacity: var(--opacity-100);
+    transform: translateY(0) rotateY(180deg);
+  }
+
+  45% {
+    transform: translateY(0) rotateY(180deg) scale(1.02);
+  }
+
+  70%,
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+}
+
+@keyframes reveal-burst {
+  0%,
+  60% {
+    opacity: var(--opacity-0);
+    transform: scale(0.4);
+  }
+
+  75% {
+    opacity: var(--opacity-88);
+  }
+
+  100% {
+    opacity: var(--opacity-0);
+    transform: scale(1.4);
+  }
+}
+
+.card-back {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  align-items: center;
+  justify-content: center;
+  border: var(--spacing-2) solid var(--color-game-line-gold);
+  border-radius: var(--radius-12);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-game-background-panel) 0 var(--spacing-10),
+    var(--color-game-background-raised) var(--spacing-10) var(--spacing-20)
+  );
+  box-shadow: var(--shadow-game-panel), inset 0 0 0 var(--spacing-6) var(--color-game-background-panel),
+    inset 0 0 0 var(--spacing-8) var(--color-game-line-gold);
+  color: var(--color-game-gold-normal);
+}
+
+.card-back-crest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-64);
+  height: var(--spacing-64);
+  border: var(--spacing-2) solid var(--color-game-line-gold);
+  border-radius: var(--radius-9999);
+  background: var(--color-game-background-inset);
+  box-shadow: var(--shadow-game-candle);
+  color: var(--color-game-candle);
+}
+
 /* ─── 연출: 촛불 일렁임 ─── */
 
 .flame {
