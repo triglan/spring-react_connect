@@ -87,14 +87,23 @@ body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:
 
 <div class="menu-grid">
 <sc-for list="{{menus}}" as="m" hint-placeholder-count="12">
-<div class="card-slot">
-<a class="{{m.cardClass}}" style="{{m.tiltStyle}}" href="MenuDetail.dc.html">
+<div class="{{m.slotClass}}" style="{{m.tiltStyle}}">
+<a class="{{m.cardClass}}" href="MenuDetail.dc.html">
 <div class="menu-card-top">
 <span class="card-no caption1 bold">No.{{m.no}}</span>
 <span class="rarity-tag caption1 bold"><span class="gem"></span>{{m.rarityName}}</span>
 </div>
 <div class="card-art">
-<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg>
+<sc-if value="{{m.art_korean}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 30h44"></path><path d="M12 30c0 13 9 22 20 22s20-9 20-22"></path><path d="M25 52h14"></path><path d="M17 30c2-7 8-10 15-8 6-4 13-2 15 8" fill="currentColor" fill-opacity="0.18"></path><path d="M40 7 28 25"></path><path d="M47 9 33 26"></path></svg></sc-if>
+<sc-if value="{{m.art_chinese}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 42c0-14 40-14 40 0-6 5-34 5-40 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M24 31l2 6M32 29v7M40 31l-2 6"></path><path d="M26 20c-2-4 2-6 0-10M38 20c-2-4 2-6 0-10"></path><path d="M8 50h48"></path></svg></sc-if>
+<sc-if value="{{m.art_japanese}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 38h32a6 6 0 0 1 0 12H16a6 6 0 0 1 0-12z"></path><path d="M11 38c4-10 38-12 42-3-3 4-37 5-42 3z" fill="currentColor" fill-opacity="0.18"></path><path d="M24 32l-2 5M34 30l-2 7M44 30l-2 6"></path><path d="M29 36h8v14h-8z" fill="currentColor" fill-opacity="0.35"></path></svg></sc-if>
+<sc-if value="{{m.art_fusion}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 8v14c0 4 8 4 8 0V8M22 8v14M22 26v30"></path><path d="M36 17a6 9 0 1 0 12 0a6 9 0 1 0-12 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M42 26v30"></path><path d="M32 34l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="currentColor" fill-opacity="1"></path></svg></sc-if>
+<sc-if value="{{m.art_coffee}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 26h28v10c0 9-6 14-14 14s-14-5-14-14z" fill="currentColor" fill-opacity="0.18"></path><path d="M44 29c8 0 8 11 0 11"></path><path d="M10 54h40"></path><path d="M24 18c-2-4 2-6 0-10M34 18c-2-4 2-6 0-10"></path></svg></sc-if>
+<sc-if value="{{m.art_juice}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M20 16h24l-4 38H24z"></path><path d="M21.3 28h21.4L40 54H24z" fill="currentColor" fill-opacity="0.25"></path><path d="M34 22l4-16 6-2"></path><path d="M39 18a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M46 11v14M39 18h14"></path></svg></sc-if>
+<sc-if value="{{m.art_etc}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M26 5h12v5H26z"></path><path d="M28 19c-11 4-14 16-9 25 4 7 22 7 26 0 5-9 2-21-9-25V10h-8z"></path><path d="M17.6 35c6.4-3 22.4 3 28.8 0 .6 4-.4 6.9-1.4 9-4 7-22 7-26 0-1-2.1-1.8-5-1.4-9z" fill="currentColor" fill-opacity="0.3"></path><path d="M26 42a2 2 0 1 0 4 0a2 2 0 1 0-4 0zM33.5 38a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0-3 0z" fill="currentColor" fill-opacity="1"></path></svg></sc-if>
+<sc-if value="{{m.art_eastern}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 56 52 8"></path><path d="M16 43a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M25 32a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.3"></path><path d="M34 21a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.18"></path></svg></sc-if>
+<sc-if value="{{m.art_western}}" hint-placeholder-val="{{false}}"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 46h44V30L10 38z" fill="currentColor" fill-opacity="0.18"></path><path d="M10 42l44-6"></path><path d="M42 24a4 4 0 1 0 8 0a4 4 0 1 0-8 0z" fill="currentColor" fill-opacity="1"></path><path d="M46 20c0-4 3-6 6-7"></path></svg></sc-if>
+<sc-if value="{{m.art_default}}" hint-placeholder-val="{{true}}"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg></sc-if>
 <span class="category caption1 medium">{{m.categoryName}}</span>
 <sc-if value="{{m.soldOut}}" hint-placeholder-val="{{false}}">
 <span class="stamp label1 bold">품절</span>
@@ -173,8 +182,8 @@ menus: raw.map(function (r, i) {
 var rr = rarity(r[2]);
 var cls = 'menu-card rarity-' + rr[0];
 if (r[4] === 'N') cls += ' is-soldout';
-if (i === 9) cls += ' is-tilting';
 return {
+slotClass: i === 9 ? 'card-slot is-tilting' : 'card-slot',
 tiltStyle: i === 9 ? '--tilt-x: 0.6; --tilt-y: -0.4; --gloss-x: 78%; --gloss-y: 22%;' : '',
 bagAdded: i === 0,
 bagOpen: r[4] === 'Y' && i !== 0,
@@ -182,6 +191,16 @@ no: String(r[0]).padStart(3, '0'),
 menuName: r[1],
 price: r[2].toLocaleString('ko-KR') + ' ',
 categoryName: r[3],
+art_korean: r[3] === '한식',
+art_chinese: r[3] === '중식',
+art_japanese: r[3] === '일식',
+art_fusion: r[3] === '퓨전',
+art_coffee: r[3] === '커피',
+art_juice: r[3] === '쥬스',
+art_etc: r[3] === '기타',
+art_eastern: r[3] === '동양',
+art_western: r[3] === '서양',
+art_default: ['한식','중식','일식','퓨전','커피','쥬스','기타','동양','서양'].indexOf(r[3]) < 0,
 rarityName: rr[1],
 orderable: r[4] === 'Y',
 soldOut: r[4] === 'N',

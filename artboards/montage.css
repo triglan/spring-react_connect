@@ -237,9 +237,15 @@ a { color: var(--color-game-gold-normal); }
 .bag-btn:disabled { border-color: var(--color-game-line-wood); background: var(--color-game-background-inset); color: var(--color-game-label-assistive); cursor: default; }
 
 /* 기울기와 광택 — --tilt-x/-y 는 -1~1, --gloss-x/-y 는 % (마우스 위치) */
-.menu-card.is-tilting { transform: perspective(var(--motion-tilt-perspective)) rotateX(calc(var(--tilt-y) * var(--motion-tilt-max) * -1)) rotateY(calc(var(--tilt-x) * var(--motion-tilt-max))) translateY(var(--motion-lift-card)); box-shadow: var(--shadow-game-lift), var(--card-glow); }
-.menu-card.is-tilting::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(circle at var(--gloss-x) var(--gloss-y), var(--color-game-gloss), transparent 55%); }
-.menu-card.is-tilting.rarity-epic::after, .menu-card.is-tilting.rarity-legendary::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0.22; mix-blend-mode: color-dodge; background: linear-gradient(115deg, var(--color-game-rarity-rare), var(--color-game-rarity-epic), var(--color-game-rarity-legendary), var(--color-game-rarity-uncommon)); background-size: 200% 200%; background-position: var(--gloss-x) var(--gloss-y); }
+/* 기울기는 카드를 감싼 칸(.card-slot)에 건다 — 칸 위에 겹친 담기 버튼도 카드와 함께 떠오르고 기운다.
+   (칸이 없는 연출 예시 카드는 카드 자신이 .is-tilting 을 받는다) */
+.card-slot { transition: transform var(--motion-duration-normal) var(--motion-easing-standard); }
+.card-slot.is-hover { transform: translateY(var(--motion-lift-card)); }
+.card-slot.is-hover > .menu-card, .card-slot.is-tilting > .menu-card { box-shadow: var(--shadow-game-lift), var(--card-glow); }
+.is-tilting { transform: perspective(var(--motion-tilt-perspective)) rotateX(calc(var(--tilt-y) * var(--motion-tilt-max) * -1)) rotateY(calc(var(--tilt-x) * var(--motion-tilt-max))) translateY(var(--motion-lift-card)); }
+.menu-card.is-tilting { box-shadow: var(--shadow-game-lift), var(--card-glow); }
+.menu-card.is-tilting::before, .is-tilting > .menu-card::before { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(circle at var(--gloss-x) var(--gloss-y), var(--color-game-gloss), transparent 55%); }
+.menu-card.is-tilting.rarity-epic::after, .menu-card.is-tilting.rarity-legendary::after, .is-tilting > .menu-card.rarity-epic::after, .is-tilting > .menu-card.rarity-legendary::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; opacity: 0.22; mix-blend-mode: color-dodge; background: linear-gradient(115deg, var(--color-game-rarity-rare), var(--color-game-rarity-epic), var(--color-game-rarity-legendary), var(--color-game-rarity-uncommon)); background-size: 200% 200%; background-position: var(--gloss-x) var(--gloss-y); }
 
 /* 전설 테두리 — 금빛이 테두리를 따라 돈다 */
 @property --orbit-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
@@ -385,3 +391,28 @@ a { color: var(--color-game-gold-normal); }
 .bag-summary dl div { display: flex; justify-content: space-between; color: var(--color-game-label-alternative); }
 .bag-summary .bag-total { padding-top: var(--spacing-12); border-top: var(--spacing-1) solid var(--color-game-line-wood); color: var(--color-game-label-strong); }
 .warn-tag { color: var(--color-game-status-negative); }
+
+
+/* 요리 계통 그림 — 64×64 선 그림. 색은 카드 그림 칸의 색(레어도)을 따른다 */
+.cat-art { width: 64px; height: 64px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.is-large .cat-art { width: 112px; height: 112px; }
+
+/* 상세 좌우 넘기기 — 카드 아래 앞·다음 번호 카드 */
+.detail-card-col { display: flex; flex-direction: column; gap: var(--spacing-12); align-self: start; }
+.card-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-8); }
+.card-nav a { display: flex; align-items: center; gap: var(--spacing-6); min-width: 0; padding: var(--spacing-10) var(--spacing-12); border: var(--spacing-1) solid var(--color-game-line-wood); border-radius: var(--radius-8); background: var(--color-game-background-raised); color: var(--color-game-label-normal); text-decoration: none; }
+.card-nav a:last-child { justify-content: flex-end; text-align: right; }
+.card-nav .nav-text { display: flex; flex-direction: column; min-width: 0; }
+.card-nav .nav-text span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-game-label-strong); }
+.card-nav .nav-no { color: var(--color-game-label-alternative); }
+.key-hint { color: var(--color-game-label-alternative); text-align: center; }
+.kbd { display: inline-flex; align-items: center; justify-content: center; min-width: var(--spacing-20); height: var(--spacing-20); padding: 0 var(--spacing-4); border: var(--spacing-1) solid var(--color-game-line-wood); border-radius: var(--radius-3); background: var(--color-game-background-inset); color: var(--color-game-label-normal); }
+
+/* 카드 넘김 — 다음 카드면 지금 카드가 왼쪽으로 밀려나고 새 카드가 오른쪽에서 들어온다 (앞 카드는 반대) */
+@keyframes slide-in-right { from { opacity: 0; transform: translateX(var(--spacing-48)) rotate(2deg); } }
+@keyframes slide-out-left { to { opacity: 0; transform: translateX(calc(var(--spacing-48) * -1)) rotate(-2deg); } }
+.slide-demo { position: relative; height: 380px; display: flex; align-items: center; justify-content: center; }
+.slide-demo > .menu-card { position: absolute; width: 240px; }
+.slide-demo .slide-old { animation: slide-out-left var(--motion-duration-normal) var(--motion-easing-standard) both; animation-delay: 600ms; }
+.slide-demo .slide-new { animation: slide-in-right var(--motion-duration-normal) var(--motion-easing-standard) both; animation-delay: 800ms; }
+.demo-loop.slide-demo .slide-old, .demo-loop.slide-demo .slide-new { animation-duration: 2400ms; }

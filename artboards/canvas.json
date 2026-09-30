@@ -1,19 +1,82 @@
 {
   "v": 3,
-  "createdOnFiles": { "v": 1, "at": "2026-09-30T06:10:00Z" },
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-30T06:10:00Z"
+  },
   "title": "메뉴 관리 아트보드",
-  "launch": { "view": "canvas" },
+  "launch": {
+    "view": "canvas"
+  },
   "pages": [],
   "boards": {
-    "Main.dc.html": { "x": 0, "y": 0, "w": 1280, "h": 720, "title": "1. 레이아웃" },
-    "MenuList.dc.html": { "x": 1360, "y": 0, "w": 1280, "h": 1580, "title": "2. 진열장 (메뉴 목록)" },
-    "MenuDetail.dc.html": { "x": 0, "y": 1700, "w": 1280, "h": 1220, "title": "3. 카드 상세 (메뉴 상세)" },
-    "MenuForm.dc.html": { "x": 1360, "y": 1700, "w": 1280, "h": 1220, "title": "4. 카드 장부 (메뉴 폼)" },
-    "States.dc.html": { "x": 2720, "y": 1700, "w": 1280, "h": 1220, "title": "5. 상태 모음" },
-    "Backpack.dc.html": { "x": 2720, "y": 0, "w": 1280, "h": 1320, "title": "6. 모험가의 배낭" },
-    "Effects.dc.html": { "x": 4080, "y": 1700, "w": 1280, "h": 1560, "title": "7. 연출 모음" }
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "title": "1. 레이아웃"
+    },
+    "MenuList.dc.html": {
+      "x": 1360,
+      "y": 0,
+      "w": 1280,
+      "h": 1580,
+      "title": "2. 진열장 (메뉴 목록)"
+    },
+    "MenuDetail.dc.html": {
+      "x": 0,
+      "y": 1700,
+      "w": 1280,
+      "h": 1220,
+      "title": "3. 카드 상세 (메뉴 상세)"
+    },
+    "MenuForm.dc.html": {
+      "x": 1360,
+      "y": 1700,
+      "w": 1280,
+      "h": 1220,
+      "title": "4. 카드 장부 (메뉴 폼)"
+    },
+    "States.dc.html": {
+      "x": 2720,
+      "y": 1700,
+      "w": 1280,
+      "h": 1220,
+      "title": "5. 상태 모음"
+    },
+    "Backpack.dc.html": {
+      "x": 2720,
+      "y": 0,
+      "w": 1280,
+      "h": 1320,
+      "title": "6. 모험가의 배낭"
+    },
+    "Effects.dc.html": {
+      "x": 4080,
+      "y": 1700,
+      "w": 1280,
+      "h": 2020,
+      "title": "7. 연출 모음"
+    },
+    "Illustrations.dc.html": {
+      "x": 4080,
+      "y": 0,
+      "w": 1280,
+      "h": 980,
+      "title": "8. 요리 계통 그림"
+    }
   },
-  "order": ["Main.dc.html", "MenuList.dc.html", "MenuDetail.dc.html", "MenuForm.dc.html", "States.dc.html", "Backpack.dc.html", "Effects.dc.html"],
+  "order": [
+    "Main.dc.html",
+    "MenuList.dc.html",
+    "MenuDetail.dc.html",
+    "MenuForm.dc.html",
+    "States.dc.html",
+    "Backpack.dc.html",
+    "Effects.dc.html",
+    "Illustrations.dc.html"
+  ],
   "notes": {},
   "designSystems": []
 }

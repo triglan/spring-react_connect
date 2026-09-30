@@ -14,7 +14,7 @@
 body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
 </style>
 </helmet>
-<div style="width: 1280px; height: 1560px; box-sizing: border-box; padding: var(--spacing-40); display: flex; flex-direction: column; gap: var(--spacing-40); background: var(--color-game-background-base); color: var(--color-game-label-normal);">
+<div style="width: 1280px; height: 2020px; box-sizing: border-box; padding: var(--spacing-40); display: flex; flex-direction: column; gap: var(--spacing-40); background: var(--color-game-background-base); color: var(--color-game-label-normal);">
 
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-24);">
 <section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
@@ -135,9 +135,27 @@ body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:
 <p class="caption1 regular" style="color: var(--color-game-label-alternative);">모든 연출은 운영체제의 ‘동작 줄이기’가 켜져 있으면 멈추고 결과만 보여준다.</p>
 </section>
 </div>
+
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">카드 넘김 — 상세에서 다음 번호로 넘기면 지금 카드가 왼쪽으로 밀려나고 새 카드가 오른쪽에서 들어온다 (앞 번호는 반대 방향, 0.2초)</p>
+<div class="slide-demo demo-loop">
+<div class="menu-card rarity-legendary slide-old">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.008</span><span class="rarity-tag caption1 bold"><span class="gem"></span>전설</span></div>
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 30h44"></path><path d="M12 30c0 13 9 22 20 22s20-9 20-22"></path><path d="M25 52h14"></path><path d="M17 30c2-7 8-10 15-8 6-4 13-2 15 8" fill="currentColor" fill-opacity="0.18"></path><path d="M40 7 28 25"></path><path d="M47 9 33 26"></path></svg><span class="category caption1 medium">한식</span></div>
+<p class="menu-card-name headline1 display-font">한우딸기국밥</p>
+<div class="menu-card-foot"><span class="price headline2 bold">20,000 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+<div class="menu-card rarity-rare slide-new">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.009</span><span class="rarity-tag caption1 bold"><span class="gem"></span>희귀</span></div>
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 46h44V30L10 38z" fill="currentColor" fill-opacity="0.18"></path><path d="M10 42l44-6"></path><path d="M42 24a4 4 0 1 0 8 0a4 4 0 1 0-8 0z" fill="currentColor" fill-opacity="1"></path><path d="M46 20c0-4 3-6 6-7"></path></svg><span class="category caption1 medium">서양</span></div>
+<p class="menu-card-name headline1 display-font">홍어마카롱</p>
+<div class="menu-card-foot"><span class="price headline2 bold">9,000 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+</div>
+</section>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1560}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2020}}'>
 class Component extends DCLogic {
 renderVals() {
 var list = [

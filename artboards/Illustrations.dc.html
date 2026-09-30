@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>요리 계통 그림</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="montage.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
+</style>
+</helmet>
+<div style="width: 1280px; height: 980px; box-sizing: border-box; padding: var(--spacing-40); display: flex; flex-direction: column; gap: var(--spacing-24); background: var(--color-game-background-base); color: var(--color-game-label-normal);">
+<div style="display: flex; flex-direction: column; gap: var(--spacing-6);">
+<h1 class="title3 display-font" style="color: var(--color-game-label-strong);">요리 계통 그림</h1>
+<p class="body2 regular" style="color: var(--color-game-label-alternative);">하위 계통 9가지마다 선 그림 하나. 색은 카드의 레어도를 따른다 (아래는 레어도를 돌려 가며 칠한 예). 최상위 계통(식사·음료·디저트)에 속한 메뉴는 기본 접시 그림.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--spacing-16);">
+<div class="menu-card rarity-common" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 30h44"></path><path d="M12 30c0 13 9 22 20 22s20-9 20-22"></path><path d="M25 52h14"></path><path d="M17 30c2-7 8-10 15-8 6-4 13-2 15 8" fill="currentColor" fill-opacity="0.18"></path><path d="M40 7 28 25"></path><path d="M47 9 33 26"></path></svg><span class="category caption1 medium">한식</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">한식 — 비빔밥 그릇과 젓가락</p>
+</div>
+<div class="menu-card rarity-uncommon" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 42c0-14 40-14 40 0-6 5-34 5-40 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M24 31l2 6M32 29v7M40 31l-2 6"></path><path d="M26 20c-2-4 2-6 0-10M38 20c-2-4 2-6 0-10"></path><path d="M8 50h48"></path></svg><span class="category caption1 medium">중식</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">중식 — 만두와 김</p>
+</div>
+<div class="menu-card rarity-rare" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 38h32a6 6 0 0 1 0 12H16a6 6 0 0 1 0-12z"></path><path d="M11 38c4-10 38-12 42-3-3 4-37 5-42 3z" fill="currentColor" fill-opacity="0.18"></path><path d="M24 32l-2 5M34 30l-2 7M44 30l-2 6"></path><path d="M29 36h8v14h-8z" fill="currentColor" fill-opacity="0.35"></path></svg><span class="category caption1 medium">일식</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">일식 — 초밥</p>
+</div>
+<div class="menu-card rarity-epic" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 8v14c0 4 8 4 8 0V8M22 8v14M22 26v30"></path><path d="M36 17a6 9 0 1 0 12 0a6 9 0 1 0-12 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M42 26v30"></path><path d="M32 34l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="currentColor" fill-opacity="1"></path></svg><span class="category caption1 medium">퓨전</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">퓨전 — 포크와 숟가락, 반짝임</p>
+</div>
+<div class="menu-card rarity-legendary" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 26h28v10c0 9-6 14-14 14s-14-5-14-14z" fill="currentColor" fill-opacity="0.18"></path><path d="M44 29c8 0 8 11 0 11"></path><path d="M10 54h40"></path><path d="M24 18c-2-4 2-6 0-10M34 18c-2-4 2-6 0-10"></path></svg><span class="category caption1 medium">커피</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">커피 — 김이 오르는 잔</p>
+</div>
+<div class="menu-card rarity-common" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M20 16h24l-4 38H24z"></path><path d="M21.3 28h21.4L40 54H24z" fill="currentColor" fill-opacity="0.25"></path><path d="M34 22l4-16 6-2"></path><path d="M39 18a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M46 11v14M39 18h14"></path></svg><span class="category caption1 medium">쥬스</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">쥬스 — 빨대 꽂은 잔과 과일 조각</p>
+</div>
+<div class="menu-card rarity-uncommon" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M26 5h12v5H26z"></path><path d="M28 19c-11 4-14 16-9 25 4 7 22 7 26 0 5-9 2-21-9-25V10h-8z"></path><path d="M17.6 35c6.4-3 22.4 3 28.8 0 .6 4-.4 6.9-1.4 9-4 7-22 7-26 0-1-2.1-1.8-5-1.4-9z" fill="currentColor" fill-opacity="0.3"></path><path d="M26 42a2 2 0 1 0 4 0a2 2 0 1 0-4 0zM33.5 38a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0-3 0z" fill="currentColor" fill-opacity="1"></path></svg><span class="category caption1 medium">기타</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">기타 — 물약병</p>
+</div>
+<div class="menu-card rarity-rare" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 56 52 8"></path><path d="M16 43a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.18"></path><path d="M25 32a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.3"></path><path d="M34 21a7 7 0 1 0 14 0a7 7 0 1 0-14 0z" fill="currentColor" fill-opacity="0.18"></path></svg><span class="category caption1 medium">동양</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">동양 — 경단 꼬치</p>
+</div>
+<div class="menu-card rarity-epic" style="padding: var(--spacing-12);">
+<div class="card-art"><svg class="cat-art" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 46h44V30L10 38z" fill="currentColor" fill-opacity="0.18"></path><path d="M10 42l44-6"></path><path d="M42 24a4 4 0 1 0 8 0a4 4 0 1 0-8 0z" fill="currentColor" fill-opacity="1"></path><path d="M46 20c0-4 3-6 6-7"></path></svg><span class="category caption1 medium">서양</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">서양 — 체리 올린 케이크 조각</p>
+</div>
+<div class="menu-card" style="padding: var(--spacing-12); --card-rarity: var(--color-game-line-gold);">
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">식사 · 음료 · 디저트</span></div>
+<p class="label2 medium" style="color: var(--color-game-label-alternative); padding: 0 var(--spacing-4);">최상위 계통 — 기본 접시</p>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":980}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
