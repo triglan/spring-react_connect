@@ -1,4 +1,4 @@
-import { DishIcon } from './Icons.jsx';
+import CategoryArt from './CategoryArt.jsx';
 import { formatCardNo, formatGold, getRarity } from './rarity.js';
 
 // 도감 카드 한 장의 앞면. 목록(링크 카드)과 상세(큰 카드)가 같이 쓴다.
@@ -19,7 +19,7 @@ const CardFace = ({ menu, as: Tag = 'div', className = '', size = 'normal', ...r
         </span>
       </div>
       <div className="card-art">
-        <DishIcon size={size === 'large' ? 72 : 44} />
+        <CategoryArt categoryName={menu.categoryName} large={size === 'large'} />
         <span className="card-category caption1 medium">{menu.categoryName}</span>
         {soldOut && <span className={`stamp ${size === 'large' ? 'headline2' : 'label1'} bold`}>품절</span>}
       </div>

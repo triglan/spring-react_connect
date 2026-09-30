@@ -511,6 +511,22 @@ a.menu-card:focus-visible {
   color: var(--card-rarity);
 }
 
+/* 요리 계통 그림 (CategoryArt) — 선 굵기·크기만 정하고 색은 그림 칸의 레어도 색을 따른다 */
+.cat-art {
+  width: var(--spacing-64);
+  height: var(--spacing-64);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.menu-card.is-large .cat-art {
+  width: calc(var(--spacing-80) + var(--spacing-32));
+  height: calc(var(--spacing-80) + var(--spacing-32));
+}
+
 .card-category {
   padding: var(--spacing-2) var(--spacing-10);
   border: var(--spacing-1) solid var(--color-game-line-wood);
