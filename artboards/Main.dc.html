@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>레이아웃</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="montage.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
+</style>
+</helmet>
+<div class="app-shell" style="width: 1280px; height: 720px;">
+<header class="app-header">
+<div class="app-header-inner">
+<a class="app-logo" href="Main.dc.html">
+<span class="app-logo-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<span class="heading1 display-font">모험가의 식탁</span>
+</a>
+<nav aria-label="주요 메뉴">
+<ul class="app-nav">
+<li><a class="app-nav-link label1 bold active" href="MenuList.dc.html">진열장</a></li>
+<li><a class="app-nav-link label1 bold" href="MenuForm.dc.html">카드 들이기</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="app-main">
+<div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--spacing-8); border: var(--spacing-2) dashed var(--color-game-line-wood); border-radius: var(--radius-12); color: var(--color-game-label-alternative);">
+<p class="headline1 display-font" style="color: var(--color-game-label-normal);">가게 안</p>
+<p class="label1 regular">각 주소의 페이지가 이 자리에 들어온다 · 좌우 여백 40px</p>
+</div>
+</main>
+<footer class="app-footer">
+<div class="app-footer-inner">
+<p class="caption1 medium">모험가의 식탁 · 밤에만 여는 요리 카드 가게</p>
+<p class="caption1 regular">Montage 디자인 토큰 · Spring Boot 메뉴 API</p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

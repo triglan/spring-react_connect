@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>상태 모음</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="montage.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1220px; box-sizing: border-box; padding: var(--spacing-40); display: flex; flex-direction: column; gap: var(--spacing-40); background: var(--color-game-background-base); color: var(--color-game-label-normal);">
+
+<section style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<p class="state-label label2 bold">불러오는 중 — 카드 모양 스켈레톤 위로 사선 빛줄기가 왼쪽에서 오른쪽으로 (카드마다 조금씩 늦게)</p>
+<p class="label1 medium" style="display: inline-flex; align-items: center; gap: var(--spacing-8); color: var(--color-game-gold-normal);">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg>
+상인이 장부를 뒤지는 중…
+</p>
+</div>
+<div class="menu-grid" aria-busy="true" aria-label="카드를 불러오는 중">
+<sc-for list="{{skeletons}}" as="s" hint-placeholder-count="4">
+<div class="menu-card skeleton-card" style="border-color: var(--color-game-line-wood); --shimmer-delay: {{s.delay}};">
+<div class="menu-card-top">
+<span class="skeleton" style="width: var(--spacing-48); height: var(--spacing-16);"></span>
+<span class="skeleton" style="width: var(--spacing-40); height: var(--spacing-16);"></span>
+</div>
+<div class="skeleton" style="height: calc(var(--spacing-80) + var(--spacing-40)); border-radius: var(--radius-8);"></div>
+<div style="display: flex; flex-direction: column; gap: var(--spacing-8); min-height: 3.25rem; padding: 0 var(--spacing-4);">
+<span class="skeleton" style="width: 88%; height: var(--spacing-20);"></span>
+<span class="skeleton" style="width: 56%; height: var(--spacing-20);"></span>
+</div>
+<div class="menu-card-foot">
+<span class="skeleton" style="width: var(--spacing-72); height: var(--spacing-20);"></span>
+<span class="skeleton" style="width: var(--spacing-48); height: var(--spacing-14);"></span>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-16);">
+<p class="state-label label2 bold">빈 결과 — 조건에 맞는 카드 없음</p>
+<p class="state-label label2 bold">오류 응답 — 서버가 ErrorResponse 를 보냄</p>
+<p class="state-label label2 bold">연결 실패 — 응답 자체가 없음</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-16);">
+
+<div class="state-card">
+<span class="npc-face" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+<div class="state-text">
+<p class="npc-name caption1 bold">상인</p>
+<p class="state-line headline1 display-font">“그런 카드는 지금 진열장에 없다네.”</p>
+<p class="state-fact label2 regular">찾은 조건 · ‘치킨’ · 30,000 G 초과</p>
+</div>
+<button class="btn btn-outlined label1 medium" type="button">조건 비우기</button>
+</div>
+
+<div class="state-card is-error">
+<span class="npc-face" aria-hidden="true" style="color: var(--color-game-status-negative); border-color: var(--color-game-status-negative);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg></span>
+<div class="state-text">
+<p class="npc-name caption1 bold">상인</p>
+<p class="state-line headline1 display-font">“장부에서 그 카드를 찾지 못했다네.”</p>
+<div class="record" style="width: 100%;">
+<p class="record-label caption1 bold">장부 기록</p>
+<p class="record-title label2 bold">메뉴 조회 실패</p>
+<p class="record-detail label2 regular">해당 메뉴가 존재하지 않습니다. menuCode=99999</p>
+<p class="record-code caption1 regular">ERROR_CODE_00001</p>
+</div>
+</div>
+<a class="btn btn-outlined label1 medium" href="MenuList.dc.html">진열장으로</a>
+</div>
+
+<div class="state-card">
+<span class="npc-face" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"></rect><path d="M15 12h.01"></path><path d="M3 21h18"></path></svg></span>
+<div class="state-text">
+<p class="npc-name caption1 bold">상인의 쪽지</p>
+<p class="state-line headline1 display-font">“잠시 가게를 비웠다네. 조금 뒤 다시 두드려 주게.”</p>
+<p class="state-fact label2 regular">서버 응답 없음 · localhost:8080</p>
+</div>
+<button class="btn btn-primary label1 bold" type="button">다시 두드리기</button>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+<p class="state-label label2 bold">장부에 적는 중 — 요청이 끝날 때까지 버튼 잠금</p>
+<div class="panel" style="padding: var(--spacing-24) var(--spacing-32); display: flex; align-items: center; justify-content: space-between;">
+<p class="body2 regular" style="color: var(--color-game-label-alternative);">장부에 적기 · 고쳐 적기 · 불태우기 모두 같은 방식으로 잠근다</p>
+<div style="display: flex; gap: var(--spacing-8);">
+<button class="btn btn-outlined label1 medium" type="button" disabled="disabled">그만두기</button>
+<button class="btn btn-primary label1 bold" type="button" disabled="disabled">장부에 적는 중…</button>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+<p class="state-label label2 bold">움직임 — 카드 hover · 버튼 눌림</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spacing-20); align-items: end;">
+<div class="menu-card rarity-rare">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.031</span><span class="rarity-tag caption1 bold"><span class="gem"></span>희귀</span></div>
+<p class="menu-card-name headline1 display-font" style="min-height: 0;">평소</p>
+</div>
+<div class="menu-card rarity-rare is-hover">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.031</span><span class="rarity-tag caption1 bold"><span class="gem"></span>희귀</span></div>
+<p class="menu-card-name headline1 display-font" style="min-height: 0;">hover — 4px 떠오르고 등급 빛</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: var(--spacing-8); align-items: flex-start;">
+<p class="caption1 medium" style="color: var(--color-game-label-alternative);">버튼 평소</p>
+<button class="btn btn-primary label1 bold" type="button">장부에 적기</button>
+</div>
+<div style="display: flex; flex-direction: column; gap: var(--spacing-8); align-items: flex-start;">
+<p class="caption1 medium" style="color: var(--color-game-label-alternative);">버튼 눌림</p>
+<button class="btn btn-primary is-pressed label1 bold" type="button">장부에 적기</button>
+</div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1220}}'>
+class Component extends DCLogic {
+renderVals() {
+return { skeletons: [0, 1, 2, 3].map(function (i) { return { delay: (i * 120) + 'ms' }; }) };
+}
+}
+</script>
+</body>
+</html>

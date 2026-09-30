@@ -1,0 +1,216 @@
+/* 모험가의 식탁 — menu-app/src/tokens.css 와 같은 이름·값의 아트보드 전용 사본
+   (Montage spacing·radius·type + 직접 추가한 game 토큰) */
+:root {
+  --color-game-background-base: #15100C;
+  --color-game-background-panel: #221912;
+  --color-game-background-raised: #2E2219;
+  --color-game-background-inset: #0F0B08;
+  --color-game-background-dimmer: #0A0705CC;
+  --color-game-line-wood: #4A3828;
+  --color-game-line-gold: #B8913F;
+  --color-game-label-strong: #FFF4DE;
+  --color-game-label-normal: #EADCC3;
+  --color-game-label-alternative: #BBA684;
+  --color-game-label-assistive: #8E7B60;
+  --color-game-gold-normal: #E0B252;
+  --color-game-gold-strong: #F4CE72;
+  --color-game-gold-on-gold: #20150A;
+  --color-game-gold-tint: #E0B2521F;
+  --color-game-candle: #FFB547;
+  --color-game-shimmer: #F4CE722E;
+  --color-game-status-positive: #8ED081;
+  --color-game-status-negative: #FF8A73;
+  --color-game-status-negative-tint: #FF8A731F;
+  --color-game-status-danger: #A8321F;
+  --color-game-status-on-danger: #FFF1E6;
+  --color-game-rarity-common: #A9ACB0;
+  --color-game-rarity-uncommon: #67C46F;
+  --color-game-rarity-rare: #58A6FF;
+  --color-game-rarity-epic: #B98CFF;
+  --color-game-rarity-legendary: #F2B640;
+
+  --shadow-game-panel: 0px 12px 32px -12px #000000B3;
+  --shadow-game-lift: 0px 18px 36px -12px #000000CC;
+  --shadow-game-candle: 0px 0px 24px -4px #FFB54759;
+  --shadow-game-pressed: inset 0px 2px 0px 0px #00000059;
+  --shadow-game-glow-common: 0px 0px 18px -4px #A9ACB04D;
+  --shadow-game-glow-uncommon: 0px 0px 18px -4px #67C46F66;
+  --shadow-game-glow-rare: 0px 0px 18px -4px #58A6FF66;
+  --shadow-game-glow-epic: 0px 0px 20px -4px #B98CFF73;
+  --shadow-game-glow-legendary: 0px 0px 24px -2px #F2B64080;
+
+  --font-family-display: 'Hahmlet', 'Nanum Myeongjo', serif;
+  --font-family-body: 'Pretendard JP', Pretendard, system-ui, sans-serif;
+  --motion-duration-fast: 120ms;
+  --motion-duration-normal: 200ms;
+  --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-lift-card: -4px;
+
+  --spacing-0: 0px; --spacing-1: 1px; --spacing-2: 2px; --spacing-4: 4px; --spacing-6: 6px;
+  --spacing-8: 8px; --spacing-10: 10px; --spacing-12: 12px; --spacing-14: 14px; --spacing-16: 16px;
+  --spacing-20: 20px; --spacing-24: 24px; --spacing-32: 32px; --spacing-40: 40px; --spacing-48: 48px;
+  --spacing-56: 56px; --spacing-64: 64px; --spacing-72: 72px; --spacing-80: 80px;
+  --radius-3: 3px; --radius-6: 6px; --radius-8: 8px; --radius-10: 10px; --radius-12: 12px;
+  --radius-16: 16px; --radius-20: 20px; --radius-9999: 9999px;
+}
+
+/* 타입 스타일 (tokens.css 의 클래스와 같은 이름) */
+.title2 { font-size: 1.75rem; line-height: 2.375rem; letter-spacing: -0.0236em; }
+.title3 { font-size: 1.5rem; line-height: 2rem; letter-spacing: -0.023em; }
+.heading1 { font-size: 1.375rem; line-height: 1.875rem; letter-spacing: -0.0194em; }
+.heading2 { font-size: 1.25rem; line-height: 1.75rem; letter-spacing: -0.012em; }
+.headline1 { font-size: 1.125rem; line-height: 1.625rem; letter-spacing: -0.002em; }
+.headline2 { font-size: 1.0625rem; line-height: 1.5rem; letter-spacing: 0em; }
+.body1 { font-size: 1rem; line-height: 1.5rem; letter-spacing: 0.0057em; }
+.body2 { font-size: 0.9375rem; line-height: 1.375rem; letter-spacing: 0.0096em; }
+.label1 { font-size: 0.875rem; line-height: 1.25rem; letter-spacing: 0.0145em; }
+.label2 { font-size: 0.8125rem; line-height: 1.125rem; letter-spacing: 0.0194em; }
+.caption1 { font-size: 0.75rem; line-height: 1rem; letter-spacing: 0.0252em; }
+.regular { font-weight: 400; }
+.medium { font-weight: 500; }
+.bold { font-weight: 600; }
+.title2.bold, .title3.bold { font-weight: 700; }
+.display-font { font-family: var(--font-family-display); font-weight: 700; letter-spacing: 0; }
+
+/* 기본 */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-family-body); color: var(--color-game-label-normal); background: var(--color-game-background-base); }
+p, h1, h2, h3, dl, dd { margin: 0; }
+button, input, select { font: inherit; }
+a { color: var(--color-game-gold-normal); }
+
+/* 레이아웃 */
+.app-shell { display: flex; flex-direction: column; background: var(--color-game-background-base); color: var(--color-game-label-normal); }
+.app-header { background: var(--color-game-background-panel); border-bottom: var(--spacing-1) solid var(--color-game-line-gold); box-shadow: var(--shadow-game-panel); }
+.app-header-inner, .app-main, .app-footer-inner { width: calc(100% - var(--spacing-80)); margin: 0 auto; }
+.app-header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-24); min-height: var(--spacing-72); }
+.app-logo { display: inline-flex; align-items: center; gap: var(--spacing-10); color: var(--color-game-gold-normal); text-decoration: none; }
+.app-logo-mark { display: inline-flex; width: var(--spacing-32); height: var(--spacing-32); align-items: center; justify-content: center; border-radius: var(--radius-9999); background: var(--color-game-background-raised); border: var(--spacing-1) solid var(--color-game-line-gold); color: var(--color-game-candle); box-shadow: var(--shadow-game-candle); }
+.app-nav { display: flex; gap: var(--spacing-4); margin: 0; padding: 0; list-style: none; }
+.app-nav-link { display: inline-flex; align-items: center; gap: var(--spacing-6); padding: var(--spacing-10) var(--spacing-16); border: var(--spacing-1) solid transparent; border-radius: var(--radius-8); color: var(--color-game-label-alternative); text-decoration: none; }
+.app-nav-link.active { background: var(--color-game-gold-tint); border-color: var(--color-game-line-gold); color: var(--color-game-gold-strong); }
+.app-main { flex-grow: 1; padding: var(--spacing-40) 0 var(--spacing-64); display: flex; flex-direction: column; gap: var(--spacing-24); }
+.app-footer { background: var(--color-game-background-panel); border-top: var(--spacing-1) solid var(--color-game-line-wood); }
+.app-footer-inner { display: flex; justify-content: space-between; gap: var(--spacing-16); padding: var(--spacing-24) 0; color: var(--color-game-label-alternative); }
+
+/* 페이지 머리 */
+.page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--spacing-24); }
+.page-head-text { display: flex; flex-direction: column; gap: var(--spacing-6); }
+.page-title { color: var(--color-game-label-strong); }
+.page-desc { color: var(--color-game-label-alternative); }
+
+/* 버튼 */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-6); padding: var(--spacing-12) var(--spacing-20); border: var(--spacing-1) solid transparent; border-radius: var(--radius-8); cursor: pointer; text-decoration: none; white-space: nowrap; }
+.btn-primary { background: var(--color-game-gold-normal); color: var(--color-game-gold-on-gold); box-shadow: var(--shadow-game-candle); }
+.btn-primary.is-pressed { background: var(--color-game-gold-strong); box-shadow: var(--shadow-game-pressed); }
+.btn-outlined { background: var(--color-game-background-raised); border-color: var(--color-game-line-wood); color: var(--color-game-label-normal); }
+.btn-danger-outlined { background: var(--color-game-background-raised); border-color: var(--color-game-status-negative); color: var(--color-game-status-negative); }
+.btn-danger { background: var(--color-game-status-danger); color: var(--color-game-status-on-danger); }
+.btn-text { background: transparent; color: var(--color-game-label-alternative); padding: var(--spacing-10) var(--spacing-12); }
+.btn:disabled { background: var(--color-game-background-inset); border-color: var(--color-game-line-wood); color: var(--color-game-label-assistive); box-shadow: none; cursor: default; }
+
+/* 입력 */
+.field { display: flex; flex-direction: column; gap: var(--spacing-8); }
+.field-label { color: var(--color-game-label-normal); }
+.field-label .req { color: var(--color-game-gold-normal); }
+.control { display: flex; align-items: center; gap: var(--spacing-8); min-height: var(--spacing-48); padding: 0 var(--spacing-16); border: var(--spacing-1) solid var(--color-game-line-wood); border-radius: var(--radius-8); background: var(--color-game-background-inset); color: var(--color-game-label-strong); }
+.control input, .control select { flex-grow: 1; min-width: 0; border: 0; outline: 0; padding: 0; background: transparent; color: inherit; }
+.control select option, .control select optgroup { background: var(--color-game-background-panel); color: var(--color-game-label-normal); }
+.control input::placeholder { color: var(--color-game-label-assistive); }
+.control .suffix { color: var(--color-game-gold-normal); white-space: nowrap; }
+.control .icon { color: var(--color-game-label-alternative); display: inline-flex; }
+.control.is-error { border-color: var(--color-game-status-negative); }
+.control.is-focus { border-color: var(--color-game-line-gold); box-shadow: var(--shadow-game-candle); }
+.field-error { display: flex; align-items: center; gap: var(--spacing-6); color: var(--color-game-status-negative); }
+.field-hint { color: var(--color-game-label-alternative); }
+
+/* 세그먼트 */
+.segmented { display: inline-flex; gap: var(--spacing-4); padding: var(--spacing-4); border-radius: var(--radius-10); background: var(--color-game-background-inset); border: var(--spacing-1) solid var(--color-game-line-wood); }
+.segment { display: inline-flex; align-items: center; gap: var(--spacing-6); padding: var(--spacing-10) var(--spacing-20); border-radius: var(--radius-6); color: var(--color-game-label-alternative); cursor: pointer; }
+.segment input { position: absolute; opacity: 0; width: 0; height: 0; }
+.segment.is-selected { background: var(--color-game-gold-tint); color: var(--color-game-gold-strong); box-shadow: inset 0 0 0 var(--spacing-1) var(--color-game-line-gold); }
+
+/* 패널 */
+.panel { background: var(--color-game-background-panel); border: var(--spacing-1) solid var(--color-game-line-wood); border-radius: var(--radius-12); box-shadow: var(--shadow-game-panel); }
+.panel-gold { border-color: var(--color-game-line-gold); }
+.cell { display: flex; flex-direction: column; gap: var(--spacing-4); padding: var(--spacing-16) var(--spacing-20); border-radius: var(--radius-8); background: var(--color-game-background-raised); border: var(--spacing-1) solid var(--color-game-line-wood); }
+.cell dt { color: var(--color-game-label-alternative); }
+.cell dd { color: var(--color-game-label-strong); }
+
+/* 레어도 — 카드 하나에 한 등급 클래스를 붙인다 */
+.rarity-common { --card-rarity: var(--color-game-rarity-common); --card-glow: var(--shadow-game-glow-common); }
+.rarity-uncommon { --card-rarity: var(--color-game-rarity-uncommon); --card-glow: var(--shadow-game-glow-uncommon); }
+.rarity-rare { --card-rarity: var(--color-game-rarity-rare); --card-glow: var(--shadow-game-glow-rare); }
+.rarity-epic { --card-rarity: var(--color-game-rarity-epic); --card-glow: var(--shadow-game-glow-epic); }
+.rarity-legendary { --card-rarity: var(--color-game-rarity-legendary); --card-glow: var(--shadow-game-glow-legendary); }
+
+/* 카드 */
+.menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spacing-20); }
+.menu-card { position: relative; display: flex; flex-direction: column; gap: var(--spacing-12); padding: var(--spacing-12); background: var(--color-game-background-panel); border: var(--spacing-2) solid var(--card-rarity); border-radius: var(--radius-12); box-shadow: var(--shadow-game-panel); color: inherit; text-decoration: none; transition: transform var(--motion-duration-normal) var(--motion-easing-standard), box-shadow var(--motion-duration-normal) var(--motion-easing-standard); }
+.menu-card.rarity-legendary { box-shadow: var(--shadow-game-panel), var(--card-glow); }
+.menu-card.is-hover { transform: translateY(var(--motion-lift-card)); box-shadow: var(--shadow-game-lift), var(--card-glow); }
+.menu-card-top { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-8); }
+.card-no { color: var(--color-game-label-alternative); font-variant-numeric: tabular-nums; }
+.rarity-tag { display: inline-flex; align-items: center; gap: var(--spacing-6); color: var(--card-rarity); }
+.gem { width: var(--spacing-10); height: var(--spacing-10); transform: rotate(45deg); border-radius: var(--radius-3); background: var(--card-rarity); }
+.card-art { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--spacing-8); height: calc(var(--spacing-80) + var(--spacing-40)); border-radius: var(--radius-8); background: var(--color-game-background-inset); border: var(--spacing-1) solid var(--color-game-line-wood); color: var(--card-rarity); }
+.card-art .category { padding: var(--spacing-2) var(--spacing-10); border-radius: var(--radius-9999); background: var(--color-game-background-raised); color: var(--color-game-label-normal); border: var(--spacing-1) solid var(--color-game-line-wood); }
+.menu-card-name { color: var(--color-game-label-strong); min-height: 3.25rem; padding: 0 var(--spacing-4); }
+.menu-card-foot { display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-10) var(--spacing-4) var(--spacing-2); border-top: var(--spacing-1) solid var(--color-game-line-wood); }
+.price { display: inline-flex; align-items: baseline; gap: var(--spacing-4); color: var(--color-game-gold-normal); font-variant-numeric: tabular-nums; }
+.status { display: inline-flex; align-items: center; gap: var(--spacing-6); }
+.status-on { color: var(--color-game-status-positive); }
+.status-off { color: var(--color-game-label-alternative); }
+.dot { width: var(--spacing-6); height: var(--spacing-6); border-radius: var(--radius-9999); background: currentColor; }
+.menu-card.is-soldout .card-art, .menu-card.is-soldout .menu-card-name { opacity: 0.56; }
+.stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); padding: var(--spacing-4) var(--spacing-12); border: var(--spacing-2) solid var(--color-game-status-negative); border-radius: var(--radius-6); color: var(--color-game-status-negative); background: var(--color-game-background-inset); letter-spacing: 0.2em; }
+
+/* 페이지네이션 */
+.pagination { display: flex; justify-content: center; align-items: center; gap: var(--spacing-6); }
+.page-btn { display: inline-flex; align-items: center; justify-content: center; min-width: var(--spacing-40); height: var(--spacing-40); padding: 0 var(--spacing-8); border: var(--spacing-1) solid var(--color-game-line-wood); border-radius: var(--radius-8); background: var(--color-game-background-raised); color: var(--color-game-label-normal); cursor: pointer; }
+.page-btn.is-current { background: var(--color-game-gold-normal); border-color: var(--color-game-gold-normal); color: var(--color-game-gold-on-gold); box-shadow: var(--shadow-game-candle); }
+.page-btn:disabled { background: var(--color-game-background-inset); color: var(--color-game-label-assistive); cursor: default; }
+
+/* 알림 */
+.message { display: flex; gap: var(--spacing-12); padding: var(--spacing-16) var(--spacing-20); border-radius: var(--radius-8); }
+.message-negative { background: var(--color-game-status-negative-tint); border: var(--spacing-1) solid var(--color-game-status-negative); }
+.message-negative .icon { color: var(--color-game-status-negative); }
+.message-body { display: flex; flex-direction: column; gap: var(--spacing-4); }
+.message-title { color: var(--color-game-label-strong); }
+.message-detail { color: var(--color-game-label-normal); }
+.message-code { color: var(--color-game-label-alternative); font-variant-numeric: tabular-nums; }
+
+/* 상인 대화창 */
+.npc-dialog { display: flex; flex-direction: column; gap: var(--spacing-20); padding: var(--spacing-24); border-radius: var(--radius-12); background: var(--color-game-background-panel); border: var(--spacing-1) solid var(--color-game-line-gold); box-shadow: var(--shadow-game-lift), var(--shadow-game-candle); }
+.npc-head { display: flex; align-items: center; gap: var(--spacing-12); }
+.npc-face { display: inline-flex; width: var(--spacing-48); height: var(--spacing-48); flex-shrink: 0; align-items: center; justify-content: center; border-radius: var(--radius-9999); background: var(--color-game-background-raised); border: var(--spacing-1) solid var(--color-game-line-gold); color: var(--color-game-candle); }
+.npc-name { color: var(--color-game-gold-normal); }
+.npc-line { color: var(--color-game-label-normal); }
+
+/* 장부 기록 — 서버 ErrorResponse(description·detail·code)를 담는 칸. 오류가 나는 모든 화면에서 같은 모양 */
+.record { display: flex; flex-direction: column; gap: var(--spacing-2); margin-top: var(--spacing-8); padding: var(--spacing-10) var(--spacing-12); border-radius: var(--radius-6); background: var(--color-game-background-inset); border: var(--spacing-1) solid var(--color-game-line-wood); text-align: left; }
+.record-label { color: var(--color-game-label-alternative); }
+.record-title { color: var(--color-game-label-strong); }
+.record-detail { color: var(--color-game-label-normal); }
+.record-code { color: var(--color-game-label-alternative); font-variant-numeric: tabular-nums; }
+
+/* 상태 카드 — 화자 · 대사 · 사실 · 행동 순서를 모든 상태에서 지킨다 */
+.state-card { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-16); padding: var(--spacing-24); border-radius: var(--radius-12); background: var(--color-game-background-panel); border: var(--spacing-1) solid var(--color-game-line-wood); box-shadow: var(--shadow-game-panel); text-align: center; }
+.state-card.is-error { border-color: var(--color-game-status-negative); }
+.state-text { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-6); width: 100%; }
+.state-line { color: var(--color-game-label-strong); }
+.state-fact { color: var(--color-game-label-alternative); }
+
+/* 스켈레톤 — 카드 모양의 빈 칸 위로 사선 빛줄기가 왼쪽에서 오른쪽으로 지나간다 */
+.skeleton { background: var(--color-game-background-raised); border-radius: var(--radius-3); }
+.skeleton-card { overflow: hidden; }
+.skeleton-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(110deg, transparent 35%, var(--color-game-shimmer) 50%, transparent 65%); transform: translateX(-100%); animation: shimmer var(--motion-duration-slow) var(--motion-easing-standard) infinite; animation-delay: var(--shimmer-delay, 0ms); }
+@keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .skeleton-card::after { animation: none; } }
+
+/* 아트보드 안에서 상태 이름을 적는 머리글 */
+.state-label { color: var(--color-game-label-alternative); }
+
+/* 레어도 범례 */
+.legend { display: flex; gap: var(--spacing-16); color: var(--color-game-label-alternative); }
+.legend-item { display: inline-flex; align-items: center; gap: var(--spacing-6); }

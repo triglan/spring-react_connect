@@ -1,0 +1,4413 @@
+{
+  "$meta": {
+    "name": "Montage (Wanted Design System) tokens",
+    "generatedAt": "2026-09-29",
+    "source": {
+      "wds-theme": "packages/wds-theme/src/theme (v3.12.2)",
+      "typography": "packages/wds/src/components/typography/style.ts (wds v3.12.2)",
+      "radius": "packages/wds/src/components/**/style.ts 에서 실제 사용된 border-radius 값 수집",
+      "game": "메뉴 관리 앱 '모험가의 식탁' 테마용으로 직접 추가 (color.game, shadow.game, fontFamily, motion)",
+      "usageDocs": "docs/src/features/docs/components/foundations/colors/semantic/index.tsx"
+    },
+    "colorFormat": "#RRGGBB (불투명) 또는 #RRGGBBAA (반투명)",
+    "alphaRule": "원본 addHexOpacity(hex, a) = hex.substring(0,7) + Math.round(a*255).toString(16).padStart(2,'0').toUpperCase() — 원본 함수를 그대로 실행해 계산",
+    "remBase": 16,
+    "fields": {
+      "light/dark.value": "해당 테마의 최종 값",
+      "light/dark.ref": "참조한 atomic 토큰",
+      "light/dark.alpha": "addHexOpacity 에 넘긴 알파 (alphaSource: opacity 토큰 또는 리터럴)",
+      "usage": "어디에 쓰는지 한 줄 설명",
+      "usedIn": "packages/wds/src/components 에서 이 토큰을 쓰는 컴포넌트 폴더",
+      "referencedBy": "이 atomic 을 참조하는 semantic 토큰 (theme:path@alpha)"
+    },
+    "notes": [
+      "atomic 팔레트는 light/dark 테마가 같은 객체를 공유하므로 두 값이 같다.",
+      "elevation shadow 는 원본에서 light/dark 정의가 동일하다.",
+      "typography 의 px 는 rem × 16 으로 환산한 값, letterSpacing.px 는 em × fontSize(px).",
+      "typography usage 는 문서에 단계별 설명이 없어 이름 계층(display>title>heading>headline>body>label>caption) 기준으로 작성.",
+      "radius 는 wds-theme 에 토큰이 없어 컴포넌트 스타일에서 수집. 이름은 px 값(50% 는 50pct).",
+      "game 토큰은 어두운 상점 테마 하나뿐이라 light/dark 값이 같다. 테마 분기 없이 항상 같은 색으로 보인다.",
+      "radius 수집 제외: inherit 35회, 계산식 4회 (avatar: border-radius: ${rounded}px; | avatar: border-radius: ${rounded + 8}px; | avatar: border-radius: ${rounded + 1.5}px; | skeleton: border-radius: ${toCssValue(radius)};)"
+    ]
+  },
+  "color": {
+    "atomic": {
+      "blue": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#001536"
+          },
+          "dark": {
+            "value": "#001536"
+          },
+          "usage": "blue 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#002966"
+          },
+          "dark": {
+            "value": "#002966"
+          },
+          "usage": "blue 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#003E9C"
+          },
+          "dark": {
+            "value": "#003E9C"
+          },
+          "usage": "blue 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#0054D1"
+          },
+          "dark": {
+            "value": "#0054D1"
+          },
+          "usage": "blue 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.primary.heavy"
+          ]
+        },
+        "45": {
+          "$type": "color",
+          "light": {
+            "value": "#005EEB"
+          },
+          "dark": {
+            "value": "#005EEB"
+          },
+          "usage": "blue 원시 팔레트 45 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.primary.strong",
+            "light:semantic.accent.foreground.blue"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#0066FF"
+          },
+          "dark": {
+            "value": "#0066FF"
+          },
+          "usage": "blue 원시 팔레트 50 단계 — semantic 5곳에서 참조",
+          "referencedBy": [
+            "light:semantic.primary.normal",
+            "light:semantic.line.primary.normal@0.28",
+            "light:semantic.line.primary.strong@0.43",
+            "dark:semantic.primary.heavy",
+            "dark:semantic.inverse.primary"
+          ]
+        },
+        "55": {
+          "$type": "color",
+          "light": {
+            "value": "#1A75FF"
+          },
+          "dark": {
+            "value": "#1A75FF"
+          },
+          "usage": "blue 원시 팔레트 55 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.primary.strong"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#3385FF"
+          },
+          "dark": {
+            "value": "#3385FF"
+          },
+          "usage": "blue 원시 팔레트 60 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "light:semantic.inverse.primary",
+            "dark:semantic.primary.normal",
+            "dark:semantic.line.primary.normal@0.28",
+            "dark:semantic.line.primary.strong@0.43"
+          ]
+        },
+        "65": {
+          "$type": "color",
+          "light": {
+            "value": "#4F95FF"
+          },
+          "dark": {
+            "value": "#4F95FF"
+          },
+          "usage": "blue 원시 팔레트 65 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.foreground.blue"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#69A5FF"
+          },
+          "dark": {
+            "value": "#69A5FF"
+          },
+          "usage": "blue 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#9EC5FF"
+          },
+          "dark": {
+            "value": "#9EC5FF"
+          },
+          "usage": "blue 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#C9DEFE"
+          },
+          "dark": {
+            "value": "#C9DEFE"
+          },
+          "usage": "blue 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#EAF2FE"
+          },
+          "dark": {
+            "value": "#EAF2FE"
+          },
+          "usage": "blue 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F7FBFF"
+          },
+          "dark": {
+            "value": "#F7FBFF"
+          },
+          "usage": "blue 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "common": {
+        "0": {
+          "$type": "color",
+          "light": {
+            "value": "#000000"
+          },
+          "dark": {
+            "value": "#000000"
+          },
+          "usage": "common 원시 팔레트 0 단계 — semantic 3곳에서 참조",
+          "referencedBy": [
+            "light:semantic.static.black",
+            "light:semantic.label.strong",
+            "dark:semantic.static.black"
+          ]
+        },
+        "100": {
+          "$type": "color",
+          "light": {
+            "value": "#ffffff"
+          },
+          "dark": {
+            "value": "#ffffff"
+          },
+          "usage": "common 원시 팔레트 100 단계 — semantic 8곳에서 참조",
+          "referencedBy": [
+            "light:semantic.static.white",
+            "light:semantic.background.normal.normal",
+            "light:semantic.background.elevated.normal",
+            "light:semantic.background.transparent.normal@0.08",
+            "light:semantic.background.transparent.alternative@0.28",
+            "dark:semantic.static.white",
+            "dark:semantic.label.strong",
+            "dark:semantic.inverse.background"
+          ]
+        }
+      },
+      "coolNeutral": {
+        "5": {
+          "$type": "color",
+          "light": {
+            "value": "#0F0F10"
+          },
+          "dark": {
+            "value": "#0F0F10"
+          },
+          "usage": "coolNeutral 원시 팔레트 5 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.background.normal.alternative"
+          ]
+        },
+        "7": {
+          "$type": "color",
+          "light": {
+            "value": "#141415"
+          },
+          "dark": {
+            "value": "#141415"
+          },
+          "usage": "coolNeutral 원시 팔레트 7 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.background.elevated.alternative"
+          ]
+        },
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#171719"
+          },
+          "dark": {
+            "value": "#171719"
+          },
+          "usage": "coolNeutral 원시 팔레트 10 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "light:semantic.label.normal",
+            "light:semantic.material.dimmer@0.52",
+            "dark:semantic.inverse.label",
+            "dark:semantic.material.dimmer@0.74"
+          ]
+        },
+        "15": {
+          "$type": "color",
+          "light": {
+            "value": "#1B1C1E"
+          },
+          "dark": {
+            "value": "#1B1C1E"
+          },
+          "usage": "coolNeutral 원시 팔레트 15 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.inverse.background",
+            "dark:semantic.background.normal.normal"
+          ]
+        },
+        "17": {
+          "$type": "color",
+          "light": {
+            "value": "#212225"
+          },
+          "dark": {
+            "value": "#212225"
+          },
+          "usage": "coolNeutral 원시 팔레트 17 단계 — semantic 3곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.background.elevated.normal",
+            "dark:semantic.background.transparent.normal@0.61",
+            "dark:semantic.background.transparent.alternative@0.61"
+          ]
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#292A2D"
+          },
+          "dark": {
+            "value": "#292A2D"
+          },
+          "usage": "coolNeutral 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "22": {
+          "$type": "color",
+          "light": {
+            "value": "#2E2F33"
+          },
+          "dark": {
+            "value": "#2E2F33"
+          },
+          "usage": "coolNeutral 원시 팔레트 22 단계 — semantic 3곳에서 참조",
+          "referencedBy": [
+            "light:semantic.label.neutral@0.88",
+            "dark:semantic.interaction.disable",
+            "dark:semantic.line.solid.alternative"
+          ]
+        },
+        "23": {
+          "$type": "color",
+          "light": {
+            "value": "#333438"
+          },
+          "dark": {
+            "value": "#333438"
+          },
+          "usage": "coolNeutral 원시 팔레트 23 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.line.solid.neutral"
+          ]
+        },
+        "25": {
+          "$type": "color",
+          "light": {
+            "value": "#37383C"
+          },
+          "dark": {
+            "value": "#37383C"
+          },
+          "usage": "coolNeutral 원시 팔레트 25 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "light:semantic.label.alternative@0.61",
+            "light:semantic.label.assistive@0.28",
+            "light:semantic.label.disable@0.16",
+            "dark:semantic.line.solid.normal"
+          ]
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#46474C"
+          },
+          "dark": {
+            "value": "#46474C"
+          },
+          "usage": "coolNeutral 원시 팔레트 30 단계 — semantic 미참조, 컴포넌트가 직접 사용",
+          "usedIn": [
+            "icon-button",
+            "page-counter",
+            "play-badge"
+          ]
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#5A5C63"
+          },
+          "dark": {
+            "value": "#5A5C63"
+          },
+          "usage": "coolNeutral 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.interaction.inactive"
+          ],
+          "usedIn": [
+            "play-badge"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#70737C"
+          },
+          "dark": {
+            "value": "#70737C"
+          },
+          "usage": "coolNeutral 원시 팔레트 50 단계 — semantic 12곳에서 참조",
+          "referencedBy": [
+            "light:semantic.line.normal.normal@0.22",
+            "light:semantic.line.normal.neutral@0.16",
+            "light:semantic.line.normal.alternative@0.08",
+            "light:semantic.fill.normal@0.08",
+            "light:semantic.fill.strong@0.16",
+            "light:semantic.fill.alternative@0.05",
+            "dark:semantic.line.normal.normal@0.32",
+            "dark:semantic.line.normal.neutral@0.28",
+            "dark:semantic.line.normal.alternative@0.22",
+            "dark:semantic.fill.normal@0.22",
+            "dark:semantic.fill.strong@0.28",
+            "dark:semantic.fill.alternative@0.12"
+          ],
+          "usedIn": [
+            "icon-button"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#878A93"
+          },
+          "dark": {
+            "value": "#878A93"
+          },
+          "usage": "coolNeutral 원시 팔레트 60 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#989BA2"
+          },
+          "dark": {
+            "value": "#989BA2"
+          },
+          "usage": "coolNeutral 원시 팔레트 70 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.interaction.inactive",
+            "dark:semantic.label.disable@0.16"
+          ]
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#AEB0B6"
+          },
+          "dark": {
+            "value": "#AEB0B6"
+          },
+          "usage": "coolNeutral 원시 팔레트 80 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.label.alternative@0.61",
+            "dark:semantic.label.assistive@0.28"
+          ]
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#C2C4C8"
+          },
+          "dark": {
+            "value": "#C2C4C8"
+          },
+          "usage": "coolNeutral 원시 팔레트 90 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.label.neutral@0.88"
+          ]
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#DBDCDF"
+          },
+          "dark": {
+            "value": "#DBDCDF"
+          },
+          "usage": "coolNeutral 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "96": {
+          "$type": "color",
+          "light": {
+            "value": "#E1E2E4"
+          },
+          "dark": {
+            "value": "#E1E2E4"
+          },
+          "usage": "coolNeutral 원시 팔레트 96 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.line.solid.normal"
+          ]
+        },
+        "97": {
+          "$type": "color",
+          "light": {
+            "value": "#EAEBEC"
+          },
+          "dark": {
+            "value": "#EAEBEC"
+          },
+          "usage": "coolNeutral 원시 팔레트 97 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.line.solid.neutral"
+          ]
+        },
+        "98": {
+          "$type": "color",
+          "light": {
+            "value": "#F4F4F5"
+          },
+          "dark": {
+            "value": "#F4F4F5"
+          },
+          "usage": "coolNeutral 원시 팔레트 98 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.interaction.disable",
+            "light:semantic.line.solid.alternative"
+          ]
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F7F7F8"
+          },
+          "dark": {
+            "value": "#F7F7F8"
+          },
+          "usage": "coolNeutral 원시 팔레트 99 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "light:semantic.background.normal.alternative",
+            "light:semantic.background.elevated.alternative",
+            "light:semantic.inverse.label",
+            "dark:semantic.label.normal"
+          ]
+        }
+      },
+      "cyan": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#00252B"
+          },
+          "dark": {
+            "value": "#00252B"
+          },
+          "usage": "cyan 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#004854"
+          },
+          "dark": {
+            "value": "#004854"
+          },
+          "usage": "cyan 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#006F82"
+          },
+          "dark": {
+            "value": "#006F82"
+          },
+          "usage": "cyan 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#0098B2"
+          },
+          "dark": {
+            "value": "#0098B2"
+          },
+          "usage": "cyan 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.cyan"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#00BDDE"
+          },
+          "dark": {
+            "value": "#00BDDE"
+          },
+          "usage": "cyan 원시 팔레트 50 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.cyan",
+            "dark:semantic.accent.foreground.cyan"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#28D0ED"
+          },
+          "dark": {
+            "value": "#28D0ED"
+          },
+          "usage": "cyan 원시 팔레트 60 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.cyan"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#57DFF7"
+          },
+          "dark": {
+            "value": "#57DFF7"
+          },
+          "usage": "cyan 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#8AEDFF"
+          },
+          "dark": {
+            "value": "#8AEDFF"
+          },
+          "usage": "cyan 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#B5F4FF"
+          },
+          "dark": {
+            "value": "#B5F4FF"
+          },
+          "usage": "cyan 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#DEFAFF"
+          },
+          "dark": {
+            "value": "#DEFAFF"
+          },
+          "usage": "cyan 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F7FEFF"
+          },
+          "dark": {
+            "value": "#F7FEFF"
+          },
+          "usage": "cyan 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "green": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#00240C"
+          },
+          "dark": {
+            "value": "#00240C"
+          },
+          "usage": "green 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#004517"
+          },
+          "dark": {
+            "value": "#004517"
+          },
+          "usage": "green 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#006E25"
+          },
+          "dark": {
+            "value": "#006E25"
+          },
+          "usage": "green 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#009632"
+          },
+          "dark": {
+            "value": "#009632"
+          },
+          "usage": "green 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.green"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#00BF40"
+          },
+          "dark": {
+            "value": "#00BF40"
+          },
+          "usage": "green 원시 팔레트 50 단계 — semantic 3곳에서 참조",
+          "referencedBy": [
+            "light:semantic.background.status.positive@0.08",
+            "light:semantic.line.status.positive.normal@0.43",
+            "light:semantic.status.positive"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#1ED45A"
+          },
+          "dark": {
+            "value": "#1ED45A"
+          },
+          "usage": "green 원시 팔레트 60 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.background.status.positive@0.08",
+            "dark:semantic.line.status.positive.normal@0.43",
+            "dark:semantic.status.positive",
+            "dark:semantic.accent.foreground.green"
+          ],
+          "usedIn": [
+            "toast"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#49E57D"
+          },
+          "dark": {
+            "value": "#49E57D"
+          },
+          "usage": "green 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#7DF5A5"
+          },
+          "dark": {
+            "value": "#7DF5A5"
+          },
+          "usage": "green 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#ACFCC7"
+          },
+          "dark": {
+            "value": "#ACFCC7"
+          },
+          "usage": "green 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#D9FFE6"
+          },
+          "dark": {
+            "value": "#D9FFE6"
+          },
+          "usage": "green 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F2FFF6"
+          },
+          "dark": {
+            "value": "#F2FFF6"
+          },
+          "usage": "green 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "lightBlue": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#002130"
+          },
+          "dark": {
+            "value": "#002130"
+          },
+          "usage": "lightBlue 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#004261"
+          },
+          "dark": {
+            "value": "#004261"
+          },
+          "usage": "lightBlue 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#006796"
+          },
+          "dark": {
+            "value": "#006796"
+          },
+          "usage": "lightBlue 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#008DCF"
+          },
+          "dark": {
+            "value": "#008DCF"
+          },
+          "usage": "lightBlue 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.lightBlue"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#00AEFF"
+          },
+          "dark": {
+            "value": "#00AEFF"
+          },
+          "usage": "lightBlue 원시 팔레트 50 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.lightBlue",
+            "dark:semantic.accent.foreground.lightBlue"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#3DC2FF"
+          },
+          "dark": {
+            "value": "#3DC2FF"
+          },
+          "usage": "lightBlue 원시 팔레트 60 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.lightBlue"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#70D2FF"
+          },
+          "dark": {
+            "value": "#70D2FF"
+          },
+          "usage": "lightBlue 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#A1E1FF"
+          },
+          "dark": {
+            "value": "#A1E1FF"
+          },
+          "usage": "lightBlue 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#C4ECFE"
+          },
+          "dark": {
+            "value": "#C4ECFE"
+          },
+          "usage": "lightBlue 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#E5F6FE"
+          },
+          "dark": {
+            "value": "#E5F6FE"
+          },
+          "usage": "lightBlue 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F7FDFF"
+          },
+          "dark": {
+            "value": "#F7FDFF"
+          },
+          "usage": "lightBlue 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "lime": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#112900"
+          },
+          "dark": {
+            "value": "#112900"
+          },
+          "usage": "lime 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#225200"
+          },
+          "dark": {
+            "value": "#225200"
+          },
+          "usage": "lime 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#347D00"
+          },
+          "dark": {
+            "value": "#347D00"
+          },
+          "usage": "lime 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "37": {
+          "$type": "color",
+          "light": {
+            "value": "#429E00"
+          },
+          "dark": {
+            "value": "#429E00"
+          },
+          "usage": "lime 원시 팔레트 37 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.lime"
+          ]
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#48AD00"
+          },
+          "dark": {
+            "value": "#48AD00"
+          },
+          "usage": "lime 원시 팔레트 40 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#58CF04"
+          },
+          "dark": {
+            "value": "#58CF04"
+          },
+          "usage": "lime 원시 팔레트 50 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.lime",
+            "dark:semantic.accent.foreground.lime"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#6BE016"
+          },
+          "dark": {
+            "value": "#6BE016"
+          },
+          "usage": "lime 원시 팔레트 60 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.lime"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#88F03E"
+          },
+          "dark": {
+            "value": "#88F03E"
+          },
+          "usage": "lime 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#AEF779"
+          },
+          "dark": {
+            "value": "#AEF779"
+          },
+          "usage": "lime 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#CCFCA9"
+          },
+          "dark": {
+            "value": "#CCFCA9"
+          },
+          "usage": "lime 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#E6FFD4"
+          },
+          "dark": {
+            "value": "#E6FFD4"
+          },
+          "usage": "lime 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F8FFF2"
+          },
+          "dark": {
+            "value": "#F8FFF2"
+          },
+          "usage": "lime 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "neutral": {
+        "5": {
+          "$type": "color",
+          "light": {
+            "value": "#0F0F0F"
+          },
+          "dark": {
+            "value": "#0F0F0F"
+          },
+          "usage": "neutral 원시 팔레트 5 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#171717"
+          },
+          "dark": {
+            "value": "#171717"
+          },
+          "usage": "neutral 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "15": {
+          "$type": "color",
+          "light": {
+            "value": "#1C1C1C"
+          },
+          "dark": {
+            "value": "#1C1C1C"
+          },
+          "usage": "neutral 원시 팔레트 15 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#2A2A2A"
+          },
+          "dark": {
+            "value": "#2A2A2A"
+          },
+          "usage": "neutral 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "22": {
+          "$type": "color",
+          "light": {
+            "value": "#303030"
+          },
+          "dark": {
+            "value": "#303030"
+          },
+          "usage": "neutral 원시 팔레트 22 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#474747"
+          },
+          "dark": {
+            "value": "#474747"
+          },
+          "usage": "neutral 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#5C5C5C"
+          },
+          "dark": {
+            "value": "#5C5C5C"
+          },
+          "usage": "neutral 원시 팔레트 40 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#737373"
+          },
+          "dark": {
+            "value": "#737373"
+          },
+          "usage": "neutral 원시 팔레트 50 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#8A8A8A"
+          },
+          "dark": {
+            "value": "#8A8A8A"
+          },
+          "usage": "neutral 원시 팔레트 60 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#9B9B9B"
+          },
+          "dark": {
+            "value": "#9B9B9B"
+          },
+          "usage": "neutral 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#B0B0B0"
+          },
+          "dark": {
+            "value": "#B0B0B0"
+          },
+          "usage": "neutral 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#C4C4C4"
+          },
+          "dark": {
+            "value": "#C4C4C4"
+          },
+          "usage": "neutral 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#DCDCDC"
+          },
+          "dark": {
+            "value": "#DCDCDC"
+          },
+          "usage": "neutral 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#F7F7F7"
+          },
+          "dark": {
+            "value": "#F7F7F7"
+          },
+          "usage": "neutral 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "orange": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#361E00"
+          },
+          "dark": {
+            "value": "#361E00"
+          },
+          "usage": "orange 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#663A00"
+          },
+          "dark": {
+            "value": "#663A00"
+          },
+          "usage": "orange 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#9C5800"
+          },
+          "dark": {
+            "value": "#9C5800"
+          },
+          "usage": "orange 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "39": {
+          "$type": "color",
+          "light": {
+            "value": "#D17600"
+          },
+          "dark": {
+            "value": "#D17600"
+          },
+          "usage": "orange 원시 팔레트 39 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.orange"
+          ]
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#D47800"
+          },
+          "dark": {
+            "value": "#D47800"
+          },
+          "usage": "orange 원시 팔레트 40 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#FF9200"
+          },
+          "dark": {
+            "value": "#FF9200"
+          },
+          "usage": "orange 원시 팔레트 50 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "light:semantic.background.status.cautionary@0.08",
+            "light:semantic.line.status.cautionary.normal@0.43",
+            "light:semantic.status.cautionary",
+            "dark:semantic.accent.foreground.orange"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#FFA938"
+          },
+          "dark": {
+            "value": "#FFA938"
+          },
+          "usage": "orange 원시 팔레트 60 단계 — semantic 3곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.background.status.cautionary@0.08",
+            "dark:semantic.line.status.cautionary.normal@0.43",
+            "dark:semantic.status.cautionary"
+          ],
+          "usedIn": [
+            "toast"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#FFC06E"
+          },
+          "dark": {
+            "value": "#FFC06E"
+          },
+          "usage": "orange 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#FFD49C"
+          },
+          "dark": {
+            "value": "#FFD49C"
+          },
+          "usage": "orange 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#FEE6C6"
+          },
+          "dark": {
+            "value": "#FEE6C6"
+          },
+          "usage": "orange 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#FEF4E6"
+          },
+          "dark": {
+            "value": "#FEF4E6"
+          },
+          "usage": "orange 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#FFFCF7"
+          },
+          "dark": {
+            "value": "#FFFCF7"
+          },
+          "usage": "orange 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "pink": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#3D0133"
+          },
+          "dark": {
+            "value": "#3D0133"
+          },
+          "usage": "pink 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#730560"
+          },
+          "dark": {
+            "value": "#730560"
+          },
+          "usage": "pink 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#A81690"
+          },
+          "dark": {
+            "value": "#A81690"
+          },
+          "usage": "pink 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#D331B8"
+          },
+          "dark": {
+            "value": "#D331B8"
+          },
+          "usage": "pink 원시 팔레트 40 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "46": {
+          "$type": "color",
+          "light": {
+            "value": "#E846CD"
+          },
+          "dark": {
+            "value": "#E846CD"
+          },
+          "usage": "pink 원시 팔레트 46 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.pink"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#F553DA"
+          },
+          "dark": {
+            "value": "#F553DA"
+          },
+          "usage": "pink 원시 팔레트 50 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.pink"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#FA73E3"
+          },
+          "dark": {
+            "value": "#FA73E3"
+          },
+          "usage": "pink 원시 팔레트 60 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.pink",
+            "dark:semantic.accent.foreground.pink"
+          ],
+          "usedIn": [
+            "loading"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#FF94ED"
+          },
+          "dark": {
+            "value": "#FF94ED"
+          },
+          "usage": "pink 원시 팔레트 70 단계 — semantic 미참조, 컴포넌트가 직접 사용",
+          "usedIn": [
+            "loading"
+          ]
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#FFB8F3"
+          },
+          "dark": {
+            "value": "#FFB8F3"
+          },
+          "usage": "pink 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#FED3F7"
+          },
+          "dark": {
+            "value": "#FED3F7"
+          },
+          "usage": "pink 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#FEECFB"
+          },
+          "dark": {
+            "value": "#FEECFB"
+          },
+          "usage": "pink 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#FFFAFE"
+          },
+          "dark": {
+            "value": "#FFFAFE"
+          },
+          "usage": "pink 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "purple": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#290247"
+          },
+          "dark": {
+            "value": "#290247"
+          },
+          "usage": "purple 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#580A7D"
+          },
+          "dark": {
+            "value": "#580A7D"
+          },
+          "usage": "purple 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#861CB8"
+          },
+          "dark": {
+            "value": "#861CB8"
+          },
+          "usage": "purple 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#AD36E3"
+          },
+          "dark": {
+            "value": "#AD36E3"
+          },
+          "usage": "purple 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.purple"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#CB59FF"
+          },
+          "dark": {
+            "value": "#CB59FF"
+          },
+          "usage": "purple 원시 팔레트 50 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.purple"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#D478FF"
+          },
+          "dark": {
+            "value": "#D478FF"
+          },
+          "usage": "purple 원시 팔레트 60 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.purple",
+            "dark:semantic.accent.foreground.purple"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#DE96FF"
+          },
+          "dark": {
+            "value": "#DE96FF"
+          },
+          "usage": "purple 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#E9BAFF"
+          },
+          "dark": {
+            "value": "#E9BAFF"
+          },
+          "usage": "purple 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#F2D6FF"
+          },
+          "dark": {
+            "value": "#F2D6FF"
+          },
+          "usage": "purple 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#F9EDFF"
+          },
+          "dark": {
+            "value": "#F9EDFF"
+          },
+          "usage": "purple 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#FEFBFF"
+          },
+          "dark": {
+            "value": "#FEFBFF"
+          },
+          "usage": "purple 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "red": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#3B0101"
+          },
+          "dark": {
+            "value": "#3B0101"
+          },
+          "usage": "red 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#730303"
+          },
+          "dark": {
+            "value": "#730303"
+          },
+          "usage": "red 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#B00C0C"
+          },
+          "dark": {
+            "value": "#B00C0C"
+          },
+          "usage": "red 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#E52222"
+          },
+          "dark": {
+            "value": "#E52222"
+          },
+          "usage": "red 원시 팔레트 40 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.red"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#FF4242"
+          },
+          "dark": {
+            "value": "#FF4242"
+          },
+          "usage": "red 원시 팔레트 50 단계 — semantic 4곳에서 참조",
+          "referencedBy": [
+            "light:semantic.background.status.negative@0.08",
+            "light:semantic.line.status.negative.normal@0.43",
+            "light:semantic.line.status.negative.strong@0.52",
+            "light:semantic.status.negative"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#FF6363"
+          },
+          "dark": {
+            "value": "#FF6363"
+          },
+          "usage": "red 원시 팔레트 60 단계 — semantic 5곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.background.status.negative@0.08",
+            "dark:semantic.line.status.negative.normal@0.43",
+            "dark:semantic.line.status.negative.strong@0.52",
+            "dark:semantic.status.negative",
+            "dark:semantic.accent.foreground.red"
+          ],
+          "usedIn": [
+            "toast"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#FF8C8C"
+          },
+          "dark": {
+            "value": "#FF8C8C"
+          },
+          "usage": "red 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#FFB5B5"
+          },
+          "dark": {
+            "value": "#FFB5B5"
+          },
+          "usage": "red 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#FED5D5"
+          },
+          "dark": {
+            "value": "#FED5D5"
+          },
+          "usage": "red 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#FEECEC"
+          },
+          "dark": {
+            "value": "#FEECEC"
+          },
+          "usage": "red 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#FFFAFA"
+          },
+          "dark": {
+            "value": "#FFFAFA"
+          },
+          "usage": "red 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "violet": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#11024D"
+          },
+          "dark": {
+            "value": "#11024D"
+          },
+          "usage": "violet 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#23098F"
+          },
+          "dark": {
+            "value": "#23098F"
+          },
+          "usage": "violet 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#3A16C9"
+          },
+          "dark": {
+            "value": "#3A16C9"
+          },
+          "usage": "violet 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#4F29E5"
+          },
+          "dark": {
+            "value": "#4F29E5"
+          },
+          "usage": "violet 원시 팔레트 40 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "45": {
+          "$type": "color",
+          "light": {
+            "value": "#5B37ED"
+          },
+          "dark": {
+            "value": "#5B37ED"
+          },
+          "usage": "violet 원시 팔레트 45 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.violet"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#6541F2"
+          },
+          "dark": {
+            "value": "#6541F2"
+          },
+          "usage": "violet 원시 팔레트 50 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.violet"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#7D5EF7"
+          },
+          "dark": {
+            "value": "#7D5EF7"
+          },
+          "usage": "violet 원시 팔레트 60 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.violet"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#9E86FC"
+          },
+          "dark": {
+            "value": "#9E86FC"
+          },
+          "usage": "violet 원시 팔레트 70 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.foreground.violet"
+          ]
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#C0B0FF"
+          },
+          "dark": {
+            "value": "#C0B0FF"
+          },
+          "usage": "violet 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#DBD3FE"
+          },
+          "dark": {
+            "value": "#DBD3FE"
+          },
+          "usage": "violet 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#F0ECFE"
+          },
+          "dark": {
+            "value": "#F0ECFE"
+          },
+          "usage": "violet 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#FBFAFF"
+          },
+          "dark": {
+            "value": "#FBFAFF"
+          },
+          "usage": "violet 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      },
+      "redOrange": {
+        "10": {
+          "$type": "color",
+          "light": {
+            "value": "#290F00"
+          },
+          "dark": {
+            "value": "#290F00"
+          },
+          "usage": "redOrange 원시 팔레트 10 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "20": {
+          "$type": "color",
+          "light": {
+            "value": "#592100"
+          },
+          "dark": {
+            "value": "#592100"
+          },
+          "usage": "redOrange 원시 팔레트 20 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "30": {
+          "$type": "color",
+          "light": {
+            "value": "#913500"
+          },
+          "dark": {
+            "value": "#913500"
+          },
+          "usage": "redOrange 원시 팔레트 30 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "40": {
+          "$type": "color",
+          "light": {
+            "value": "#C94A00"
+          },
+          "dark": {
+            "value": "#C94A00"
+          },
+          "usage": "redOrange 원시 팔레트 40 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "48": {
+          "$type": "color",
+          "light": {
+            "value": "#F55A00"
+          },
+          "dark": {
+            "value": "#F55A00"
+          },
+          "usage": "redOrange 원시 팔레트 48 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.foreground.redOrange"
+          ]
+        },
+        "50": {
+          "$type": "color",
+          "light": {
+            "value": "#FF5E00"
+          },
+          "dark": {
+            "value": "#FF5E00"
+          },
+          "usage": "redOrange 원시 팔레트 50 단계 — semantic 1곳에서 참조",
+          "referencedBy": [
+            "light:semantic.accent.background.redOrange"
+          ],
+          "usedIn": [
+            "loading"
+          ]
+        },
+        "60": {
+          "$type": "color",
+          "light": {
+            "value": "#FF7B2E"
+          },
+          "dark": {
+            "value": "#FF7B2E"
+          },
+          "usage": "redOrange 원시 팔레트 60 단계 — semantic 2곳에서 참조",
+          "referencedBy": [
+            "dark:semantic.accent.background.redOrange",
+            "dark:semantic.accent.foreground.redOrange"
+          ],
+          "usedIn": [
+            "loading"
+          ]
+        },
+        "70": {
+          "$type": "color",
+          "light": {
+            "value": "#FF9B61"
+          },
+          "dark": {
+            "value": "#FF9B61"
+          },
+          "usage": "redOrange 원시 팔레트 70 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "80": {
+          "$type": "color",
+          "light": {
+            "value": "#FFBD96"
+          },
+          "dark": {
+            "value": "#FFBD96"
+          },
+          "usage": "redOrange 원시 팔레트 80 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "90": {
+          "$type": "color",
+          "light": {
+            "value": "#FED9C4"
+          },
+          "dark": {
+            "value": "#FED9C4"
+          },
+          "usage": "redOrange 원시 팔레트 90 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "95": {
+          "$type": "color",
+          "light": {
+            "value": "#FEEEE5"
+          },
+          "dark": {
+            "value": "#FEEEE5"
+          },
+          "usage": "redOrange 원시 팔레트 95 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        },
+        "99": {
+          "$type": "color",
+          "light": {
+            "value": "#FFFAF7"
+          },
+          "dark": {
+            "value": "#FFFAF7"
+          },
+          "usage": "redOrange 원시 팔레트 99 단계 — semantic·컴포넌트 어디서도 직접 참조하지 않음"
+        }
+      }
+    },
+    "semantic": {
+      "static": {
+        "white": {
+          "$type": "color",
+          "light": {
+            "value": "#ffffff",
+            "ref": "atomic.common.100"
+          },
+          "dark": {
+            "value": "#ffffff",
+            "ref": "atomic.common.100"
+          },
+          "usage": "테마와 무관하게 항상 흰색이어야 하는 요소 (컬러 배경 위 글자·아이콘 등)",
+          "usedIn": [
+            "avatar",
+            "button",
+            "card",
+            "checkbox",
+            "date-calendar",
+            "date-range-calendar",
+            "icon-button",
+            "page-counter",
+            "pagination-dots",
+            "play-badge",
+            "progress-tracker",
+            "push-badge",
+            "radio",
+            "section-message",
+            "segmented-control",
+            "select",
+            "snackbar",
+            "stepper",
+            "switch",
+            "text-area",
+            "text-field",
+            "toast"
+          ]
+        },
+        "black": {
+          "$type": "color",
+          "light": {
+            "value": "#000000",
+            "ref": "atomic.common.0"
+          },
+          "dark": {
+            "value": "#000000",
+            "ref": "atomic.common.0"
+          },
+          "usage": "테마와 무관하게 항상 검정이어야 하는 요소",
+          "usedIn": [
+            "card",
+            "icon-button",
+            "page-counter",
+            "progress-tracker",
+            "segmented-control",
+            "stepper"
+          ]
+        }
+      },
+      "primary": {
+        "normal": {
+          "$type": "color",
+          "light": {
+            "value": "#0066FF",
+            "ref": "atomic.blue.50"
+          },
+          "dark": {
+            "value": "#3385FF",
+            "ref": "atomic.blue.60"
+          },
+          "usage": "화면에서 가장 중요한 요소(주요 버튼·선택 상태)의 기본 브랜드 색",
+          "usedIn": [
+            "autocomplete",
+            "bottom-navigation",
+            "button",
+            "check-mark",
+            "checkbox",
+            "chip",
+            "date-calendar",
+            "date-range-calendar",
+            "filter-button",
+            "icon-button",
+            "list",
+            "loading",
+            "menu",
+            "progress-indicator",
+            "progress-step-indicator",
+            "progress-tracker",
+            "push-badge",
+            "radio",
+            "round-checkbox",
+            "search-field",
+            "section-message",
+            "segmented-control",
+            "select",
+            "slider",
+            "snackbar",
+            "stepper",
+            "switch",
+            "text-area",
+            "text-button",
+            "text-field",
+            "time-view",
+            "toast",
+            "toggle-icon",
+            "tooltip"
+          ]
+        },
+        "strong": {
+          "$type": "color",
+          "light": {
+            "value": "#005EEB",
+            "ref": "atomic.blue.45"
+          },
+          "dark": {
+            "value": "#1A75FF",
+            "ref": "atomic.blue.55"
+          },
+          "usage": "Primary 한 단계 강조 — normal 로 대비가 부족할 때"
+        },
+        "heavy": {
+          "$type": "color",
+          "light": {
+            "value": "#0054D1",
+            "ref": "atomic.blue.40"
+          },
+          "dark": {
+            "value": "#0066FF",
+            "ref": "atomic.blue.50"
+          },
+          "usage": "Primary 가장 강한 단계"
+        }
+      },
+      "label": {
+        "normal": {
+          "$type": "color",
+          "light": {
+            "value": "#171719",
+            "ref": "atomic.coolNeutral.10"
+          },
+          "dark": {
+            "value": "#F7F7F8",
+            "ref": "atomic.coolNeutral.99"
+          },
+          "usage": "기본 텍스트 색 (본문·제목)",
+          "usedIn": [
+            "accordion",
+            "alert",
+            "avatar",
+            "button",
+            "checkbox",
+            "chip",
+            "date-calendar",
+            "date-range-calendar",
+            "fallback-view",
+            "filter-button",
+            "icon-button",
+            "list",
+            "modal",
+            "pagination",
+            "pagination-dots",
+            "popover",
+            "progress-tracker",
+            "radio",
+            "scroll-area",
+            "search-field",
+            "section-message",
+            "segmented-control",
+            "select",
+            "slider",
+            "stepper",
+            "switch",
+            "table",
+            "text-area",
+            "text-button",
+            "text-field",
+            "time-view",
+            "top-navigation",
+            "with-interaction"
+          ]
+        },
+        "strong": {
+          "$type": "color",
+          "light": {
+            "value": "#000000",
+            "ref": "atomic.common.0"
+          },
+          "dark": {
+            "value": "#ffffff",
+            "ref": "atomic.common.100"
+          },
+          "usage": "가장 진한 텍스트 색 — 최대 대비가 필요한 강조 텍스트",
+          "usedIn": [
+            "section-header",
+            "tab",
+            "top-navigation"
+          ]
+        },
+        "neutral": {
+          "$type": "color",
+          "light": {
+            "value": "#2E2F33E0",
+            "ref": "atomic.coolNeutral.22",
+            "alpha": 0.88,
+            "alphaSource": "opacity.88"
+          },
+          "dark": {
+            "value": "#C2C4C8E0",
+            "ref": "atomic.coolNeutral.90",
+            "alpha": 0.88,
+            "alphaSource": "opacity.88"
+          },
+          "usage": "normal 보다 한 단계 약한 텍스트",
+          "usedIn": [
+            "accordion",
+            "button",
+            "label",
+            "pagination",
+            "popover",
+            "section-message",
+            "table"
+          ]
+        },
+        "alternative": {
+          "$type": "color",
+          "light": {
+            "value": "#37383C9C",
+            "ref": "atomic.coolNeutral.25",
+            "alpha": 0.61,
+            "alphaSource": "opacity.61"
+          },
+          "dark": {
+            "value": "#AEB0B69C",
+            "ref": "atomic.coolNeutral.80",
+            "alpha": 0.61,
+            "alphaSource": "opacity.61"
+          },
+          "usage": "부가 정보·설명 텍스트 (neutral 보다 약함)",
+          "usedIn": [
+            "action-area",
+            "alert",
+            "autocomplete",
+            "card",
+            "content-badge",
+            "date-calendar",
+            "date-range-calendar",
+            "fallback-view",
+            "form",
+            "list",
+            "menu",
+            "modal",
+            "pagination",
+            "popover",
+            "progress-tracker",
+            "search-field",
+            "section-header",
+            "section-message",
+            "segmented-control",
+            "select",
+            "select-multiple",
+            "stepper",
+            "tab",
+            "text-area",
+            "text-button",
+            "text-field"
+          ]
+        },
+        "assistive": {
+          "$type": "color",
+          "light": {
+            "value": "#37383C47",
+            "ref": "atomic.coolNeutral.25",
+            "alpha": 0.28,
+            "alphaSource": "opacity.28"
+          },
+          "dark": {
+            "value": "#AEB0B647",
+            "ref": "atomic.coolNeutral.80",
+            "alpha": 0.28,
+            "alphaSource": "opacity.28"
+          },
+          "usage": "가장 약한 텍스트 — 보조 안내·비강조 아이콘",
+          "usedIn": [
+            "button",
+            "card-list",
+            "check-mark",
+            "date-calendar",
+            "date-range-calendar",
+            "list",
+            "search-field",
+            "section-header",
+            "section-message",
+            "select",
+            "stepper",
+            "tab",
+            "text-area",
+            "text-button",
+            "text-field",
+            "toggle-icon"
+          ]
+        },
+        "disable": {
+          "$type": "color",
+          "light": {
+            "value": "#37383C29",
+            "ref": "atomic.coolNeutral.25",
+            "alpha": 0.16,
+            "alphaSource": "opacity.16"
+          },
+          "dark": {
+            "value": "#989BA229",
+            "ref": "atomic.coolNeutral.70",
+            "alpha": 0.16,
+            "alphaSource": "opacity.16"
+          },
+          "usage": "비활성 상태의 텍스트·아이콘",
+          "usedIn": [
+            "button",
+            "checkbox",
+            "chip",
+            "date-calendar",
+            "date-range-calendar",
+            "filter-button",
+            "icon-button",
+            "pagination",
+            "radio",
+            "search-field",
+            "section-header",
+            "select",
+            "slider",
+            "tab",
+            "text-area",
+            "text-button",
+            "text-field",
+            "toggle-icon"
+          ]
+        }
+      },
+      "background": {
+        "normal": {
+          "normal": {
+            "$type": "color",
+            "light": {
+              "value": "#ffffff",
+              "ref": "atomic.common.100"
+            },
+            "dark": {
+              "value": "#1B1C1E",
+              "ref": "atomic.coolNeutral.15"
+            },
+            "usage": "일반 화면의 기본 배경",
+            "usedIn": [
+              "avatar",
+              "avatar-group",
+              "checkbox",
+              "content-badge",
+              "icon-button",
+              "radio",
+              "section-message",
+              "slider",
+              "snackbar"
+            ]
+          },
+          "alternative": {
+            "$type": "color",
+            "light": {
+              "value": "#F7F7F8",
+              "ref": "atomic.coolNeutral.99"
+            },
+            "dark": {
+              "value": "#0F0F10",
+              "ref": "atomic.coolNeutral.5"
+            },
+            "usage": "기본 배경과 구분이 필요한 영역(카드 UI 등)의 대비 배경"
+          }
+        },
+        "elevated": {
+          "normal": {
+            "$type": "color",
+            "light": {
+              "value": "#ffffff",
+              "ref": "atomic.common.100"
+            },
+            "dark": {
+              "value": "#212225",
+              "ref": "atomic.coolNeutral.17"
+            },
+            "usage": "모달처럼 층위가 있는 표면의 배경 (다크 모드에서 normal 과 달라짐)",
+            "usedIn": [
+              "action-area",
+              "alert",
+              "autocomplete",
+              "date-calendar",
+              "date-picker",
+              "date-range-calendar",
+              "date-range-picker",
+              "menu",
+              "modal",
+              "picker-action-area",
+              "popover",
+              "segmented-control",
+              "time-picker",
+              "top-navigation"
+            ]
+          },
+          "alternative": {
+            "$type": "color",
+            "light": {
+              "value": "#F7F7F8",
+              "ref": "atomic.coolNeutral.99"
+            },
+            "dark": {
+              "value": "#141415",
+              "ref": "atomic.coolNeutral.7"
+            },
+            "usage": "층위가 있는 표면 안에서 대비를 주는 배경"
+          }
+        },
+        "transparent": {
+          "normal": {
+            "$type": "color",
+            "light": {
+              "value": "#ffffff14",
+              "ref": "atomic.common.100",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "dark": {
+              "value": "#2122259C",
+              "ref": "atomic.coolNeutral.17",
+              "alpha": 0.61,
+              "alphaSource": "opacity.61"
+            },
+            "usage": "Chrome(반투명 블러) 효과를 주는 반투명 배경",
+            "usedIn": [
+              "select",
+              "text-area",
+              "text-field"
+            ]
+          },
+          "alternative": {
+            "$type": "color",
+            "light": {
+              "value": "#ffffff47",
+              "ref": "atomic.common.100",
+              "alpha": 0.28,
+              "alphaSource": "opacity.28"
+            },
+            "dark": {
+              "value": "#2122259C",
+              "ref": "atomic.coolNeutral.17",
+              "alpha": 0.61,
+              "alphaSource": "opacity.61"
+            },
+            "usage": "Chrome 효과용 반투명 배경 — 문서상 Android 전용"
+          }
+        },
+        "status": {
+          "negative": {
+            "$type": "color",
+            "light": {
+              "value": "#FF424214",
+              "ref": "atomic.red.50",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "dark": {
+              "value": "#FF636314",
+              "ref": "atomic.red.60",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "usage": "오류 상태를 알리는 옅은 배경"
+          },
+          "cautionary": {
+            "$type": "color",
+            "light": {
+              "value": "#FF920014",
+              "ref": "atomic.orange.50",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "dark": {
+              "value": "#FFA93814",
+              "ref": "atomic.orange.60",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "usage": "주의 상태를 알리는 옅은 배경"
+          },
+          "positive": {
+            "$type": "color",
+            "light": {
+              "value": "#00BF4014",
+              "ref": "atomic.green.50",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "dark": {
+              "value": "#1ED45A14",
+              "ref": "atomic.green.60",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "usage": "성공 상태를 알리는 옅은 배경"
+          }
+        }
+      },
+      "interaction": {
+        "inactive": {
+          "$type": "color",
+          "light": {
+            "value": "#989BA2",
+            "ref": "atomic.coolNeutral.70"
+          },
+          "dark": {
+            "value": "#5A5C63",
+            "ref": "atomic.coolNeutral.40"
+          },
+          "usage": "활성화할 수 있지만 현재 꺼져 있는 상호작용 요소",
+          "usedIn": [
+            "bottom-navigation"
+          ]
+        },
+        "disable": {
+          "$type": "color",
+          "light": {
+            "value": "#F4F4F5",
+            "ref": "atomic.coolNeutral.98"
+          },
+          "dark": {
+            "value": "#2E2F33",
+            "ref": "atomic.coolNeutral.22"
+          },
+          "usage": "상호작용이 불가능한(disabled) 요소의 채움",
+          "usedIn": [
+            "button",
+            "chip",
+            "filter-button",
+            "slider"
+          ]
+        }
+      },
+      "line": {
+        "normal": {
+          "normal": {
+            "$type": "color",
+            "light": {
+              "value": "#70737C38",
+              "ref": "atomic.coolNeutral.50",
+              "alpha": 0.22,
+              "alphaSource": "opacity.22"
+            },
+            "dark": {
+              "value": "#70737C52",
+              "ref": "atomic.coolNeutral.50",
+              "alpha": 0.32,
+              "alphaSource": "literal 0.32"
+            },
+            "usage": "Divider·Border 기본 구분선 (반투명 — 선끼리 겹치지 않게)",
+            "usedIn": [
+              "checkbox",
+              "content-badge",
+              "divider",
+              "progress-tracker",
+              "radio",
+              "segmented-control"
+            ]
+          },
+          "neutral": {
+            "$type": "color",
+            "light": {
+              "value": "#70737C29",
+              "ref": "atomic.coolNeutral.50",
+              "alpha": 0.16,
+              "alphaSource": "opacity.16"
+            },
+            "dark": {
+              "value": "#70737C47",
+              "ref": "atomic.coolNeutral.50",
+              "alpha": 0.28,
+              "alphaSource": "opacity.28"
+            },
+            "usage": "normal 보다 약한 반투명 구분선",
+            "usedIn": [
+              "action-area",
+              "button",
+              "chip",
+              "filter-button",
+              "icon-button",
+              "pagination-dots",
+              "section-header",
+              "select",
+              "text-area",
+              "text-field",
+              "thumbnail"
+            ]
+          },
+          "alternative": {
+            "$type": "color",
+            "light": {
+              "value": "#70737C14",
+              "ref": "atomic.coolNeutral.50",
+              "alpha": 0.08,
+              "alphaSource": "opacity.8"
+            },
+            "dark": {
+              "value": "#70737C38",
+              "ref": "atomic.coolNeutral.50",
+              "alpha": 0.22,
+              "alphaSource": "opacity.22"
+            },
+            "usage": "가장 약한 반투명 구분선",
+            "usedIn": [
+              "accordion",
+              "bottom-navigation",
+              "select",
+              "tab",
+              "text-area",
+              "text-field"
+            ]
+          }
+        },
+        "solid": {
+          "normal": {
+            "$type": "color",
+            "light": {
+              "value": "#E1E2E4",
+              "ref": "atomic.coolNeutral.96"
+            },
+            "dark": {
+              "value": "#37383C",
+              "ref": "atomic.coolNeutral.25"
+            },
+            "usage": "선이 겹치는 곳에 쓰는 불투명 구분선",
+            "usedIn": [
+              "loading"
+            ]
+          },
+          "neutral": {
+            "$type": "color",
+            "light": {
+              "value": "#EAEBEC",
+              "ref": "atomic.coolNeutral.97"
+            },
+            "dark": {
+              "value": "#333438",
+              "ref": "atomic.coolNeutral.23"
+            },
+            "usage": "선이 겹치는 곳에 쓰는 불투명 구분선 (한 단계 약함)",
+            "usedIn": [
+              "autocomplete",
+              "date-picker",
+              "date-range-picker",
+              "menu",
+              "table",
+              "time-picker"
+            ]
+          },
+          "alternative": {
+            "$type": "color",
+            "light": {
+              "value": "#F4F4F5",
+              "ref": "atomic.coolNeutral.98"
+            },
+            "dark": {
+              "value": "#2E2F33",
+              "ref": "atomic.coolNeutral.22"
+            },
+            "usage": "선이 겹치는 곳에 쓰는 불투명 구분선 (가장 약함)",
+            "usedIn": [
+              "menu",
+              "picker-action-area"
+            ]
+          }
+        },
+        "primary": {
+          "normal": {
+            "$type": "color",
+            "light": {
+              "value": "#0066FF47",
+              "ref": "atomic.blue.50",
+              "alpha": 0.28,
+              "alphaSource": "opacity.28"
+            },
+            "dark": {
+              "value": "#3385FF47",
+              "ref": "atomic.blue.60",
+              "alpha": 0.28,
+              "alphaSource": "opacity.28"
+            },
+            "usage": "Primary 계열 테두리"
+          },
+          "strong": {
+            "$type": "color",
+            "light": {
+              "value": "#0066FF6E",
+              "ref": "atomic.blue.50",
+              "alpha": 0.43,
+              "alphaSource": "opacity.43"
+            },
+            "dark": {
+              "value": "#3385FF6E",
+              "ref": "atomic.blue.60",
+              "alpha": 0.43,
+              "alphaSource": "opacity.43"
+            },
+            "usage": "Primary 계열 테두리 (더 진함)"
+          }
+        },
+        "status": {
+          "negative": {
+            "normal": {
+              "$type": "color",
+              "light": {
+                "value": "#FF42426E",
+                "ref": "atomic.red.50",
+                "alpha": 0.43,
+                "alphaSource": "opacity.43"
+              },
+              "dark": {
+                "value": "#FF63636E",
+                "ref": "atomic.red.60",
+                "alpha": 0.43,
+                "alphaSource": "opacity.43"
+              },
+              "usage": "오류 상태 테두리"
+            },
+            "strong": {
+              "$type": "color",
+              "light": {
+                "value": "#FF424285",
+                "ref": "atomic.red.50",
+                "alpha": 0.52,
+                "alphaSource": "opacity.52"
+              },
+              "dark": {
+                "value": "#FF636385",
+                "ref": "atomic.red.60",
+                "alpha": 0.52,
+                "alphaSource": "opacity.52"
+              },
+              "usage": "오류 상태 테두리 (더 진함)"
+            }
+          },
+          "cautionary": {
+            "normal": {
+              "$type": "color",
+              "light": {
+                "value": "#FF92006E",
+                "ref": "atomic.orange.50",
+                "alpha": 0.43,
+                "alphaSource": "opacity.43"
+              },
+              "dark": {
+                "value": "#FFA9386E",
+                "ref": "atomic.orange.60",
+                "alpha": 0.43,
+                "alphaSource": "opacity.43"
+              },
+              "usage": "주의 상태 테두리"
+            }
+          },
+          "positive": {
+            "normal": {
+              "$type": "color",
+              "light": {
+                "value": "#00BF406E",
+                "ref": "atomic.green.50",
+                "alpha": 0.43,
+                "alphaSource": "opacity.43"
+              },
+              "dark": {
+                "value": "#1ED45A6E",
+                "ref": "atomic.green.60",
+                "alpha": 0.43,
+                "alphaSource": "opacity.43"
+              },
+              "usage": "성공 상태 테두리"
+            }
+          }
+        }
+      },
+      "status": {
+        "positive": {
+          "$type": "color",
+          "light": {
+            "value": "#00BF40",
+            "ref": "atomic.green.50"
+          },
+          "dark": {
+            "value": "#1ED45A",
+            "ref": "atomic.green.60"
+          },
+          "usage": "성공·긍정 상태를 나타내는 글자·아이콘",
+          "usedIn": [
+            "section-message"
+          ]
+        },
+        "cautionary": {
+          "$type": "color",
+          "light": {
+            "value": "#FF9200",
+            "ref": "atomic.orange.50"
+          },
+          "dark": {
+            "value": "#FFA938",
+            "ref": "atomic.orange.60"
+          },
+          "usage": "주의·경고 상태를 나타내는 글자·아이콘",
+          "usedIn": [
+            "section-message"
+          ]
+        },
+        "negative": {
+          "$type": "color",
+          "light": {
+            "value": "#FF4242",
+            "ref": "atomic.red.50"
+          },
+          "dark": {
+            "value": "#FF6363",
+            "ref": "atomic.red.60"
+          },
+          "usage": "오류·위험 상태를 나타내는 글자·아이콘",
+          "usedIn": [
+            "alert",
+            "form",
+            "label",
+            "section-message",
+            "select",
+            "text-area",
+            "text-field"
+          ]
+        }
+      },
+      "accent": {
+        "background": {
+          "redOrange": {
+            "$type": "color",
+            "light": {
+              "value": "#FF5E00",
+              "ref": "atomic.redOrange.50"
+            },
+            "dark": {
+              "value": "#FF7B2E",
+              "ref": "atomic.redOrange.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 redOrange 강조색"
+          },
+          "lime": {
+            "$type": "color",
+            "light": {
+              "value": "#58CF04",
+              "ref": "atomic.lime.50"
+            },
+            "dark": {
+              "value": "#6BE016",
+              "ref": "atomic.lime.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 lime 강조색"
+          },
+          "cyan": {
+            "$type": "color",
+            "light": {
+              "value": "#00BDDE",
+              "ref": "atomic.cyan.50"
+            },
+            "dark": {
+              "value": "#28D0ED",
+              "ref": "atomic.cyan.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 cyan 강조색"
+          },
+          "lightBlue": {
+            "$type": "color",
+            "light": {
+              "value": "#00AEFF",
+              "ref": "atomic.lightBlue.50"
+            },
+            "dark": {
+              "value": "#3DC2FF",
+              "ref": "atomic.lightBlue.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 lightBlue 강조색"
+          },
+          "violet": {
+            "$type": "color",
+            "light": {
+              "value": "#6541F2",
+              "ref": "atomic.violet.50"
+            },
+            "dark": {
+              "value": "#7D5EF7",
+              "ref": "atomic.violet.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 violet 강조색"
+          },
+          "purple": {
+            "$type": "color",
+            "light": {
+              "value": "#CB59FF",
+              "ref": "atomic.purple.50"
+            },
+            "dark": {
+              "value": "#D478FF",
+              "ref": "atomic.purple.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 purple 강조색"
+          },
+          "pink": {
+            "$type": "color",
+            "light": {
+              "value": "#F553DA",
+              "ref": "atomic.pink.50"
+            },
+            "dark": {
+              "value": "#FA73E3",
+              "ref": "atomic.pink.60"
+            },
+            "usage": "배경처럼 뒤쪽에 놓이는 요소의 pink 강조색"
+          }
+        },
+        "foreground": {
+          "red": {
+            "$type": "color",
+            "light": {
+              "value": "#E52222",
+              "ref": "atomic.red.40"
+            },
+            "dark": {
+              "value": "#FF6363",
+              "ref": "atomic.red.60"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 red 강조색"
+          },
+          "redOrange": {
+            "$type": "color",
+            "light": {
+              "value": "#F55A00",
+              "ref": "atomic.redOrange.48"
+            },
+            "dark": {
+              "value": "#FF7B2E",
+              "ref": "atomic.redOrange.60"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 redOrange 강조색"
+          },
+          "orange": {
+            "$type": "color",
+            "light": {
+              "value": "#D17600",
+              "ref": "atomic.orange.39"
+            },
+            "dark": {
+              "value": "#FF9200",
+              "ref": "atomic.orange.50"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 orange 강조색"
+          },
+          "lime": {
+            "$type": "color",
+            "light": {
+              "value": "#429E00",
+              "ref": "atomic.lime.37"
+            },
+            "dark": {
+              "value": "#58CF04",
+              "ref": "atomic.lime.50"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 lime 강조색"
+          },
+          "green": {
+            "$type": "color",
+            "light": {
+              "value": "#009632",
+              "ref": "atomic.green.40"
+            },
+            "dark": {
+              "value": "#1ED45A",
+              "ref": "atomic.green.60"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 green 강조색"
+          },
+          "cyan": {
+            "$type": "color",
+            "light": {
+              "value": "#0098B2",
+              "ref": "atomic.cyan.40"
+            },
+            "dark": {
+              "value": "#00BDDE",
+              "ref": "atomic.cyan.50"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 cyan 강조색",
+            "usedIn": [
+              "content-badge"
+            ]
+          },
+          "lightBlue": {
+            "$type": "color",
+            "light": {
+              "value": "#008DCF",
+              "ref": "atomic.lightBlue.40"
+            },
+            "dark": {
+              "value": "#00AEFF",
+              "ref": "atomic.lightBlue.50"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 lightBlue 강조색"
+          },
+          "blue": {
+            "$type": "color",
+            "light": {
+              "value": "#005EEB",
+              "ref": "atomic.blue.45"
+            },
+            "dark": {
+              "value": "#4F95FF",
+              "ref": "atomic.blue.65"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 blue 강조색"
+          },
+          "violet": {
+            "$type": "color",
+            "light": {
+              "value": "#5B37ED",
+              "ref": "atomic.violet.45"
+            },
+            "dark": {
+              "value": "#9E86FC",
+              "ref": "atomic.violet.70"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 violet 강조색"
+          },
+          "purple": {
+            "$type": "color",
+            "light": {
+              "value": "#AD36E3",
+              "ref": "atomic.purple.40"
+            },
+            "dark": {
+              "value": "#D478FF",
+              "ref": "atomic.purple.60"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 purple 강조색"
+          },
+          "pink": {
+            "$type": "color",
+            "light": {
+              "value": "#E846CD",
+              "ref": "atomic.pink.46"
+            },
+            "dark": {
+              "value": "#FA73E3",
+              "ref": "atomic.pink.60"
+            },
+            "usage": "글자·아이콘처럼 앞쪽에 놓이는 요소의 pink 강조색"
+          }
+        }
+      },
+      "inverse": {
+        "primary": {
+          "$type": "color",
+          "light": {
+            "value": "#3385FF",
+            "ref": "atomic.blue.60"
+          },
+          "dark": {
+            "value": "#0066FF",
+            "ref": "atomic.blue.50"
+          },
+          "usage": "반전 표면(Tooltip 등) 위의 Primary 색"
+        },
+        "background": {
+          "$type": "color",
+          "light": {
+            "value": "#1B1C1E",
+            "ref": "atomic.coolNeutral.15"
+          },
+          "dark": {
+            "value": "#ffffff",
+            "ref": "atomic.common.100"
+          },
+          "usage": "테마와 대비가 반대인 표면의 배경 (Tooltip 등)",
+          "usedIn": [
+            "chip",
+            "filter-button",
+            "snackbar",
+            "toast",
+            "tooltip"
+          ]
+        },
+        "label": {
+          "$type": "color",
+          "light": {
+            "value": "#F7F7F8",
+            "ref": "atomic.coolNeutral.99"
+          },
+          "dark": {
+            "value": "#171719",
+            "ref": "atomic.coolNeutral.10"
+          },
+          "usage": "반전 표면 위의 텍스트",
+          "usedIn": [
+            "chip",
+            "filter-button",
+            "tooltip"
+          ]
+        }
+      },
+      "fill": {
+        "normal": {
+          "$type": "color",
+          "light": {
+            "value": "#70737C14",
+            "ref": "atomic.coolNeutral.50",
+            "alpha": 0.08,
+            "alphaSource": "opacity.8"
+          },
+          "dark": {
+            "value": "#70737C38",
+            "ref": "atomic.coolNeutral.50",
+            "alpha": 0.22,
+            "alphaSource": "opacity.22"
+          },
+          "usage": "패널·요소를 배경과 구분하려고 채우는 반투명 색",
+          "usedIn": [
+            "button",
+            "content-badge",
+            "icon-button",
+            "list",
+            "progress-indicator",
+            "progress-step-indicator",
+            "search-field",
+            "segmented-control",
+            "skeleton"
+          ]
+        },
+        "strong": {
+          "$type": "color",
+          "light": {
+            "value": "#70737C29",
+            "ref": "atomic.coolNeutral.50",
+            "alpha": 0.16,
+            "alphaSource": "opacity.16"
+          },
+          "dark": {
+            "value": "#70737C47",
+            "ref": "atomic.coolNeutral.50",
+            "alpha": 0.28,
+            "alphaSource": "opacity.28"
+          },
+          "usage": "반투명 채움 (더 진함)",
+          "usedIn": [
+            "avatar",
+            "modal",
+            "progress-tracker",
+            "scroll-area",
+            "slider",
+            "stepper",
+            "switch"
+          ]
+        },
+        "alternative": {
+          "$type": "color",
+          "light": {
+            "value": "#70737C0D",
+            "ref": "atomic.coolNeutral.50",
+            "alpha": 0.05,
+            "alphaSource": "opacity.5"
+          },
+          "dark": {
+            "value": "#70737C1F",
+            "ref": "atomic.coolNeutral.50",
+            "alpha": 0.12,
+            "alphaSource": "opacity.12"
+          },
+          "usage": "반투명 채움 (가장 옅음)",
+          "usedIn": [
+            "chip",
+            "filter-button",
+            "icon-button",
+            "select",
+            "skeleton",
+            "tab",
+            "table",
+            "text-area",
+            "text-field"
+          ]
+        }
+      },
+      "material": {
+        "dimmer": {
+          "$type": "color",
+          "light": {
+            "value": "#17171985",
+            "ref": "atomic.coolNeutral.10",
+            "alpha": 0.52,
+            "alphaSource": "opacity.52"
+          },
+          "dark": {
+            "value": "#171719BD",
+            "ref": "atomic.coolNeutral.10",
+            "alpha": 0.74,
+            "alphaSource": "opacity.74"
+          },
+          "usage": "모달 뒤 화면을 어둡게 덮는 딤 레이어",
+          "usedIn": [
+            "alert",
+            "modal"
+          ]
+        }
+      }
+    },
+    "game": {
+      "background": {
+        "base": { "$type": "color", "light": { "value": "#15100C" }, "dark": { "value": "#15100C" }, "usage": "상점 바닥 — 페이지 전체 바탕 (밤의 목재)" },
+        "panel": { "$type": "color", "light": { "value": "#221912" }, "dark": { "value": "#221912" }, "usage": "진열장·장부·카드 등 패널 바탕" },
+        "raised": { "$type": "color", "light": { "value": "#2E2219" }, "dark": { "value": "#2E2219" }, "usage": "패널 위에 한 번 더 올린 칸 (정보 칸, 입력칸, 헤더)" },
+        "inset": { "$type": "color", "light": { "value": "#0F0B08" }, "dark": { "value": "#0F0B08" }, "usage": "움푹 들어간 곳 (세그먼트 바탕, 스켈레톤 바탕)" },
+        "dimmer": { "$type": "color", "light": { "value": "#0A0705CC" }, "dark": { "value": "#0A0705CC" }, "usage": "대화창 뒤를 어둡게 덮는 층" }
+      },
+      "line": {
+        "wood": { "$type": "color", "light": { "value": "#4A3828" }, "dark": { "value": "#4A3828" }, "usage": "기본 테두리·구분선 (나뭇결)" },
+        "gold": { "$type": "color", "light": { "value": "#B8913F" }, "dark": { "value": "#B8913F" }, "usage": "금테 — 강조 패널, 초점, 선택된 칸" }
+      },
+      "label": {
+        "strong": { "$type": "color", "light": { "value": "#FFF4DE" }, "dark": { "value": "#FFF4DE" }, "usage": "제목·카드 이름" },
+        "normal": { "$type": "color", "light": { "value": "#EADCC3" }, "dark": { "value": "#EADCC3" }, "usage": "본문" },
+        "alternative": { "$type": "color", "light": { "value": "#BBA684" }, "dark": { "value": "#BBA684" }, "usage": "보조 문구, 라벨" },
+        "assistive": { "$type": "color", "light": { "value": "#8E7B60" }, "dark": { "value": "#8E7B60" }, "usage": "플레이스홀더, 비활성 — 본문에는 쓰지 않는다" }
+      },
+      "gold": {
+        "normal": { "$type": "color", "light": { "value": "#E0B252" }, "dark": { "value": "#E0B252" }, "usage": "주요 버튼 바탕, 골드(G) 가격, 로고 문장" },
+        "strong": { "$type": "color", "light": { "value": "#F4CE72" }, "dark": { "value": "#F4CE72" }, "usage": "주요 버튼 hover, 활성 내비" },
+        "onGold": { "$type": "color", "light": { "value": "#20150A" }, "dark": { "value": "#20150A" }, "usage": "금색 바탕 위 글자" },
+        "tint": { "$type": "color", "light": { "value": "#E0B2521F" }, "dark": { "value": "#E0B2521F" }, "usage": "금빛 옅은 바탕 — 활성 내비, 선택 칸" }
+      },
+      "candle": { "$type": "color", "light": { "value": "#FFB547" }, "dark": { "value": "#FFB547" }, "usage": "촛불빛 — 로고 불꽃, 빛 효과의 색" },
+      "shimmer": { "$type": "color", "light": { "value": "#F4CE722E" }, "dark": { "value": "#F4CE722E" }, "usage": "스켈레톤 위를 사선으로 지나가는 빛줄기" },
+      "status": {
+        "positive": { "$type": "color", "light": { "value": "#8ED081" }, "dark": { "value": "#8ED081" }, "usage": "판매 중" },
+        "negative": { "$type": "color", "light": { "value": "#FF8A73" }, "dark": { "value": "#FF8A73" }, "usage": "오류·경고 글자, 입력 오류 테두리" },
+        "negativeTint": { "$type": "color", "light": { "value": "#FF8A731F" }, "dark": { "value": "#FF8A731F" }, "usage": "오류 알림 바탕" },
+        "danger": { "$type": "color", "light": { "value": "#A8321F" }, "dark": { "value": "#A8321F" }, "usage": "불태우기(삭제) 버튼 바탕" },
+        "onDanger": { "$type": "color", "light": { "value": "#FFF1E6" }, "dark": { "value": "#FFF1E6" }, "usage": "불태우기 버튼 글자" }
+      },
+      "rarity": {
+        "common": { "$type": "color", "light": { "value": "#A9ACB0" }, "dark": { "value": "#A9ACB0" }, "usage": "일반 (~4,999원)" },
+        "uncommon": { "$type": "color", "light": { "value": "#67C46F" }, "dark": { "value": "#67C46F" }, "usage": "고급 (5,000~7,999원)" },
+        "rare": { "$type": "color", "light": { "value": "#58A6FF" }, "dark": { "value": "#58A6FF" }, "usage": "희귀 (8,000~11,999원)" },
+        "epic": { "$type": "color", "light": { "value": "#B98CFF" }, "dark": { "value": "#B98CFF" }, "usage": "영웅 (12,000~19,999원)" },
+        "legendary": { "$type": "color", "light": { "value": "#F2B640" }, "dark": { "value": "#F2B640" }, "usage": "전설 (20,000원~)" }
+      }
+    }
+  },
+  "shadow": {
+    "game": {
+      "panel": { "$type": "shadow", "light": { "value": "0px 12px 32px -12px #000000B3" }, "dark": { "value": "0px 12px 32px -12px #000000B3" }, "usage": "패널·카드가 바닥 위에 놓인 그림자" },
+      "lift": { "$type": "shadow", "light": { "value": "0px 18px 36px -12px #000000CC" }, "dark": { "value": "0px 18px 36px -12px #000000CC" }, "usage": "카드 hover 시 떠오른 그림자" },
+      "candle": { "$type": "shadow", "light": { "value": "0px 0px 24px -4px #FFB54759" }, "dark": { "value": "0px 0px 24px -4px #FFB54759" }, "usage": "촛불빛 번짐 — 로고, 주요 버튼, 대화창" },
+      "pressed": { "$type": "shadow", "light": { "value": "inset 0px 2px 0px 0px #00000059" }, "dark": { "value": "inset 0px 2px 0px 0px #00000059" }, "usage": "버튼을 눌렀을 때 안으로 들어간 느낌" },
+      "glowCommon": { "$type": "shadow", "light": { "value": "0px 0px 18px -4px #A9ACB04D" }, "dark": { "value": "0px 0px 18px -4px #A9ACB04D" }, "usage": "일반 카드 hover 빛" },
+      "glowUncommon": { "$type": "shadow", "light": { "value": "0px 0px 18px -4px #67C46F66" }, "dark": { "value": "0px 0px 18px -4px #67C46F66" }, "usage": "고급 카드 hover 빛" },
+      "glowRare": { "$type": "shadow", "light": { "value": "0px 0px 18px -4px #58A6FF66" }, "dark": { "value": "0px 0px 18px -4px #58A6FF66" }, "usage": "희귀 카드 hover 빛" },
+      "glowEpic": { "$type": "shadow", "light": { "value": "0px 0px 20px -4px #B98CFF73" }, "dark": { "value": "0px 0px 20px -4px #B98CFF73" }, "usage": "영웅 카드 hover 빛" },
+      "glowLegendary": { "$type": "shadow", "light": { "value": "0px 0px 24px -2px #F2B64080" }, "dark": { "value": "0px 0px 24px -2px #F2B64080" }, "usage": "전설 카드 빛 — hover 전에도 은은히" }
+    },
+    "normal": {
+      "xsmall": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 1px 2px -1px #1717171A"
+        },
+        "dark": {
+          "value": "0px 1px 2px -1px #1717171A"
+        },
+        "usage": "요소를 띄우는 box-shadow — xsmall 단계",
+        "usedIn": [
+          "select",
+          "text-area",
+          "text-field"
+        ]
+      },
+      "small": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 2px 4px -2px #1717170F, 0px 4px 6px -1px #1717170F"
+        },
+        "dark": {
+          "value": "0px 2px 4px -2px #1717170F, 0px 4px 6px -1px #1717170F"
+        },
+        "usage": "요소를 띄우는 box-shadow — small 단계",
+        "usedIn": [
+          "autocomplete",
+          "date-picker",
+          "date-range-picker",
+          "menu",
+          "time-picker"
+        ]
+      },
+      "medium": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 4px 6px -2px #17171712, 0px 10px 15px -3px #17171712"
+        },
+        "dark": {
+          "value": "0px 4px 6px -2px #17171712, 0px 10px 15px -3px #17171712"
+        },
+        "usage": "요소를 띄우는 box-shadow — medium 단계"
+      },
+      "large": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 6px 10px -4px #17171714, 0px 16px 24px -6px #17171714"
+        },
+        "dark": {
+          "value": "0px 6px 10px -4px #17171714, 0px 16px 24px -6px #17171714"
+        },
+        "usage": "요소를 띄우는 box-shadow — large 단계"
+      },
+      "xlarge": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 10px 15px -5px #1717171A, 0px 24px 38px -10px #1717171F"
+        },
+        "dark": {
+          "value": "0px 10px 15px -5px #1717171A, 0px 24px 38px -10px #1717171F"
+        },
+        "usage": "요소를 띄우는 box-shadow — xlarge 단계"
+      }
+    },
+    "drop": {
+      "xsmall": {
+        "$type": "shadow",
+        "light": {
+          "value": "drop-shadow(0px 1px 0.5px #1717170D)"
+        },
+        "dark": {
+          "value": "drop-shadow(0px 1px 0.5px #1717170D)"
+        },
+        "usage": "형태를 따라가는 filter: drop-shadow — xsmall 단계"
+      },
+      "small": {
+        "$type": "shadow",
+        "light": {
+          "value": "drop-shadow(0px 2px 1px #17171708) drop-shadow(0px 4px 2.5px #17171708)"
+        },
+        "dark": {
+          "value": "drop-shadow(0px 2px 1px #17171708) drop-shadow(0px 4px 2.5px #17171708)"
+        },
+        "usage": "형태를 따라가는 filter: drop-shadow — small 단계"
+      },
+      "medium": {
+        "$type": "shadow",
+        "light": {
+          "value": "drop-shadow(0px 4px 2px #17171709) drop-shadow(0px 10px 6px #17171709)"
+        },
+        "dark": {
+          "value": "drop-shadow(0px 4px 2px #17171709) drop-shadow(0px 10px 6px #17171709)"
+        },
+        "usage": "형태를 따라가는 filter: drop-shadow — medium 단계"
+      },
+      "large": {
+        "$type": "shadow",
+        "light": {
+          "value": "drop-shadow(0px 6px 3px #1717170A) drop-shadow(0px 16px 9px #17171708)"
+        },
+        "dark": {
+          "value": "drop-shadow(0px 6px 3px #1717170A) drop-shadow(0px 16px 9px #17171708)"
+        },
+        "usage": "형태를 따라가는 filter: drop-shadow — large 단계"
+      },
+      "xlarge": {
+        "$type": "shadow",
+        "light": {
+          "value": "drop-shadow(0px 10px 5px #1717170D) drop-shadow(0px 24px 14px #1717170F)"
+        },
+        "dark": {
+          "value": "drop-shadow(0px 10px 5px #1717170D) drop-shadow(0px 24px 14px #1717170F)"
+        },
+        "usage": "형태를 따라가는 filter: drop-shadow — xlarge 단계"
+      }
+    },
+    "spread": {
+      "small": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 0px 60px 0px #1717171A"
+        },
+        "dark": {
+          "value": "0px 0px 60px 0px #1717171A"
+        },
+        "usage": "넓게 퍼지는 box-shadow — small 단계",
+        "usedIn": [
+          "popover"
+        ]
+      },
+      "medium": {
+        "$type": "shadow",
+        "light": {
+          "value": "0px 15px 75px 0px #17171729"
+        },
+        "dark": {
+          "value": "0px 15px 75px 0px #17171729"
+        },
+        "usage": "넓게 퍼지는 box-shadow — medium 단계"
+      }
+    }
+  },
+  "effect": {
+    "platform": {
+      "ios": {
+        "navigation": {
+          "$type": "composite",
+          "light": {
+            "backgroundColor": "#ffffffE0",
+            "backdropFilter": "blur(32px)"
+          },
+          "dark": {
+            "backgroundColor": "#212225E0",
+            "backdropFilter": "blur(32px)"
+          },
+          "source": "addHexOpacity(semantic.background.elevated.normal, opacity.88) + backdrop-filter: blur(32px)",
+          "usage": "iOS 스타일 반투명 블러 내비게이션 바 배경"
+        }
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "value": "Pretendard JP",
+      "fallbackNote": "코드에 font-family 지정 없음. docs foundations/typography 와 packages/wds/README 에서 Pretendard(JP) 로드를 안내",
+      "usage": "모든 텍스트 (한·영·일 지원)"
+    },
+    "fontWeight": {
+      "regular": {
+        "value": 400,
+        "usage": "기본 굵기"
+      },
+      "medium": {
+        "value": 500,
+        "usage": "약간 강조"
+      },
+      "bold": {
+        "value": 600,
+        "valueForLargeVariants": 700,
+        "largeVariants": [
+          "display1",
+          "display2",
+          "display3",
+          "title1",
+          "title2",
+          "title3"
+        ],
+        "usage": "강조 — display1/display2/display3/title1/title2/title3 는 700, 나머지는 600"
+      }
+    },
+    "variant": {
+      "display1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "3.5rem",
+          "px": 56
+        },
+        "lineHeight": {
+          "rem": "4.5rem",
+          "px": 72
+        },
+        "letterSpacing": {
+          "em": "-0.0319em",
+          "px": -1.786
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        },
+        "usage": "가장 큰 표시용 문구 (히어로·랜딩 헤드라인)"
+      },
+      "display2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "2.5rem",
+          "px": 40
+        },
+        "lineHeight": {
+          "rem": "3.25rem",
+          "px": 52
+        },
+        "letterSpacing": {
+          "em": "-0.0282em",
+          "px": -1.128
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        },
+        "usage": "가장 큰 표시용 문구 (히어로·랜딩 헤드라인)"
+      },
+      "display3": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "2.25rem",
+          "px": 36
+        },
+        "lineHeight": {
+          "rem": "3rem",
+          "px": 48
+        },
+        "letterSpacing": {
+          "em": "-0.027em",
+          "px": -0.972
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        },
+        "usage": "가장 큰 표시용 문구 (히어로·랜딩 헤드라인)"
+      },
+      "title1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "2rem",
+          "px": 32
+        },
+        "lineHeight": {
+          "rem": "2.75rem",
+          "px": 44
+        },
+        "letterSpacing": {
+          "em": "-0.0253em",
+          "px": -0.81
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        },
+        "usage": "페이지·화면의 큰 제목"
+      },
+      "title2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1.75rem",
+          "px": 28
+        },
+        "lineHeight": {
+          "rem": "2.375rem",
+          "px": 38
+        },
+        "letterSpacing": {
+          "em": "-0.0236em",
+          "px": -0.661
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        },
+        "usage": "페이지·화면의 큰 제목"
+      },
+      "title3": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1.5rem",
+          "px": 24
+        },
+        "lineHeight": {
+          "rem": "2rem",
+          "px": 32
+        },
+        "letterSpacing": {
+          "em": "-0.023em",
+          "px": -0.552
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 700
+        },
+        "usage": "페이지·화면의 큰 제목",
+        "usedIn": [
+          "top-navigation"
+        ]
+      },
+      "heading1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1.375rem",
+          "px": 22
+        },
+        "lineHeight": {
+          "rem": "1.875rem",
+          "px": 30
+        },
+        "letterSpacing": {
+          "em": "-0.0194em",
+          "px": -0.427
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "섹션 제목"
+      },
+      "heading2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1.25rem",
+          "px": 20
+        },
+        "lineHeight": {
+          "rem": "1.75rem",
+          "px": 28
+        },
+        "letterSpacing": {
+          "em": "-0.012em",
+          "px": -0.24
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "섹션 제목",
+        "usedIn": [
+          "fallback-view",
+          "modal"
+        ]
+      },
+      "headline1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1.125rem",
+          "px": 18
+        },
+        "lineHeight": {
+          "rem": "1.625rem",
+          "px": 26
+        },
+        "letterSpacing": {
+          "em": "-0.002em",
+          "px": -0.036
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "목록·카드 안의 강조 문구",
+        "usedIn": [
+          "alert",
+          "fallback-view"
+        ]
+      },
+      "headline2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1.0625rem",
+          "px": 17
+        },
+        "lineHeight": {
+          "rem": "1.5rem",
+          "px": 24
+        },
+        "letterSpacing": {
+          "em": "0em",
+          "px": 0
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "목록·카드 안의 강조 문구",
+        "usedIn": [
+          "segmented-control",
+          "slider",
+          "tab",
+          "top-navigation"
+        ]
+      },
+      "body1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1rem",
+          "px": 16
+        },
+        "lineHeight": {
+          "rem": "1.5rem",
+          "px": 24
+        },
+        "letterSpacing": {
+          "em": "0.0057em",
+          "px": 0.091
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "본문",
+        "usedIn": [
+          "button",
+          "card",
+          "card-list",
+          "date-range-calendar",
+          "list",
+          "search-field",
+          "select",
+          "select-multiple",
+          "table",
+          "text-button",
+          "text-field"
+        ]
+      },
+      "body1-reading": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "1rem",
+          "px": 16
+        },
+        "lineHeight": {
+          "rem": "1.625rem",
+          "px": 26
+        },
+        "letterSpacing": {
+          "em": "0.0057em",
+          "px": 0.091
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "본문 — 여러 줄 읽기용(행간 넓힘)",
+        "usedIn": [
+          "fallback-view",
+          "text-area"
+        ]
+      },
+      "body2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.9375rem",
+          "px": 15
+        },
+        "lineHeight": {
+          "rem": "1.375rem",
+          "px": 22
+        },
+        "letterSpacing": {
+          "em": "0.0096em",
+          "px": 0.144
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "본문",
+        "usedIn": [
+          "accordion",
+          "alert",
+          "button",
+          "card",
+          "card-list",
+          "category",
+          "check-mark",
+          "checkbox",
+          "chip",
+          "filter-button",
+          "page-counter",
+          "pagination",
+          "popover",
+          "radio",
+          "section-message",
+          "segmented-control",
+          "snackbar",
+          "tab",
+          "toast"
+        ]
+      },
+      "body2-reading": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.9375rem",
+          "px": 15
+        },
+        "lineHeight": {
+          "rem": "1.5rem",
+          "px": 24
+        },
+        "letterSpacing": {
+          "em": "0.0096em",
+          "px": 0.144
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "본문 — 여러 줄 읽기용(행간 넓힘)",
+        "usedIn": [
+          "fallback-view"
+        ]
+      },
+      "label1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.875rem",
+          "px": 14
+        },
+        "lineHeight": {
+          "rem": "1.25rem",
+          "px": 20
+        },
+        "letterSpacing": {
+          "em": "0.0145em",
+          "px": 0.203
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "버튼·입력창·칩 등 UI 라벨",
+        "usedIn": [
+          "accordion",
+          "category",
+          "check-mark",
+          "checkbox",
+          "chip",
+          "filter-button",
+          "label",
+          "list",
+          "pagination",
+          "push-badge",
+          "radio",
+          "section-header",
+          "slider",
+          "text-button",
+          "text-field",
+          "tooltip"
+        ]
+      },
+      "label1-reading": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.875rem",
+          "px": 14
+        },
+        "lineHeight": {
+          "rem": "1.375rem",
+          "px": 22
+        },
+        "letterSpacing": {
+          "em": "0.0145em",
+          "px": 0.203
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "버튼·입력창·칩 등 UI 라벨 — 여러 줄 읽기용(행간 넓힘)",
+        "usedIn": [
+          "section-message"
+        ]
+      },
+      "label2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.8125rem",
+          "px": 13
+        },
+        "lineHeight": {
+          "rem": "1.125rem",
+          "px": 18
+        },
+        "letterSpacing": {
+          "em": "0.0194em",
+          "px": 0.252
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "버튼·입력창·칩 등 UI 라벨",
+        "usedIn": [
+          "action-area",
+          "button",
+          "card",
+          "card-list",
+          "content-badge",
+          "date-calendar",
+          "date-range-calendar",
+          "form",
+          "page-counter",
+          "pagination",
+          "popover",
+          "progress-tracker",
+          "segmented-control",
+          "snackbar",
+          "stepper",
+          "table",
+          "text-area"
+        ]
+      },
+      "caption1": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.75rem",
+          "px": 12
+        },
+        "lineHeight": {
+          "rem": "1rem",
+          "px": 16
+        },
+        "letterSpacing": {
+          "em": "0.0252em",
+          "px": 0.302
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "보조 설명·메타 정보 등 가장 작은 텍스트",
+        "usedIn": [
+          "autocomplete",
+          "category",
+          "chip",
+          "content-badge",
+          "filter-button",
+          "menu",
+          "progress-tracker",
+          "stepper"
+        ]
+      },
+      "caption2": {
+        "$type": "typography",
+        "fontSize": {
+          "rem": "0.6875rem",
+          "px": 11
+        },
+        "lineHeight": {
+          "rem": "0.875rem",
+          "px": 14
+        },
+        "letterSpacing": {
+          "em": "0.0311em",
+          "px": 0.342
+        },
+        "fontWeight": {
+          "regular": 400,
+          "medium": 500,
+          "bold": 600
+        },
+        "usage": "보조 설명·메타 정보 등 가장 작은 텍스트",
+        "usedIn": [
+          "bottom-navigation",
+          "card",
+          "content-badge",
+          "date-calendar",
+          "date-range-calendar",
+          "push-badge",
+          "tooltip"
+        ]
+      }
+    }
+  },
+  "spacing": {
+    "0": {
+      "$type": "dimension",
+      "value": "0px",
+      "usage": "0px 간격 (padding·margin·gap)"
+    },
+    "1": {
+      "$type": "dimension",
+      "value": "1px",
+      "usage": "1px 간격 (padding·margin·gap)"
+    },
+    "2": {
+      "$type": "dimension",
+      "value": "2px",
+      "usage": "2px 간격 (padding·margin·gap)"
+    },
+    "4": {
+      "$type": "dimension",
+      "value": "4px",
+      "usage": "4px 간격 (padding·margin·gap)"
+    },
+    "6": {
+      "$type": "dimension",
+      "value": "6px",
+      "usage": "6px 간격 (padding·margin·gap)"
+    },
+    "8": {
+      "$type": "dimension",
+      "value": "8px",
+      "usage": "8px 간격 (padding·margin·gap)"
+    },
+    "10": {
+      "$type": "dimension",
+      "value": "10px",
+      "usage": "10px 간격 (padding·margin·gap)"
+    },
+    "12": {
+      "$type": "dimension",
+      "value": "12px",
+      "usage": "12px 간격 (padding·margin·gap)"
+    },
+    "14": {
+      "$type": "dimension",
+      "value": "14px",
+      "usage": "14px 간격 (padding·margin·gap)"
+    },
+    "16": {
+      "$type": "dimension",
+      "value": "16px",
+      "usage": "16px 간격 (padding·margin·gap)"
+    },
+    "20": {
+      "$type": "dimension",
+      "value": "20px",
+      "usage": "20px 간격 (padding·margin·gap)"
+    },
+    "24": {
+      "$type": "dimension",
+      "value": "24px",
+      "usage": "24px 간격 (padding·margin·gap)"
+    },
+    "32": {
+      "$type": "dimension",
+      "value": "32px",
+      "usage": "32px 간격 (padding·margin·gap)"
+    },
+    "40": {
+      "$type": "dimension",
+      "value": "40px",
+      "usage": "40px 간격 (padding·margin·gap)"
+    },
+    "48": {
+      "$type": "dimension",
+      "value": "48px",
+      "usage": "48px 간격 (padding·margin·gap)"
+    },
+    "56": {
+      "$type": "dimension",
+      "value": "56px",
+      "usage": "56px 간격 (padding·margin·gap)"
+    },
+    "64": {
+      "$type": "dimension",
+      "value": "64px",
+      "usage": "64px 간격 (padding·margin·gap)"
+    },
+    "72": {
+      "$type": "dimension",
+      "value": "72px",
+      "usage": "72px 간격 (padding·margin·gap)"
+    },
+    "80": {
+      "$type": "dimension",
+      "value": "80px",
+      "usage": "80px 간격 (padding·margin·gap)"
+    },
+    "0.5": {
+      "$type": "dimension",
+      "value": "0.5px",
+      "usage": "0.5px 간격 (padding·margin·gap)"
+    }
+  },
+  "radius": {
+    "0": {
+      "$type": "dimension",
+      "value": "0px",
+      "usage": "모서리 없음 — 붙어 있는 쪽 모서리를 직각으로 만들 때",
+      "usedIn": [
+        "icon-button",
+        "modal",
+        "page-counter",
+        "segmented-control",
+        "text-field",
+        "thumbnail"
+      ]
+    },
+    "3": {
+      "$type": "dimension",
+      "value": "3px",
+      "usage": "3px 둥근 모서리",
+      "usedIn": [
+        "skeleton"
+      ]
+    },
+    "5": {
+      "$type": "dimension",
+      "value": "5px",
+      "usage": "5px 둥근 모서리",
+      "usedIn": [
+        "checkbox"
+      ]
+    },
+    "6": {
+      "$type": "dimension",
+      "value": "6px",
+      "usage": "6px 둥근 모서리",
+      "usedIn": [
+        "avatar",
+        "category",
+        "chip",
+        "filter-button",
+        "segmented-control",
+        "text-button",
+        "tooltip"
+      ]
+    },
+    "8": {
+      "$type": "dimension",
+      "value": "8px",
+      "usage": "8px 둥근 모서리",
+      "usedIn": [
+        "avatar",
+        "button",
+        "category",
+        "chip",
+        "content-badge",
+        "date-range-calendar",
+        "filter-button",
+        "pagination",
+        "segmented-control",
+        "time-view",
+        "tooltip"
+      ]
+    },
+    "10": {
+      "$type": "dimension",
+      "value": "10px",
+      "usage": "10px 둥근 모서리",
+      "usedIn": [
+        "avatar",
+        "button",
+        "category",
+        "chip",
+        "content-badge",
+        "filter-button",
+        "scroll-area",
+        "section-header",
+        "segmented-control"
+      ]
+    },
+    "12": {
+      "$type": "dimension",
+      "value": "12px",
+      "usage": "12px 둥근 모서리",
+      "usedIn": [
+        "alert",
+        "avatar",
+        "button",
+        "card",
+        "date-picker",
+        "date-range-picker",
+        "list",
+        "modal",
+        "popover",
+        "search-field",
+        "section-message",
+        "segmented-control",
+        "select",
+        "snackbar",
+        "table",
+        "text-area",
+        "text-field",
+        "thumbnail",
+        "time-picker",
+        "toast"
+      ]
+    },
+    "14": {
+      "$type": "dimension",
+      "value": "14px",
+      "usage": "14px 둥근 모서리",
+      "usedIn": [
+        "avatar"
+      ]
+    },
+    "16": {
+      "$type": "dimension",
+      "value": "16px",
+      "usage": "16px 둥근 모서리",
+      "usedIn": [
+        "autocomplete",
+        "menu",
+        "popover"
+      ]
+    },
+    "20": {
+      "$type": "dimension",
+      "value": "20px",
+      "usage": "20px 둥근 모서리",
+      "usedIn": [
+        "modal"
+      ]
+    },
+    "75": {
+      "$type": "dimension",
+      "value": "75px",
+      "usage": "완전히 둥근 알약·원형 모양 (요소 높이보다 큰 값)",
+      "usedIn": [
+        "switch"
+      ]
+    },
+    "100": {
+      "$type": "dimension",
+      "value": "100px",
+      "usage": "완전히 둥근 알약·원형 모양 (요소 높이보다 큰 값)",
+      "usedIn": [
+        "switch"
+      ]
+    },
+    "999": {
+      "$type": "dimension",
+      "value": "999px",
+      "usage": "완전히 둥근 알약·원형 모양 (요소 높이보다 큰 값)",
+      "usedIn": [
+        "progress-step-indicator",
+        "section-message",
+        "toast"
+      ]
+    },
+    "1000": {
+      "$type": "dimension",
+      "value": "1000px",
+      "usage": "완전히 둥근 알약·원형 모양 (요소 높이보다 큰 값)",
+      "usedIn": [
+        "modal",
+        "page-counter",
+        "pagination-dots",
+        "play-badge",
+        "slider",
+        "switch"
+      ]
+    },
+    "9999": {
+      "$type": "dimension",
+      "value": "9999px",
+      "usage": "완전히 둥근 알약·원형 모양 (요소 높이보다 큰 값)",
+      "usedIn": [
+        "avatar",
+        "check-mark",
+        "checkbox",
+        "icon-button",
+        "progress-tracker",
+        "push-badge",
+        "radio",
+        "round-checkbox",
+        "slider",
+        "stepper",
+        "toggle-icon"
+      ]
+    },
+    "10000": {
+      "$type": "dimension",
+      "value": "10000px",
+      "usage": "완전히 둥근 알약·원형 모양 (요소 높이보다 큰 값)",
+      "usedIn": [
+        "date-calendar"
+      ]
+    },
+    "50pct": {
+      "$type": "dimension",
+      "value": "50%",
+      "usage": "원형 (요소 크기의 절반)",
+      "usedIn": [
+        "skeleton"
+      ]
+    }
+  },
+  "opacity": {
+    "0": {
+      "$type": "number",
+      "value": 0,
+      "usage": "불투명도 0%"
+    },
+    "5": {
+      "$type": "number",
+      "value": 0.05,
+      "usage": "불투명도 5% — 반투명 semantic 1곳의 알파"
+    },
+    "8": {
+      "$type": "number",
+      "value": 0.08,
+      "usage": "불투명도 8% — 반투명 semantic 9곳의 알파"
+    },
+    "12": {
+      "$type": "number",
+      "value": 0.12,
+      "usage": "불투명도 12% — 반투명 semantic 1곳의 알파"
+    },
+    "16": {
+      "$type": "number",
+      "value": 0.16,
+      "usage": "불투명도 16% — 반투명 semantic 4곳의 알파"
+    },
+    "22": {
+      "$type": "number",
+      "value": 0.22,
+      "usage": "불투명도 22% — 반투명 semantic 3곳의 알파"
+    },
+    "28": {
+      "$type": "number",
+      "value": 0.28,
+      "usage": "불투명도 28% — 반투명 semantic 7곳의 알파"
+    },
+    "35": {
+      "$type": "number",
+      "value": 0.35,
+      "usage": "불투명도 35%"
+    },
+    "43": {
+      "$type": "number",
+      "value": 0.43,
+      "usage": "불투명도 43% — 반투명 semantic 8곳의 알파"
+    },
+    "52": {
+      "$type": "number",
+      "value": 0.52,
+      "usage": "불투명도 52% — 반투명 semantic 3곳의 알파"
+    },
+    "61": {
+      "$type": "number",
+      "value": 0.61,
+      "usage": "불투명도 61% — 반투명 semantic 4곳의 알파"
+    },
+    "74": {
+      "$type": "number",
+      "value": 0.74,
+      "usage": "불투명도 74% — 반투명 semantic 1곳의 알파"
+    },
+    "88": {
+      "$type": "number",
+      "value": 0.88,
+      "usage": "불투명도 88% — 반투명 semantic 2곳의 알파"
+    },
+    "97": {
+      "$type": "number",
+      "value": 0.97,
+      "usage": "불투명도 97%"
+    },
+    "100": {
+      "$type": "number",
+      "value": 1,
+      "usage": "불투명도 100%"
+    }
+  },
+  "breakpoint": {
+    "xl": {
+      "$type": "dimension",
+      "value": "1600px",
+      "usage": "반응형 xl 구간 시작 너비 (min-width: 1600px)"
+    },
+    "lg": {
+      "$type": "dimension",
+      "value": "1200px",
+      "usage": "반응형 lg 구간 시작 너비 (min-width: 1200px)"
+    },
+    "md": {
+      "$type": "dimension",
+      "value": "992px",
+      "usage": "반응형 md 구간 시작 너비 (min-width: 992px)"
+    },
+    "sm": {
+      "$type": "dimension",
+      "value": "768px",
+      "usage": "반응형 sm 구간 시작 너비 (min-width: 768px)"
+    },
+    "xs": {
+      "$type": "dimension",
+      "value": "0px",
+      "usage": "반응형 xs 구간 시작 너비 (min-width: 0px)"
+    }
+  },
+  "zIndex": {
+    "modal": {
+      "$type": "number",
+      "value": 1300,
+      "usage": "modal 레이어 쌓임 순서"
+    }
+  },
+  "fontFamily": {
+    "display": {
+      "$type": "fontFamily",
+      "value": "'Hahmlet', 'Nanum Myeongjo', serif",
+      "usage": "로고·페이지 제목·카드 이름·대화창 제목 (Google Fonts Hahmlet 700)"
+    },
+    "body": {
+      "$type": "fontFamily",
+      "value": "'Pretendard JP', Pretendard, system-ui, sans-serif",
+      "usage": "본문·입력·버튼 — Montage 기본 글꼴"
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": { "$type": "duration", "value": "120ms", "usage": "버튼 눌림, 색 바뀜" },
+      "normal": { "$type": "duration", "value": "200ms", "usage": "카드 떠오름, 빛 번짐" },
+      "slow": { "$type": "duration", "value": "1400ms", "usage": "스켈레톤 반짝임 한 바퀴" }
+    },
+    "easing": {
+      "standard": { "$type": "cubicBezier", "value": "cubic-bezier(0.2, 0, 0, 1)", "usage": "기본 움직임 곡선" }
+    },
+    "lift": {
+      "card": { "$type": "dimension", "value": "-4px", "usage": "카드 hover 시 위로 떠오르는 거리 (translateY)" }
+    }
+  }
+}

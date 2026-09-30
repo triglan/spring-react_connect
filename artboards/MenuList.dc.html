@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>진열장</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="montage.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
+</style>
+</helmet>
+<div class="app-shell" style="width: 1280px; height: 1580px;">
+<header class="app-header">
+<div class="app-header-inner">
+<a class="app-logo" href="Main.dc.html">
+<span class="app-logo-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<span class="heading1 display-font">모험가의 식탁</span>
+</a>
+<nav aria-label="주요 메뉴">
+<ul class="app-nav">
+<li><a class="app-nav-link label1 bold active" href="MenuList.dc.html">진열장</a></li>
+<li><a class="app-nav-link label1 bold" href="MenuForm.dc.html">카드 들이기</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="app-main">
+<div class="page-head">
+<div class="page-head-text">
+<h1 class="page-title title2 display-font">오늘의 진열장</h1>
+<p class="page-desc body2 regular">“어서 오게, 모험가. 오늘 들어온 카드는 36장이라네.” · 1 / 3 쪽</p>
+</div>
+<a class="btn btn-primary label1 bold" href="MenuForm.dc.html">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+카드 들이기
+</a>
+</div>
+
+<form class="panel" style="padding: var(--spacing-20); display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr) minmax(0, 1.3fr) auto; gap: var(--spacing-12); align-items: end;">
+<div class="field">
+<label class="field-label label2 bold" for="q">카드 이름</label>
+<div class="control">
+<span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+<input id="q" class="body2 regular" type="search" placeholder="카드 이름 검색">
+</div>
+</div>
+<div class="field">
+<label class="field-label label2 bold" for="category">요리 계통</label>
+<div class="control">
+<select id="category" class="body2 regular">
+<option>모든 계통</option>
+<optgroup label="식사"><option>한식</option><option>중식</option><option>일식</option><option>퓨전</option></optgroup>
+<optgroup label="음료"><option>커피</option><option>쥬스</option><option>기타</option></optgroup>
+<optgroup label="디저트"><option>동양</option><option>서양</option></optgroup>
+</select>
+</div>
+</div>
+<div class="field">
+<label class="field-label label2 bold" for="price">몸값</label>
+<div class="control">
+<input id="price" class="body2 regular" type="number" placeholder="예: 10000">
+<span class="suffix label1 bold">G 넘는 것만</span>
+</div>
+</div>
+<div style="display: flex; gap: var(--spacing-8);">
+<button class="btn btn-outlined label1 medium" type="reset">비우기</button>
+<button class="btn btn-primary label1 bold" type="submit">찾기</button>
+</div>
+</form>
+
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<p class="label1 medium" style="color: var(--color-game-label-normal);">진열된 카드 12장 · 최근 들어온 순</p>
+<div class="legend caption1 medium" aria-label="레어도">
+<span class="legend-item rarity-common"><span class="gem"></span>일반</span>
+<span class="legend-item rarity-uncommon"><span class="gem"></span>고급</span>
+<span class="legend-item rarity-rare"><span class="gem"></span>희귀</span>
+<span class="legend-item rarity-epic"><span class="gem"></span>영웅</span>
+<span class="legend-item rarity-legendary"><span class="gem"></span>전설</span>
+</div>
+</div>
+
+<div class="menu-grid">
+<sc-for list="{{menus}}" as="m" hint-placeholder-count="12">
+<a class="{{m.cardClass}}" href="MenuDetail.dc.html">
+<div class="menu-card-top">
+<span class="card-no caption1 bold">No.{{m.no}}</span>
+<span class="rarity-tag caption1 bold"><span class="gem"></span>{{m.rarityName}}</span>
+</div>
+<div class="card-art">
+<svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg>
+<span class="category caption1 medium">{{m.categoryName}}</span>
+<sc-if value="{{m.soldOut}}" hint-placeholder-val="{{false}}">
+<span class="stamp label1 bold">품절</span>
+</sc-if>
+</div>
+<p class="menu-card-name headline1 display-font">{{m.menuName}}</p>
+<div class="menu-card-foot">
+<span class="price headline2 bold">{{m.price}}<span class="caption1 bold">G</span></span>
+<sc-if value="{{m.orderable}}" hint-placeholder-val="{{true}}">
+<span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span>
+</sc-if>
+<sc-if value="{{m.soldOut}}" hint-placeholder-val="{{false}}">
+<span class="status status-off caption1 bold"><span class="dot"></span>품절</span>
+</sc-if>
+</div>
+</a>
+</sc-for>
+</div>
+
+<nav class="pagination" aria-label="쪽">
+<button class="page-btn label1 medium" type="button" disabled="disabled" aria-label="앞 쪽">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<button class="page-btn is-current label1 bold" type="button" aria-current="page">1</button>
+<button class="page-btn label1 medium" type="button">2</button>
+<button class="page-btn label1 medium" type="button">3</button>
+<button class="page-btn label1 medium" type="button" aria-label="다음 쪽">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+</nav>
+</main>
+<footer class="app-footer">
+<div class="app-footer-inner">
+<p class="caption1 medium">모험가의 식탁 · 밤에만 여는 요리 카드 가게</p>
+<p class="caption1 regular">Montage 디자인 토큰 · Spring Boot 메뉴 API</p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1580}}'>
+class Component extends DCLogic {
+renderVals() {
+var raw = [
+[36, '초능력자의 에너지볼', 9500, '음료', 'Y'],
+[35, '백년초 스무디', 5600, '기타', 'Y'],
+[34, '귀신이 곡한 누룽지', 7000, '중식', 'Y'],
+[33, '마법사의 램버거', 11000, '식사', 'Y'],
+[32, '외계인의 초록 젤리', 4200, '동양', 'Y'],
+[31, '펭귄의 꿈 파르페', 8500, '기타', 'Y'],
+[30, '불타는 치킨', 9900, '식사', 'N'],
+[29, '드래곤 숨결 핫소스', 3000, '식사', 'Y'],
+[28, '신비로운 유니콘 아이스크림', 5500, '기타', 'Y'],
+[27, '해적왕의 보물 상자', 12000, '동양', 'Y'],
+[26, '달빛 요정 케이크', 7500, '서양', 'Y'],
+[25, '바다의 속삭임 스무디', 6500, '기타', 'Y']
+];
+var rarity = function (price) {
+if (price >= 20000) return ['legendary', '전설'];
+if (price >= 12000) return ['epic', '영웅'];
+if (price >= 8000) return ['rare', '희귀'];
+if (price >= 5000) return ['uncommon', '고급'];
+return ['common', '일반'];
+};
+return {
+menus: raw.map(function (r, i) {
+var rr = rarity(r[2]);
+var cls = 'menu-card rarity-' + rr[0];
+if (r[4] === 'N') cls += ' is-soldout';
+if (i === 9) cls += ' is-hover';
+return {
+no: String(r[0]).padStart(3, '0'),
+menuName: r[1],
+price: r[2].toLocaleString('ko-KR') + ' ',
+categoryName: r[3],
+rarityName: rr[1],
+orderable: r[4] === 'Y',
+soldOut: r[4] === 'N',
+cardClass: cls
+};
+})
+};
+}
+}
+</script>
+</body>
+</html>

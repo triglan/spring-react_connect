@@ -1,0 +1,17 @@
+# 원본 디자인 시스템 (읽기 전용 참고 자료 — 토큰은 menu-app/design/ 에 추출해 두었다)
+montage-web-main/
+refference/
+
+# 로컬 도구 설정
+.claude/
+
+# 공통
+node_modules/
+dist/
+build/
+.gradle/
+.idea/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
