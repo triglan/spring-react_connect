@@ -1,7 +1,8 @@
 // 화면에서 쓰는 선 아이콘. 색은 부모의 color(currentColor)를 따른다.
 
+// 불꽃은 어디에 쓰이든 촛불처럼 일렁인다(.flame).
 export const FlameIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <svg className="flame" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z" />
   </svg>
 );
