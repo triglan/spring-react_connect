@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>연출 모음</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="montage.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1560px; box-sizing: border-box; padding: var(--spacing-40); display: flex; flex-direction: column; gap: var(--spacing-40); background: var(--color-game-background-base); color: var(--color-game-label-normal);">
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-24);">
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">입고 개봉 — 장부에 적은 직후. 뒷면이 떨어져 뒤집히고 레어도 색으로 빛이 터진다 (1.6초)</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-16); height: 420px;">
+<div class="reveal-stage rarity-rare demo-loop">
+<span class="reveal-burst"></span>
+<div class="reveal-card">
+<div class="menu-card rarity-rare">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.039</span><span class="rarity-tag caption1 bold"><span class="gem"></span>희귀</span></div>
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">한식</span></div>
+<p class="menu-card-name headline1 display-font">여우비 비빔밥</p>
+<div class="menu-card-foot"><span class="price headline2 bold">9,000 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+<div class="card-back"><span class="card-back-crest"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span><span class="label1 display-font">모험가의 식탁</span></div>
+</div>
+</div>
+<div class="reveal-stage rarity-legendary demo-loop">
+<span class="reveal-burst"></span>
+<div class="reveal-card">
+<div class="menu-card rarity-legendary">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.040</span><span class="rarity-tag caption1 bold"><span class="gem"></span>전설</span></div>
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">서양</span></div>
+<p class="menu-card-name headline1 display-font">용의 둥지 타르트</p>
+<div class="menu-card-foot"><span class="price headline2 bold">24,000 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+<div class="card-back"><span class="card-back-crest"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span><span class="label1 display-font">모험가의 식탁</span></div>
+</div>
+</div>
+</div>
+<div class="npc-head" style="padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-8); background: var(--color-game-background-raised); border: var(--spacing-1) solid var(--color-game-line-wood);">
+<span class="npc-face" aria-hidden="true"><svg class="flicker" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: var(--spacing-2); flex-grow: 1;">
+<p class="npc-name caption1 bold">상인</p>
+<p class="npc-line body2 regular">“장부에 적었네! 전설 카드라니, 오늘 운이 좋군.”</p>
+</div>
+<a class="btn btn-primary label1 bold" href="MenuDetail.dc.html">카드 보기</a>
+</div>
+</section>
+
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">불태우기 — 대화창에서 불태우기를 누른 직후. 오른쪽 아래에서 불이 붙어 왼쪽 위로 고르지 않게 타오르고, 가는 불씨 선 위로 그을음과 열기가 옅어지며 불똥이 튄다 (1.4초)</p>
+<div style="height: 420px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-12); background: var(--color-game-background-dimmer);">
+<div class="burn-wrap demo-loop">
+<div class="menu-card rarity-legendary burn-card">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.020</span><span class="rarity-tag caption1 bold"><span class="gem"></span>전설</span></div>
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">중식</span></div>
+<p class="menu-card-name headline1 display-font">마라깐쇼한라봉</p>
+<div class="menu-card-foot"><span class="price headline2 bold">22,000 <span class="caption1 bold">G</span></span><span class="status status-off caption1 bold"><span class="dot"></span>품절</span></div>
+</div>
+<span class="burn-fx burn-haze-fx"><span class="burn-haze"></span></span>
+<span class="burn-fx burn-char-fx"><span class="burn-char"></span></span>
+<span class="burn-fx burn-glow-fx"><span class="burn-glow"></span></span>
+<span class="burn-fx burn-ember-fx"><span class="burn-ember"></span></span>
+<span class="spark" style="--x: 88%; --y: 86%; --d: 120ms;"></span>
+<span class="spark" style="--x: 74%; --y: 92%; --d: 260ms;"></span>
+<span class="spark" style="--x: 70%; --y: 64%; --d: 480ms;"></span>
+<span class="spark" style="--x: 48%; --y: 72%; --d: 700ms;"></span>
+<span class="spark" style="--x: 40%; --y: 40%; --d: 920ms;"></span>
+<span class="spark" style="--x: 18%; --y: 30%; --d: 1150ms;"></span>
+</div>
+</div>
+<p class="caption1 regular" style="color: var(--color-game-label-alternative);">삭제 요청(DELETE → 200)이 성공한 뒤에만 태운다. 실패하면 태우지 않고 대화창에 장부 기록을 보여준다.</p>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-24);">
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">기울기와 광택 — 마우스를 따라 최대 8° 기울고 광택이 따라온다. 영웅·전설은 무지갯빛이 겹친다</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-24); padding: var(--spacing-16);">
+<div class="menu-card rarity-rare is-tilting" style="--tilt-x: -0.7; --tilt-y: 0.5; --gloss-x: 18%; --gloss-y: 80%;">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.031</span><span class="rarity-tag caption1 bold"><span class="gem"></span>희귀</span></div>
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">기타</span></div>
+<p class="menu-card-name headline1 display-font">펭귄의 꿈 파르페</p>
+<div class="menu-card-foot"><span class="price headline2 bold">8,500 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+<div class="menu-card rarity-epic is-tilting" style="--tilt-x: 0.8; --tilt-y: -0.5; --gloss-x: 82%; --gloss-y: 18%;">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.027</span><span class="rarity-tag caption1 bold"><span class="gem"></span>영웅</span></div>
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">동양</span></div>
+<p class="menu-card-name headline1 display-font">해적왕의 보물 상자</p>
+<div class="menu-card-foot"><span class="price headline2 bold">12,000 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+</div>
+</section>
+
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">전설 카드 금빛 테두리 — 테두리를 따라 금빛이 4초에 한 바퀴 돈다 (진열장·상세·배낭 어디서나)</p>
+<div style="display: flex; align-items: center; justify-content: center; padding: var(--spacing-16);">
+<div class="menu-card rarity-legendary has-orbit" style="width: 260px;">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.018</span><span class="rarity-tag caption1 bold"><span class="gem"></span>전설</span></div>
+<div class="card-art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18"></path><path d="M5 17a7 7 0 0 1 14 0"></path><path d="M12 10V8"></path><path d="M10.5 8h3"></path><path d="M4 20h16"></path></svg><span class="category caption1 medium">일식</span></div>
+<p class="menu-card-name headline1 display-font">붕어빵초밥</p>
+<div class="menu-card-foot"><span class="price headline2 bold">35,000 <span class="caption1 bold">G</span></span><span class="status status-on caption1 bold"><span class="dot"></span>판매 중</span></div>
+</div>
+</div>
+</section>
+</div>
+
+<div style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--spacing-24);">
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">진열 등장 — 쪽을 넘기거나 조건을 바꾸면 카드가 한 장씩 0.05초 간격으로 떠오른다</p>
+<div class="menu-grid enter-grid demo-loop">
+<sc-for list="{{enter}}" as="c" hint-placeholder-count="4">
+<div class="{{c.cls}}" style="--i: {{c.i}};">
+<div class="menu-card-top"><span class="card-no caption1 bold">No.{{c.no}}</span><span class="rarity-tag caption1 bold"><span class="gem"></span>{{c.rarity}}</span></div>
+<p class="menu-card-name headline2 display-font" style="min-height: 0;">{{c.name}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section class="panel" style="padding: var(--spacing-24); display: flex; flex-direction: column; gap: var(--spacing-16);">
+<p class="state-label label2 bold">촛불 일렁임 — 로고와 상인 얼굴의 불꽃</p>
+<div style="display: flex; align-items: center; justify-content: space-around; flex-grow: 1;">
+<span class="app-logo-mark is-lit" aria-hidden="true" style="width: var(--spacing-64); height: var(--spacing-64);"><svg class="flicker" width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<span class="npc-face" aria-hidden="true"><svg class="flicker" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+</div>
+<p class="caption1 regular" style="color: var(--color-game-label-alternative);">모든 연출은 운영체제의 ‘동작 줄이기’가 켜져 있으면 멈추고 결과만 보여준다.</p>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1560}}'>
+class Component extends DCLogic {
+renderVals() {
+var list = [
+[24, '모험가의 미트볼', '영웅', 'epic'],
+[23, '초콜릿 피자', '희귀', 'rare'],
+[22, '우주정복 마카롱', '고급', 'uncommon'],
+[21, '돌미나리백설기', '고급', 'uncommon']
+];
+return {
+enter: list.map(function (c, i) {
+return { i: i, no: String(c[0]).padStart(3, '0'), name: c[1], rarity: c[2], cls: 'menu-card rarity-' + c[3] };
+})
+};
+}
+}
+</script>
+</body>
+</html>

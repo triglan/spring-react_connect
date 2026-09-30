@@ -3230,6 +3230,9 @@
       },
       "candle": { "$type": "color", "light": { "value": "#FFB547" }, "dark": { "value": "#FFB547" }, "usage": "촛불빛 — 로고 불꽃, 빛 효과의 색" },
       "shimmer": { "$type": "color", "light": { "value": "#F4CE722E" }, "dark": { "value": "#F4CE722E" }, "usage": "스켈레톤 위를 사선으로 지나가는 빛줄기" },
+      "gloss": { "$type": "color", "light": { "value": "#FFF4DE2E" }, "dark": { "value": "#FFF4DE2E" }, "usage": "카드 기울기 광택 — 마우스 위치의 밝은 점" },
+      "ember": { "$type": "color", "light": { "value": "#FF6A2B" }, "dark": { "value": "#FF6A2B" }, "usage": "불태우기 연출 — 타들어가는 불씨 선" },
+      "ash": { "$type": "color", "light": { "value": "#3A322B" }, "dark": { "value": "#3A322B" }, "usage": "불태우기 연출 — 타고 남은 재" },
       "status": {
         "positive": { "$type": "color", "light": { "value": "#8ED081" }, "dark": { "value": "#8ED081" }, "usage": "판매 중" },
         "negative": { "$type": "color", "light": { "value": "#FF8A73" }, "dark": { "value": "#FF8A73" }, "usage": "오류·경고 글자, 입력 오류 테두리" },
@@ -4401,7 +4404,16 @@
     "duration": {
       "fast": { "$type": "duration", "value": "120ms", "usage": "버튼 눌림, 색 바뀜" },
       "normal": { "$type": "duration", "value": "200ms", "usage": "카드 떠오름, 빛 번짐" },
-      "slow": { "$type": "duration", "value": "1400ms", "usage": "스켈레톤 반짝임 한 바퀴" }
+      "slow": { "$type": "duration", "value": "1400ms", "usage": "스켈레톤 반짝임 한 바퀴" },
+      "stagger": { "$type": "duration", "value": "50ms", "usage": "진열 등장 — 카드 한 장마다 늦춰지는 간격" },
+      "reveal": { "$type": "duration", "value": "1600ms", "usage": "입고 개봉 — 떨어짐·뒤집힘·빛 터짐 전체" },
+      "burn": { "$type": "duration", "value": "1400ms", "usage": "불태우기 — 카드가 타서 재가 되는 전체" },
+      "flicker": { "$type": "duration", "value": "2600ms", "usage": "촛불 일렁임 한 바퀴" },
+      "orbit": { "$type": "duration", "value": "4000ms", "usage": "전설 카드 테두리 금빛이 한 바퀴 도는 시간" }
+    },
+    "tilt": {
+      "max": { "$type": "angle", "value": "8deg", "usage": "카드 기울기 최대 각도" },
+      "perspective": { "$type": "dimension", "value": "800px", "usage": "카드 기울기 원근 거리" }
     },
     "easing": {
       "standard": { "$type": "cubicBezier", "value": "cubic-bezier(0.2, 0, 0, 1)", "usage": "기본 움직임 곡선" }

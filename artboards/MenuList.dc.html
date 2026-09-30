@@ -18,13 +18,14 @@ body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:
 <header class="app-header">
 <div class="app-header-inner">
 <a class="app-logo" href="Main.dc.html">
-<span class="app-logo-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<span class="app-logo-mark is-lit" aria-hidden="true"><svg class="flicker" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
 <span class="heading1 display-font">모험가의 식탁</span>
 </a>
 <nav aria-label="주요 메뉴">
 <ul class="app-nav">
 <li><a class="app-nav-link label1 bold active" href="MenuList.dc.html">진열장</a></li>
 <li><a class="app-nav-link label1 bold" href="MenuForm.dc.html">카드 들이기</a></li>
+<li><a class="app-nav-link label1 bold" href="Backpack.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>배낭 <span class="nav-count caption1 bold">5</span></a></li>
 </ul>
 </nav>
 </div>
@@ -86,7 +87,8 @@ body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:
 
 <div class="menu-grid">
 <sc-for list="{{menus}}" as="m" hint-placeholder-count="12">
-<a class="{{m.cardClass}}" href="MenuDetail.dc.html">
+<div class="card-slot">
+<a class="{{m.cardClass}}" style="{{m.tiltStyle}}" href="MenuDetail.dc.html">
 <div class="menu-card-top">
 <span class="card-no caption1 bold">No.{{m.no}}</span>
 <span class="rarity-tag caption1 bold"><span class="gem"></span>{{m.rarityName}}</span>
@@ -109,6 +111,16 @@ body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:
 </sc-if>
 </div>
 </a>
+<sc-if value="{{m.bagOpen}}" hint-placeholder-val="{{true}}">
+<button class="bag-btn caption1 bold" type="button" aria-label="{{m.menuName}} 배낭에 담기"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>담기</button>
+</sc-if>
+<sc-if value="{{m.bagAdded}}" hint-placeholder-val="{{false}}">
+<button class="bag-btn is-added caption1 bold" type="button" aria-label="{{m.menuName}} 하나 더 담기"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>배낭에 2</button>
+</sc-if>
+<sc-if value="{{m.soldOut}}" hint-placeholder-val="{{false}}">
+<button class="bag-btn caption1 bold" type="button" disabled="disabled">담을 수 없음</button>
+</sc-if>
+</div>
 </sc-for>
 </div>
 
@@ -161,8 +173,11 @@ menus: raw.map(function (r, i) {
 var rr = rarity(r[2]);
 var cls = 'menu-card rarity-' + rr[0];
 if (r[4] === 'N') cls += ' is-soldout';
-if (i === 9) cls += ' is-hover';
+if (i === 9) cls += ' is-tilting';
 return {
+tiltStyle: i === 9 ? '--tilt-x: 0.6; --tilt-y: -0.4; --gloss-x: 78%; --gloss-y: 22%;' : '',
+bagAdded: i === 0,
+bagOpen: r[4] === 'Y' && i !== 0,
 no: String(r[0]).padStart(3, '0'),
 menuName: r[1],
 price: r[2].toLocaleString('ko-KR') + ' ',

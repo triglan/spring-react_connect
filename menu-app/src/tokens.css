@@ -244,6 +244,9 @@
   --color-game-gold-tint: #E0B2521F;
   --color-game-candle: #FFB547;
   --color-game-shimmer: #F4CE722E;
+  --color-game-gloss: #FFF4DE2E;
+  --color-game-ember: #FF6A2B;
+  --color-game-ash: #3A322B;
   --color-game-status-positive: #8ED081;
   --color-game-status-negative: #FF8A73;
   --color-game-status-negative-tint: #FF8A731F;
@@ -317,6 +320,13 @@
   --motion-duration-fast: 120ms;
   --motion-duration-normal: 200ms;
   --motion-duration-slow: 1400ms;
+  --motion-duration-stagger: 50ms;
+  --motion-duration-reveal: 1600ms;
+  --motion-duration-burn: 1400ms;
+  --motion-duration-flicker: 2600ms;
+  --motion-duration-orbit: 4000ms;
+  --motion-tilt-max: 8deg;
+  --motion-tilt-perspective: 800px;
   --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
   --motion-lift-card: -4px;
   --typography-display1-font-size: 3.5rem;
@@ -704,6 +714,9 @@
   --color-game-gold-tint: #E0B2521F;
   --color-game-candle: #FFB547;
   --color-game-shimmer: #F4CE722E;
+  --color-game-gloss: #FFF4DE2E;
+  --color-game-ember: #FF6A2B;
+  --color-game-ash: #3A322B;
   --color-game-status-positive: #8ED081;
   --color-game-status-negative: #FF8A73;
   --color-game-status-negative-tint: #FF8A731F;

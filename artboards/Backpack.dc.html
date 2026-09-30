@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>모험가의 배낭</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="montage.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Pretendard JP',Pretendard,system-ui,sans-serif;color:#EADCC3;background:#15100C}
+</style>
+</helmet>
+<div class="app-shell" style="width: 1280px; height: 1320px;">
+<header class="app-header">
+<div class="app-header-inner">
+<a class="app-logo" href="Main.dc.html">
+<span class="app-logo-mark is-lit" aria-hidden="true"><svg class="flicker" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<span class="heading1 display-font">모험가의 식탁</span>
+</a>
+<nav aria-label="주요 메뉴">
+<ul class="app-nav">
+<li><a class="app-nav-link label1 bold" href="MenuList.dc.html">진열장</a></li>
+<li><a class="app-nav-link label1 bold" href="MenuForm.dc.html">카드 들이기</a></li>
+<li><a class="app-nav-link label1 bold active" href="Backpack.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>배낭 <span class="nav-count caption1 bold">5</span></a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="app-main">
+<div class="page-head">
+<div class="page-head-text">
+<h1 class="page-title title2 display-font">모험가의 배낭</h1>
+<p class="page-desc body2 regular">“마음에 드는 카드를 잘 골랐군. 계산은 이쪽에서 하게.”</p>
+</div>
+</div>
+
+<div class="bag-layout">
+<div class="panel bag-list">
+<div class="bag-row rarity-rare">
+<span class="bag-rarity"></span>
+<div class="bag-name">
+<a class="headline2 display-font" href="MenuDetail.dc.html">초능력자의 에너지볼</a>
+<span class="caption1 medium" style="color: var(--color-game-label-alternative);">No.036 · 음료 · <span style="color: var(--color-game-rarity-rare);">희귀</span></span>
+</div>
+<span class="price label1 bold">9,500 G</span>
+<div class="stepper" role="group" aria-label="초능력자의 에너지볼 수량">
+<button type="button" class="label1 bold" aria-label="하나 빼기">−</button>
+<output class="label1 bold">2</output>
+<button type="button" class="label1 bold" aria-label="하나 더">+</button>
+</div>
+<span class="price headline2 bold" style="min-width: var(--spacing-80); text-align: right;">19,000 G</span>
+</div>
+
+<div class="bag-row rarity-uncommon">
+<span class="bag-rarity"></span>
+<div class="bag-name">
+<a class="headline2 display-font" href="MenuDetail.dc.html">귀신이 곡한 누룽지</a>
+<span class="caption1 medium" style="color: var(--color-game-label-alternative);">No.034 · 중식 · <span style="color: var(--color-game-rarity-uncommon);">고급</span></span>
+</div>
+<span class="price label1 bold">7,000 G</span>
+<div class="stepper" role="group" aria-label="귀신이 곡한 누룽지 수량">
+<button type="button" class="label1 bold" aria-label="하나 빼기">−</button>
+<output class="label1 bold">1</output>
+<button type="button" class="label1 bold" aria-label="하나 더">+</button>
+</div>
+<span class="price headline2 bold" style="min-width: var(--spacing-80); text-align: right;">7,000 G</span>
+</div>
+
+<div class="bag-row is-off rarity-rare">
+<span class="bag-rarity"></span>
+<div class="bag-name">
+<a class="headline2 display-font" href="MenuDetail.dc.html">불타는 치킨</a>
+<span class="warn-tag caption1 bold">담은 뒤 품절됐다네 · 계산에서 빠진다</span>
+</div>
+<span class="price label1 bold">9,900 G</span>
+<div class="stepper" role="group" aria-label="불타는 치킨 수량">
+<button type="button" class="label1 bold" aria-label="하나 빼기">−</button>
+<output class="label1 bold">1</output>
+<button type="button" class="label1 bold" aria-label="하나 더" disabled="disabled">+</button>
+</div>
+<button class="btn btn-text label2 medium" type="button">빼기</button>
+</div>
+
+<div class="bag-row is-off" style="--card-rarity: var(--color-game-line-wood);">
+<span class="bag-rarity"></span>
+<div class="bag-name">
+<span class="headline2 display-font" style="color: var(--color-game-label-assistive);">No.037</span>
+<span class="warn-tag caption1 bold">진열장에서 사라진 카드다 · 계산에서 빠진다</span>
+</div>
+<span></span>
+<span></span>
+<button class="btn btn-text label2 medium" type="button">빼기</button>
+</div>
+</div>
+
+<aside class="panel panel-gold bag-summary">
+<p class="headline1 display-font" style="color: var(--color-game-label-strong);">계산서</p>
+<dl class="label1 medium">
+<div><dt>담은 카드</dt><dd>3장</dd></div>
+<div><dt>계산에서 빠진 카드</dt><dd class="warn-tag">2장</dd></div>
+<div class="bag-total headline2 bold"><dt>합계</dt><dd class="price">26,000 G</dd></div>
+</dl>
+<button class="btn btn-primary label1 bold" type="button">계산하기</button>
+<button class="btn btn-text label2 medium" type="button">배낭 비우기</button>
+<p class="caption1 regular" style="color: var(--color-game-label-alternative);">배낭은 이 브라우저에만 보관된다. 몸값과 판매 여부는 열 때마다 진열장 기준으로 다시 맞춘다.</p>
+</aside>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-24);">
+<div style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+<p class="state-label label2 bold">계산하기를 누른 뒤 — 상인이 값을 받는다 (서버에 주문 API 가 없어 기록은 남지 않는다)</p>
+<div style="height: 300px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-12); background: var(--color-game-background-dimmer); border: var(--spacing-1) solid var(--color-game-line-wood);">
+<div class="npc-dialog" role="dialog" aria-labelledby="pay-title" style="width: 440px;">
+<div class="npc-head">
+<span class="npc-face" aria-hidden="true"><svg class="flicker" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3.2 5 5.6 5 10a5 5 0 0 1-10 0c0-2.4 1.2-3.9 2.5-5.2.3 1.6 1.1 2.7 2.3 3.2C11.2 7.8 11.3 4.6 12 2z"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: var(--spacing-2);">
+<p class="npc-name caption1 bold">상인</p>
+<h2 id="pay-title" class="heading2 display-font" style="color: var(--color-game-label-strong);">좋은 거래였네!</h2>
+</div>
+</div>
+<p class="npc-line body2 regular">26,000 G, 잘 받았네. 카드 3장은 배낭에서 꺼내 건네주지. 또 들르게, 모험가.</p>
+<a class="btn btn-primary label1 bold" href="MenuList.dc.html">진열장으로</a>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: var(--spacing-12);">
+<p class="state-label label2 bold">빈 배낭</p>
+<div class="panel" style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--spacing-16); text-align: center;">
+<span class="npc-face" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: var(--spacing-6);">
+<p class="npc-name caption1 bold">상인</p>
+<p class="headline1 display-font" style="color: var(--color-game-label-strong);">“배낭이 텅 비었군. 진열장부터 둘러보게.”</p>
+<p class="label2 regular" style="color: var(--color-game-label-alternative);">담은 카드 0장</p>
+</div>
+<a class="btn btn-outlined label1 medium" href="MenuList.dc.html">진열장으로</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="app-footer">
+<div class="app-footer-inner">
+<p class="caption1 medium">모험가의 식탁 · 밤에만 여는 요리 카드 가게</p>
+<p class="caption1 regular">Montage 디자인 토큰 · Spring Boot 메뉴 API</p>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1320}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

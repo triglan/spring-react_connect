@@ -9,9 +9,11 @@
     "MenuList.dc.html": { "x": 1360, "y": 0, "w": 1280, "h": 1580, "title": "2. 진열장 (메뉴 목록)" },
     "MenuDetail.dc.html": { "x": 0, "y": 1700, "w": 1280, "h": 1220, "title": "3. 카드 상세 (메뉴 상세)" },
     "MenuForm.dc.html": { "x": 1360, "y": 1700, "w": 1280, "h": 1220, "title": "4. 카드 장부 (메뉴 폼)" },
-    "States.dc.html": { "x": 2720, "y": 1700, "w": 1280, "h": 1220, "title": "5. 상태 모음" }
+    "States.dc.html": { "x": 2720, "y": 1700, "w": 1280, "h": 1220, "title": "5. 상태 모음" },
+    "Backpack.dc.html": { "x": 2720, "y": 0, "w": 1280, "h": 1320, "title": "6. 모험가의 배낭" },
+    "Effects.dc.html": { "x": 4080, "y": 1700, "w": 1280, "h": 1560, "title": "7. 연출 모음" }
   },
-  "order": ["Main.dc.html", "MenuList.dc.html", "MenuDetail.dc.html", "MenuForm.dc.html", "States.dc.html"],
+  "order": ["Main.dc.html", "MenuList.dc.html", "MenuDetail.dc.html", "MenuForm.dc.html", "States.dc.html", "Backpack.dc.html", "Effects.dc.html"],
   "notes": {},
   "designSystems": []
 }
