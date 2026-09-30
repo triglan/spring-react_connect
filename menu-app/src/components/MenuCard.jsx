@@ -5,13 +5,13 @@ import CardFace from './CardFace.jsx';
 import { BagIcon, CheckIcon } from './Icons.jsx';
 
 // 카드(링크) 안에 버튼을 넣을 수 없어서, 담기 버튼은 같은 칸 위에 겹쳐 둔다.
-const MenuCard = ({ menu }) => {
+const MenuCard = ({ menu, order = 0 }) => {
   const { qtyOf, add } = useBackpack();
   const qty = qtyOf(menu.menuCode);
   const soldOut = menu.orderableStatus === 'N';
 
   return (
-    <div className="card-slot">
+    <div className="card-slot" style={{ '--i': order }}>
       <CardFace as={Link} to={`/menus/${menu.menuCode}`} menu={menu} />
       {soldOut ? (
         <button type="button" className="bag-btn caption1 bold" disabled>

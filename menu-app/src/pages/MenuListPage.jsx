@@ -234,7 +234,8 @@ const MenuListPage = () => {
               ))}
             </ul>
           </div>
-          <MenuGrid menus={view.items} />
+          {/* 조건·순서·쪽이 바뀌면 격자를 새로 그려 카드가 다시 차례로 떠오르게 한다 */}
+          <MenuGrid key={searchParams.toString()} menus={view.items} />
           <Pagination page={filters.page} totalPages={view.totalPages} onChange={goToPage} />
         </>
       )}

@@ -1345,6 +1345,21 @@ a.menu-card:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
+/* ─── 연출: 진열 등장 ─── */
+
+/* 카드(.menu-card)는 hover·기울기로 transform 을 쓰므로, 등장은 감싸는 칸(.card-slot)에 건다 */
+.enter-grid > .card-slot {
+  animation: card-enter var(--motion-duration-normal) var(--motion-easing-standard) both;
+  animation-delay: calc(var(--i, 0) * var(--motion-duration-stagger));
+}
+
+@keyframes card-enter {
+  from {
+    opacity: var(--opacity-0);
+    transform: translateY(var(--spacing-12));
+  }
+}
+
 /* ─── 연출: 촛불 일렁임 ─── */
 
 .flame {
