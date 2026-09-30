@@ -472,10 +472,15 @@ a {
   box-shadow: var(--shadow-game-panel), var(--card-glow);
 }
 
-a.menu-card:hover,
-a.menu-card:focus-visible {
-  box-shadow: var(--shadow-game-lift), var(--card-glow);
+/* 떠오름은 카드를 감싼 칸(.card-slot)에 건다 — 칸 위에 겹친 담기 버튼도 카드와 함께 떠오른다 */
+.card-slot:hover,
+.card-slot:focus-within {
   transform: translateY(var(--motion-lift-card));
+}
+
+.card-slot:hover > .menu-card,
+.card-slot:focus-within > .menu-card {
+  box-shadow: var(--shadow-game-lift), var(--card-glow);
 }
 
 .menu-card-top {
@@ -618,6 +623,7 @@ a.menu-card:focus-visible {
 .card-slot {
   position: relative;
   display: flex;
+  transition: transform var(--motion-duration-normal) var(--motion-easing-standard);
 }
 
 .card-slot > .menu-card {
@@ -826,7 +832,8 @@ a.menu-card:focus-visible {
   padding: var(--spacing-32);
 }
 
-.menu-card.is-large {
+.menu-card.is-large,
+.detail-card-slot {
   align-self: start;
 }
 
@@ -1365,7 +1372,7 @@ a.menu-card:focus-visible {
 
 /* 카드(.menu-card)는 hover·기울기로 transform 을 쓰므로, 등장은 감싸는 칸(.card-slot)에 건다 */
 .enter-grid > .card-slot {
-  animation: card-enter var(--motion-duration-normal) var(--motion-easing-standard) both;
+  animation: card-enter var(--motion-duration-normal) var(--motion-easing-standard) backwards;
   animation-delay: calc(var(--i, 0) * var(--motion-duration-stagger));
 }
 
@@ -1378,9 +1385,8 @@ a.menu-card:focus-visible {
 
 /* ─── 연출: 카드 기울기와 광택 ─── */
 
-/* useTilt 가 마우스 위치를 --tilt-x/-y(-1~1), --gloss-x/-y(%)로 넣고 .is-tilting 을 붙인다 */
-.menu-card.is-tilting {
-  box-shadow: var(--shadow-game-lift), var(--card-glow);
+/* 기울기도 칸(.card-slot)에 건다. useTilt 가 마우스 위치를 --tilt-x/-y(-1~1), --gloss-x/-y(%)로 넣고 .is-tilting 을 붙인다 */
+.card-slot.is-tilting {
   transform: perspective(var(--motion-tilt-perspective))
     rotateX(calc(var(--tilt-y, 0) * var(--motion-tilt-max) * -1))
     rotateY(calc(var(--tilt-x, 0) * var(--motion-tilt-max)))
@@ -1389,7 +1395,11 @@ a.menu-card:focus-visible {
 }
 
 /* 마우스 자리에 밝은 광택 */
-.menu-card.is-tilting::before {
+.card-slot.is-tilting > .menu-card {
+  box-shadow: var(--shadow-game-lift), var(--card-glow);
+}
+
+.card-slot.is-tilting > .menu-card::before {
   position: absolute;
   inset: var(--spacing-0);
   z-index: 1;
@@ -1400,8 +1410,8 @@ a.menu-card:focus-visible {
 }
 
 /* 영웅·전설은 무지갯빛이 겹쳐 마우스를 따라 흐른다 */
-.menu-card.is-tilting.rarity-epic::after,
-.menu-card.is-tilting.rarity-legendary::after {
+.card-slot.is-tilting > .menu-card.rarity-epic::after,
+.card-slot.is-tilting > .menu-card.rarity-legendary::after {
   position: absolute;
   inset: var(--spacing-0);
   z-index: 1;

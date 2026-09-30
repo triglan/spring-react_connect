@@ -135,7 +135,11 @@ const MenuDetail = ({ menu, justCreated, onRevealEnd, onBack, onBurn, onBurned }
   }, [justCreated, onRevealEnd]);
   const rarity = getRarity(menu.menuPrice);
   const soldOut = menu.orderableStatus === 'N';
-  const card = <CardFace menu={menu} size="large" {...tilt} />;
+  const card = (
+    <div className="card-slot detail-card-slot" {...tilt}>
+      <CardFace menu={menu} size="large" />
+    </div>
+  );
 
   const confirmBurn = async () => {
     await onBurn();

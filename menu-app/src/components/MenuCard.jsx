@@ -13,8 +13,9 @@ const MenuCard = ({ menu, order = 0 }) => {
   const tilt = useTilt();
 
   return (
-    <div className="card-slot" style={{ '--i': order }}>
-      <CardFace as={Link} to={`/menus/${menu.menuCode}`} menu={menu} {...tilt} />
+    // 떠오름·기울기는 이 칸에 걸어 담기 버튼도 카드와 함께 움직이게 한다
+    <div className="card-slot" style={{ '--i': order }} {...tilt}>
+      <CardFace as={Link} to={`/menus/${menu.menuCode}`} menu={menu} />
       {soldOut ? (
         <button type="button" className="bag-btn caption1 bold" disabled>
           담을 수 없음
