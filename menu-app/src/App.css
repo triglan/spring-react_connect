@@ -580,6 +580,227 @@ a.menu-card:focus-visible {
   transform: translate(-50%, -50%) rotate(-12deg);
 }
 
+/* ─── 배낭 ─── */
+
+.app-nav-link {
+  gap: var(--spacing-6);
+}
+
+.nav-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--spacing-20);
+  height: var(--spacing-20);
+  padding: var(--spacing-0) var(--spacing-6);
+  border-radius: var(--radius-9999);
+  background: var(--color-game-gold-normal);
+  color: var(--color-game-gold-on-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.card-slot {
+  position: relative;
+  display: flex;
+}
+
+.card-slot > .menu-card {
+  flex: 1;
+}
+
+/* 카드 그림 칸의 오른쪽 위에 겹친다 */
+.bag-btn {
+  position: absolute;
+  top: calc(var(--spacing-48) + var(--spacing-8));
+  right: var(--spacing-20);
+  z-index: 1;
+  display: inline-flex;
+  gap: var(--spacing-4);
+  align-items: center;
+  padding: var(--spacing-6) var(--spacing-10);
+  border: var(--spacing-1) solid var(--color-game-line-gold);
+  border-radius: var(--radius-9999);
+  background: var(--color-game-background-raised);
+  color: var(--color-game-gold-strong);
+  transition: background-color var(--motion-duration-fast) var(--motion-easing-standard),
+    transform var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.bag-btn:hover:not(:disabled) {
+  background: var(--color-game-gold-tint);
+}
+
+.bag-btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.bag-btn.is-added {
+  background: var(--color-game-gold-tint);
+}
+
+.bag-btn:disabled {
+  border-color: var(--color-game-line-wood);
+  background: var(--color-game-background-inset);
+  color: var(--color-game-label-assistive);
+  cursor: default;
+}
+
+.bag-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--spacing-80) * 4 + var(--spacing-20));
+  gap: var(--spacing-24);
+  align-items: start;
+}
+
+.bag-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.bag-row {
+  display: grid;
+  grid-template-columns: var(--spacing-6) minmax(0, 1fr) auto auto calc(var(--spacing-80) + var(--spacing-20));
+  gap: var(--spacing-16);
+  align-items: center;
+  padding: var(--spacing-16) var(--spacing-20);
+  border-bottom: var(--spacing-1) solid var(--color-game-line-wood);
+}
+
+.bag-row:last-child {
+  border-bottom: 0;
+}
+
+.bag-row.is-gone {
+  --card-rarity: var(--color-game-line-wood);
+}
+
+.bag-rarity {
+  align-self: stretch;
+  border-radius: var(--radius-9999);
+  background: var(--card-rarity);
+}
+
+.bag-name {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  min-width: var(--spacing-0);
+}
+
+.bag-name a {
+  color: var(--color-game-label-strong);
+  text-decoration: none;
+}
+
+.bag-name a:hover {
+  color: var(--color-game-gold-strong);
+}
+
+.bag-meta {
+  color: var(--color-game-label-alternative);
+}
+
+.bag-row.is-off .bag-name a,
+.bag-row.is-off .price,
+.bag-gone-name {
+  color: var(--color-game-label-assistive);
+}
+
+.bag-subtotal {
+  text-align: right;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  border: var(--spacing-1) solid var(--color-game-line-wood);
+  border-radius: var(--radius-8);
+  background: var(--color-game-background-inset);
+}
+
+.stepper button {
+  width: var(--spacing-32);
+  height: var(--spacing-32);
+  border: 0;
+  background: transparent;
+  color: var(--color-game-label-normal);
+}
+
+.stepper button:disabled {
+  color: var(--color-game-label-assistive);
+  cursor: default;
+}
+
+.stepper output {
+  min-width: var(--spacing-24);
+  color: var(--color-game-label-strong);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.bag-summary {
+  position: sticky;
+  top: calc(var(--spacing-72) + var(--spacing-24));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  padding: var(--spacing-24);
+}
+
+.bag-summary-title {
+  color: var(--color-game-label-strong);
+}
+
+.bag-summary dl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.bag-summary dl div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-game-label-alternative);
+}
+
+.bag-summary .bag-total {
+  padding-top: var(--spacing-12);
+  border-top: var(--spacing-1) solid var(--color-game-line-wood);
+  color: var(--color-game-label-strong);
+}
+
+.bag-note {
+  color: var(--color-game-label-alternative);
+}
+
+.bag-loading {
+  padding: var(--spacing-24);
+}
+
+.warn-tag {
+  color: var(--color-game-status-negative);
+}
+
+@media (max-width: 992px) {
+  .bag-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bag-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .bag-row {
+    grid-template-columns: var(--spacing-6) minmax(0, 1fr) auto;
+  }
+
+  .bag-row > .price.label1 {
+    display: none;
+  }
+}
+
 /* ─── 상세 ─── */
 
 .detail {

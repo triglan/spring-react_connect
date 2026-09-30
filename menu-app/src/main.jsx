@@ -3,12 +3,15 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
 
 import App from './App.jsx';
+import BackpackProvider from './components/BackpackProvider.jsx';
 import './tokens.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <BackpackProvider>
+        <App />
+      </BackpackProvider>
     </BrowserRouter>
   </StrictMode>,
 );

@@ -7,8 +7,8 @@ const icons = {
   offline: DoorIcon,
 };
 
-const StateCard = ({ kind, speaker = '상인', line, fact, error, action }) => {
-  const Icon = icons[kind];
+const StateCard = ({ kind, icon, speaker = '상인', line, fact, error, action }) => {
+  const Icon = icon ?? icons[kind];
 
   return (
     <div className={`state-card${kind === 'error' ? ' is-error' : ''}`} role={kind === 'empty' ? 'status' : 'alert'}>

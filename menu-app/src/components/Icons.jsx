@@ -58,6 +58,19 @@ export const ChevronRightIcon = ({ size = 18 }) => (
   </svg>
 );
 
+export const BagIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M6 8h12l-1 12H7L6 8z" />
+    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+  </svg>
+);
+
+export const CheckIcon = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="m5 12 5 5 9-10" />
+  </svg>
+);
+
 export const DoorIcon = ({ size = 22 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <rect x="5" y="3" width="14" height="18" rx="1" />
