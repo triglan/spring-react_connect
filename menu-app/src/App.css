@@ -923,6 +923,128 @@ a {
   }
 }
 
+/* ─── 상세: 좌우 넘기기 ─── */
+
+.detail-card-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  align-self: start;
+  min-width: var(--spacing-0);
+}
+
+.card-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-8);
+}
+
+.card-nav-link {
+  display: flex;
+  gap: var(--spacing-6);
+  align-items: center;
+  min-width: var(--spacing-0);
+  padding: var(--spacing-10) var(--spacing-12);
+  border: var(--spacing-1) solid var(--color-game-line-wood);
+  border-radius: var(--radius-8);
+  background: var(--color-game-background-raised);
+  color: var(--color-game-label-normal);
+  text-decoration: none;
+  transition: border-color var(--motion-duration-fast) var(--motion-easing-standard);
+}
+
+.card-nav-link:hover {
+  border-color: var(--color-game-line-gold);
+  color: var(--color-game-gold-strong);
+}
+
+.card-nav-link.is-next {
+  grid-column: 2;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.card-nav .nav-text {
+  display: flex;
+  flex-direction: column;
+  min-width: var(--spacing-0);
+}
+
+.card-nav .nav-no {
+  color: var(--color-game-label-alternative);
+}
+
+.card-nav .nav-name {
+  overflow: hidden;
+  color: var(--color-game-label-strong);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.key-hint {
+  color: var(--color-game-label-alternative);
+  text-align: center;
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--spacing-20);
+  height: var(--spacing-20);
+  padding: var(--spacing-0) var(--spacing-4);
+  border: var(--spacing-1) solid var(--color-game-line-wood);
+  border-radius: var(--radius-3);
+  background: var(--color-game-background-inset);
+  color: var(--color-game-label-normal);
+  font-family: inherit;
+}
+
+/* 카드 넘김 — 다음 카드면 지금 카드가 왼쪽으로 밀려나고 새 카드가 오른쪽에서 들어온다. 앞 카드는 반대 */
+.card-slide.is-leaving-next {
+  animation: slide-out-left var(--motion-duration-normal) var(--motion-easing-standard) forwards;
+}
+
+.card-slide.is-leaving-prev {
+  animation: slide-out-right var(--motion-duration-normal) var(--motion-easing-standard) forwards;
+}
+
+.card-slide.is-entering-next {
+  animation: slide-in-right var(--motion-duration-normal) var(--motion-easing-standard) backwards;
+}
+
+.card-slide.is-entering-prev {
+  animation: slide-in-left var(--motion-duration-normal) var(--motion-easing-standard) backwards;
+}
+
+@keyframes slide-out-left {
+  to {
+    opacity: var(--opacity-0);
+    transform: translateX(calc(var(--spacing-48) * -1)) rotate(-2deg);
+  }
+}
+
+@keyframes slide-out-right {
+  to {
+    opacity: var(--opacity-0);
+    transform: translateX(var(--spacing-48)) rotate(2deg);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: var(--opacity-0);
+    transform: translateX(var(--spacing-48)) rotate(2deg);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: var(--opacity-0);
+    transform: translateX(calc(var(--spacing-48) * -1)) rotate(-2deg);
+  }
+}
+
 .detail-actions-right {
   display: flex;
   gap: var(--spacing-8);

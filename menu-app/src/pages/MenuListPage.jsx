@@ -11,6 +11,7 @@ import MenuGridSkeleton from '../components/MenuGridSkeleton.jsx';
 import Pagination from '../components/Pagination.jsx';
 import StateCard from '../components/StateCard.jsx';
 import {
+  PAGE_SIZE,
   applyClientFilters,
   describeFilters,
   hasFilters,
@@ -20,7 +21,6 @@ import {
 import { DEFAULT_SORT, SORT_OPTIONS, findSort } from '../components/menuSort.js';
 import { rarityLegend } from '../components/rarity.js';
 
-const PAGE_SIZE = 12;
 
 // 조회 방식
 // - 조건 없음: GET /api/menus/pages 로 서버가 나눈 쪽을 받는다.
@@ -235,7 +235,11 @@ const MenuListPage = () => {
             </ul>
           </div>
           {/* 조건·순서·쪽이 바뀌면 격자를 새로 그려 카드가 다시 차례로 떠오르게 한다 */}
-          <MenuGrid key={searchParams.toString()} menus={view.items} />
+          <MenuGrid
+            key={searchParams.toString()}
+            menus={view.items}
+            linkSearch={toSearchParams({ ...filters, page: 1 }).toString()}
+          />
           <Pagination page={filters.page} totalPages={view.totalPages} onChange={goToPage} />
         </>
       )}

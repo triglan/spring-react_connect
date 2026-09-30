@@ -1,5 +1,8 @@
 import { DEFAULT_SORT, findSort } from './menuSort.js';
 
+// 진열장 한 쪽의 카드 수. 상세의 앞·다음 카드도 같은 쪽 크기로 받아야 진열장과 순서가 같다.
+export const PAGE_SIZE = 12;
+
 // 검색 조건과 진열 순서는 URL 쿼리스트링에만 둔다.
 //   ?q=이름 &category=하위카테고리코드 &price=기준가격(초과) &sort=진열순서 &page=쪽
 // 잘못된 값은 조건이 없는 것(순서는 기본값)으로 본다.
