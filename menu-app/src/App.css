@@ -1360,6 +1360,51 @@ a.menu-card:focus-visible {
   }
 }
 
+/* ─── 연출: 카드 기울기와 광택 ─── */
+
+/* useTilt 가 마우스 위치를 --tilt-x/-y(-1~1), --gloss-x/-y(%)로 넣고 .is-tilting 을 붙인다 */
+.menu-card.is-tilting {
+  box-shadow: var(--shadow-game-lift), var(--card-glow);
+  transform: perspective(var(--motion-tilt-perspective))
+    rotateX(calc(var(--tilt-y, 0) * var(--motion-tilt-max) * -1))
+    rotateY(calc(var(--tilt-x, 0) * var(--motion-tilt-max)))
+    translateY(var(--motion-lift-card));
+  transition-duration: var(--motion-duration-fast);
+}
+
+/* 마우스 자리에 밝은 광택 */
+.menu-card.is-tilting::before {
+  position: absolute;
+  inset: var(--spacing-0);
+  z-index: 1;
+  border-radius: inherit;
+  content: '';
+  background: radial-gradient(circle at var(--gloss-x, 50%) var(--gloss-y, 50%), var(--color-game-gloss), transparent 55%);
+  pointer-events: none;
+}
+
+/* 영웅·전설은 무지갯빛이 겹쳐 마우스를 따라 흐른다 */
+.menu-card.is-tilting.rarity-epic::after,
+.menu-card.is-tilting.rarity-legendary::after {
+  position: absolute;
+  inset: var(--spacing-0);
+  z-index: 1;
+  border-radius: inherit;
+  content: '';
+  background: linear-gradient(
+    115deg,
+    var(--color-game-rarity-rare),
+    var(--color-game-rarity-epic),
+    var(--color-game-rarity-legendary),
+    var(--color-game-rarity-uncommon)
+  );
+  background-position: var(--gloss-x, 50%) var(--gloss-y, 50%);
+  background-size: 200% 200%;
+  mix-blend-mode: color-dodge;
+  opacity: var(--opacity-22);
+  pointer-events: none;
+}
+
 /* ─── 연출: 촛불 일렁임 ─── */
 
 .flame {

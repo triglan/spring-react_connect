@@ -3,16 +3,18 @@ import { Link } from 'react-router';
 import { useBackpack } from './backpack.js';
 import CardFace from './CardFace.jsx';
 import { BagIcon, CheckIcon } from './Icons.jsx';
+import useTilt from './useTilt.js';
 
 // 카드(링크) 안에 버튼을 넣을 수 없어서, 담기 버튼은 같은 칸 위에 겹쳐 둔다.
 const MenuCard = ({ menu, order = 0 }) => {
   const { qtyOf, add } = useBackpack();
   const qty = qtyOf(menu.menuCode);
   const soldOut = menu.orderableStatus === 'N';
+  const tilt = useTilt();
 
   return (
     <div className="card-slot" style={{ '--i': order }}>
-      <CardFace as={Link} to={`/menus/${menu.menuCode}`} menu={menu} />
+      <CardFace as={Link} to={`/menus/${menu.menuCode}`} menu={menu} {...tilt} />
       {soldOut ? (
         <button type="button" className="bag-btn caption1 bold" disabled>
           담을 수 없음

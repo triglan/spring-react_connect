@@ -8,6 +8,7 @@ import CardFace from '../components/CardFace.jsx';
 import { ChevronLeftIcon, ChevronRightIcon, FlameIcon } from '../components/Icons.jsx';
 import StateCard from '../components/StateCard.jsx';
 import { formatCardNo, formatGold, getRarity } from '../components/rarity.js';
+import useTilt from '../components/useTilt.js';
 
 // 주소의 menuCode 가 양의 정수가 아니면 서버에 묻지 않는다. (서버는 500 을 돌려준다)
 const readMenuCode = (value) => {
@@ -112,12 +113,13 @@ const MenuDetailPage = () => {
 
 const MenuDetail = ({ menu, onBack, onBurn }) => {
   const [burnOpen, setBurnOpen] = useState(false);
+  const tilt = useTilt();
   const rarity = getRarity(menu.menuPrice);
   const soldOut = menu.orderableStatus === 'N';
 
   return (
     <article className="detail panel panel-gold">
-      <CardFace menu={menu} size="large" />
+      <CardFace menu={menu} size="large" {...tilt} />
 
       <div className="detail-body">
         <div className="detail-title">
